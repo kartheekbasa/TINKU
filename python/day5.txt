@@ -1,0 +1,175 @@
+Batch Mode:
+-----------
+in Batch Mode, we can write the one or more python statements into a single file, we can save that file with ".py" extension and executeing that file.
+
+how to implement the Batch Mode?
+--------------------------------
+we can implement the Batch Mode in two ways, they are
+
+	1).by using Editor's
+
+	2).by using IDE's
+
+what is Editor?
+--------------
+	an Editor is an application software,which will provides good environment to writeing the source code(programs).
+
+	windows		--> notepad,notepad++,editplus,...
+
+	linux/mac	--> vi editor,nano editor,text editor,...
+
+how to working with Editor's?
+-----------------------------
+	open any one editor in our computer/machine
+			|
+	goto file menu and to select new file
+			|
+	to write the one or more python statements into that file
+			|
+	to save that file with .py extension
+
+ex:
+---
+	C:\\Users\\Lenovo\\Desktop\\mydemo.py
+	--------------------------------------
+print("hello world")
+
+
+how to run python file/script through cmd/terminal?
+----------------------------------------------------
+	if we want to run the python file/script through cmd/terminal,in that case we are using following syntax/command.
+
+	python filename.py
+
+ex:
+---
+C:\Users\Lenovo>python mydemo.py
+python: can't open file 'C:\\Users\\Lenovo\\mydemo.py': [Errno 2] No such file or directory
+
+C:\Users\Lenovo>python C:\\Users\\Lenovo\\Desktop\\mydemo.py
+hello world
+
+	(or)
+
+C:\Users\Lenovo>cd desktop
+
+C:\Users\Lenovo\Desktop>python mydemo.py
+hello world
+
+ex2:
+----
+	D:\\demoproj\\cal.py
+	--------------------
+x=10
+y=20
+print(x+y)
+print(x-y)
+print(x*y)
+
+	output
+	------
+C:\Users\Lenovo>python D:\\demoproj\\cal.py
+30
+-10
+200
+
+	(or)
+C:\Users\Lenovo>d:
+
+D:\>cd demoproj
+
+D:\demoproj>python cal.py
+30
+-10
+200
+
+problems in Editor's?
+-----------------------
+in Editor's, the development of the application takes more time.
+
+the Editor's don't support automatic debugging concept.
+
+note:
+-----
+to overcome the problems in Editor's,in realtime we are going to using the concept called IDE's.
+
+what is IDE's?
+---------------
+IDE's(Integrated Development Environment's)
+
+the IDE's are tools,which will provides good environment to Faster Development of the applications.
+
+the IDE's support automatic debugging concept's.
+
+the python supported IDE's are,
+
+	idle
+	pycharm
+	pydev
+	spyder
+	eclipse
+	netbeans
+	vs code IDE
+	jupyter notebook
+	atom
+	....
+	....
+
+idle:
+-----
+the idle is a default python IDE,but it is not a standard IDE.
+
+the idle support both Interactive Mode and Batch Mode.
+
+
+how to working with interactive mode in idle?
+----------------------------------------------
+	goto search and by typing idle
+		     |
+	to select any one idle in our computer
+	
+
+how to working with batch mode in idle?
+---------------------------------------
+	goto search and by typing idle
+		     |
+	to select any one idle in our computer
+		     |
+	goto file menu and to select new file
+		     |
+	to write the one or more python statements into that file
+		     |
+	to save that file with .py extension
+
+how to run python file/module/script in idle?
+----------------------------------------------
+	goto run menu
+	     |
+	click on run module
+
+		(or)
+
+	to press F5	(or)	Fn+F5
+
+
+note:
+-----
+except idle, if we want to working with any another IDE's first we need to download and install manually.
+
+how to download Pycharm IDE?
+---------------------------
+	goto www.jetbrains.com
+		    |
+	goto Developer tools menu
+		    |
+	goto IDE's section
+		    |
+	to select pycharmIDE
+		    |
+	click on download
+		    |
+	to select our operating system and
+	to download any one file(community/professional)
+
+
+

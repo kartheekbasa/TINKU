@@ -1,0 +1,259 @@
+assignment-1:
+------------
+write a python script/program to check whether given charecter is either alphabet or digit or special charecter, without using any builtin methods.
+
+	input			output
+	-----			------
+	t			alphabet
+
+	R			alphabet
+
+	6			digit
+
+	@			spl charecter
+
+
+sol:
+----
+ch=input("enter your charecter: ")
+if ch>='a' and ch<='z' or ch>='A' and ch<='Z':
+    print("Given charecter is a Alphabet")
+elif ch>='0' and ch<='9':
+    print("Given charecter is a Digit")
+else:
+    print("Given charecter is Special Charecter")
+
+
+assignment-2:
+------------
+write a python script/program to check whether given charecter is either alphabet or digit or special charecter, by using any builtin methods.
+
+	input			output
+	-----			------
+	t			alphabet
+
+	R			alphabet
+
+	6			digit
+
+	@			spl charecter
+
+sol:
+---
+ch=input("enter your charecter: ")
+if ch.isalpha():
+    print("Given charecter is a Alphabet")
+elif ch.isdigit():
+    print("Given charecter is a Digit")
+else:
+    print("Given charecter is Special Charecter")
+
+
+assignment-1:
+--------------
+write a python script to implement the following inventory management application?
+	
+	takes 5 product prices from the user input and to calculate the total ammount,
+
+	if total ammount is >= 10,000		--> to apply 20% discount
+	   total ammount<10,000 and >=7000	--> to apply 15% discount
+	   total ammount<7000 and >=5000	--> to apply 10% discount
+	   total ammount<5000 and >=3000	--> to apply  5% discount
+	   bellow 3000				--> 0% discount
+
+	to apply 18% GST on to total bill after discount
+	finally to print the final bill ammount with GST
+
+assignment-2:
+-------------
+write a program to implement student grading system application based on average of given marks?
+
+	takes 6 subject marks from the user input,to calculate total,average and grade.
+
+	if average>=75					--> A+ Grade
+	   average<75 and >=65				--> A Grade
+	   average<65 and >=55				--> B Grade
+	   average<55 and >=45				--> C Grade
+	   average<45 and >=35				--> Pass
+	   bellow 35					--> Fail
+
+
+nested if:
+----------
+we can define a if block inside another if block, is known as a nested if block.
+
+	syntax
+	------
+	if condition: #outer if
+		stmt_1
+		stmt_2
+		......
+		stmt_n
+		if condition: #inner if
+			stmt_1
+			stmt_2
+			......
+			stmt_n
+
+
+	
+ex1:
+---
+write a python script to check whether given charecter is alphabet or not,whether it is a alphabet to check that alphabet is either lowercase or uppercase alphabet?
+
+ch=input("enter your charecter: ")
+if ch>='a' and ch<='z' or ch>='A' and ch<='Z':
+    if ch>='a' and ch<='z':
+        print("given charecter is a lowercase alphabet")
+    else:
+        print("given charecter is a uppercase alphabet")
+else:
+    print("given charecter is not a alphabet")
+
+output1:
+--------
+enter your charecter: r
+given charecter is a lowercase alphabet
+
+output2:
+--------
+enter your charecter: T
+given charecter is a uppercase alphabet
+
+output3:
+--------
+enter your charecter: 4
+given charecter is not a alphabet
+
+output4:
+-------
+enter your charecter: @
+given charecter is not a alphabet
+
+ex2:
+----
+write a python script to check whether given two string objects are anagram strings or not?
+
+s1=input("enter your string_1: ")
+s2=input("enter your string_2: ")
+if len(s1)==len(s2):
+    if sorted(s1)==sorted(s2):
+        print("given two string objects are Anagram strings")
+    else:
+        print("given two string objects are not a Anagram strings")
+else:
+    print("given two string objects are not a Anagram strings")
+
+
+output1:
+-------
+enter your string_1: eat
+enter your string_2: tea
+given two string objects are Anagram strings
+
+output2:
+--------
+enter your string_1: madam
+enter your string_2: mad
+given two string objects are not a Anagram strings
+
+output3:
+--------
+enter your string_1: heart
+enter your string_2: earth
+given two string objects are Anagram strings
+
+output4:
+-------
+enter your string_1: bad
+enter your string_2: bed
+given two string objects are not a Anagram strings
+
+
+assignment-3:
+------------
+write a python script to check whether given charecter is either alphabet or not,if it is alphabet to check whether that alphabet is either vowel or consonents?
+
+	input				output
+	----				------
+	a				vowel
+	t				consonent
+	E				vowel
+	R				consonent
+	@				not a alphabet
+	8				not a alphabet
+
+
+match case:
+-----------
+this concept is introduced from python3.11 versions onwards.
+
+this concept is similar to switch-case concept in c-programming.
+
+if we want to implement match-case concept,in that case we are using softkeywords in python.
+
+instead of elif ladder we will use match-case concept.
+
+	syntax
+	------
+	match expression:
+		case value_1:
+			stmt_1
+			......
+			stmt_n
+		case value_2:
+			stmt_1
+			......
+			stmt_n
+		----------
+		----------
+		case _:
+		     stmt_1
+		     ......
+		     stmt_n
+
+
+ex1:
+----
+pet=input("enter your pet name: ")
+if pet=='kicha':
+    print("your pet name is kicha")
+elif pet=="chuchu":
+    print("your pet name is chuchu")
+elif pet=="snoopy":
+    print("your pet name is snoopy")
+elif pet=='puppy':
+    print("your pet name is puppy")
+else:
+    print("None")
+
+    
+	(or)
+
+pet=input("enter your pet name: ")
+match(pet):
+    case 'kicha':
+        print("your pet name is kicha")
+    case "chuchu":
+        print("your pet name is chuchu")
+    case "snoopy":
+        print("your pet name is snoopy")
+    case 'puppy':
+        print("your pet name is puppy")
+    case _:
+        print("None")
+
+output1:
+-------
+enter your pet name: chuchu
+your pet name is chuchu
+
+output2:
+--------
+enter your pet name: puppy
+your pet name is puppy
+
+output3:
+--------
+enter your pet name: 
+None	

@@ -1,0 +1,263 @@
+		string patterns
+		---------------
+ex1:
+----
+write a python program to print given string in a square pattern?
+
+	input
+	-----
+siva
+
+	output
+	-----
+s i v a
+s i v a
+s i v a
+s i v a
+
+
+x=input("enter your string: ")
+for r in range(len(x)):
+    for c in range(len(x)):
+        print(x[c],end=" ")
+    print()
+
+ex2:
+----
+write a python program to print given string in a square pattern?
+
+	input
+	-----
+siva
+
+	output
+	------
+s s s s
+i i i i
+v v v v
+a a a a
+
+x=input("enter your string: ")
+for r in range(len(x)):
+    for c in range(len(x)):
+        print(x[r],end=" ")
+    print()
+
+ex3:
+----
+write a python program to print given string object in a right-angle triangle pattern?
+
+	input
+	-----
+siva
+
+	output
+	-----
+s
+s i 
+s i v
+s i v a
+
+x=input("enter your string: ")
+for r in range(len(x)):
+    for c in range(r+1):
+        print(x[c],end=" ")
+    print()
+
+ex4:
+----
+write a python program to print given string object in a right-angle triangle pattern?
+
+	input
+	-----
+siva
+
+	output
+	-----
+s
+i i
+v v v
+a a a a
+
+x=input("enter your string: ")
+for r in range(len(x)):
+    for c in range(r+1):
+        print(x[r],end=" ")
+    print()
+
+ex5:
+----
+write a python program to print given string object in a inverted right-angle triangle pattern?
+
+	input
+	-----
+siva
+
+	output
+	-----
+s i v a
+s i v
+s i
+s
+
+x=input("enter your string: ")
+for r in range(len(x)):
+    for c in range(len(x)-r):
+        print(x[c],end=" ")
+    print()
+
+ex6:
+----
+write a python program to print given string object in a inverted right-angle triangle pattern?
+
+	input
+	-----
+siva
+
+	output
+	-----
+s s s s
+i i i
+v v
+a
+
+x=input("enter your string: ")
+for r in range(len(x)):
+    for c in range(len(x)-r):
+        print(x[r],end=" ")
+    print()
+
+ex7:
+----
+write a python program to print given string object in a right-angle triangle pattern?
+
+	input
+	-----
+siva
+
+	output
+	-----
+      s
+    s i
+  s i v
+s i v a
+
+x=input("enter your string: ")
+for r in range(len(x)):
+    for c in range(len(x)-r-1):
+        print(" ",end=" ")
+    for c in range(r+1):
+        print(x[c],end=" ")
+    print()
+
+
+ex8:
+----
+write a python program to print given string object in a floyd's triangle pattern?
+
+	input
+	-----
+siva
+
+	output
+	-----
+   s
+  s i
+ s i v
+s i v a
+
+x=input("enter your string: ")
+for r in range(len(x)):
+    for c in range(len(x)-r-1):
+        print(" ",end="")
+    for c in range(r+1):
+        print(x[c],end=" ")
+    print()
+
+
+ex9:
+----
+write a python program to print given string object in a diamond pattern?
+
+	input
+	-----
+siva
+
+	output
+	-----
+   s
+  s i
+ s i v
+s i v a
+ s i v
+  s i
+   s
+
+x=input("enter your string: ")
+for r in range(len(x)):
+    for c in range(len(x)-r-1):
+        print(" ",end="")
+    for c in range(r+1):
+        print(x[c],end=" ")
+    print()
+for r in range(len(x)-1):
+    for c in range(r+1):
+        print(" ",end="")
+    for c in range(len(x)-r-1):
+        print(x[c],end=" ")
+    print()
+
+ex10:
+----
+write a python program to print given string object in a pyramid pattern?
+
+	input
+	------
+siva
+
+	output
+	------
+      a
+    v a v
+  i v a v i 
+s i v a v i s
+
+x=input("enter your string: ")
+for r in range(len(x)):
+    for c in range(len(x)-r-1):
+        print(" ",end=" ")
+    for c in range(len(x)-r-1,len(x)):
+        print(x[c],end=" ")
+    for c in range(len(x)-2,len(x)-2-r,-1):
+        print(x[c],end=" ")
+    print()
+
+ex11:
+----
+write a python script/program to print the given string in a bellow pattern?
+
+	input
+	-----
+siva
+
+	output
+	------
+s
+s i
+s i v
+s i v a
+s i v
+s i
+s
+
+
+x=input("enter your string: ")
+for r in range(len(x)):
+    for c in range(r+1):
+        print(x[c],end=" ")    
+    print()
+for r in range(len(x)-1):
+    for c in range(len(x)-1-r):
+        print(x[c],end=" ")
+    print()
+        

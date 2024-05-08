@@ -1,0 +1,388 @@
+		Number Patterns
+		----------------
+ex1:
+----
+write a python program to print 1-N natural numbers in a square pattern?
+
+	input
+	-----
+num=5
+
+	output
+	------
+1 2 3 4 5
+1 2 3 4 5
+1 2 3 4 5
+1 2 3 4 5
+1 2 3 4 5
+
+num=int(input("enter your number: "))
+for r in range(1,num+1):
+    for c in range(1,num+1):
+        print(c,end=" ")
+    print()
+
+ex2:
+----
+write a python program to print 1-N natural numbers in a square pattern?
+
+	input
+	-----
+num=5
+
+	output
+	------
+1 1 1 1 1
+2 2 2 2 2
+3 3 3 3 3
+4 4 4 4 4
+5 5 5 5 5
+
+num=int(input("enter your number: "))
+for r in range(1,num+1):
+    for c in range(1,num+1):
+        print(r,end=" ")
+    print()
+
+ex3:
+----
+write a python program to print 1-N natural numbers in a right-angle triangle pattern?
+
+	input
+	-----
+num=5
+
+	output
+	------
+1
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5
+
+num=int(input("enter your number: "))
+for r in range(1,num+1):
+    for c in range(1,r+1):
+        print(c,end=" ")
+    print()
+
+
+ex4:
+----
+write a python program to print 1-N natural numbers in a right-angle triangle pattern?
+
+	input
+	-----
+num=5
+
+	output
+	------
+1
+2 2
+3 3 3
+4 4 4 4
+5 5 5 5 5
+
+num=int(input("enter your number: "))
+for r in range(1,num+1):
+    for c in range(1,r+1):
+        print(r,end=" ")
+    print()
+
+
+ex5:
+---
+write a python program to print N-1 natural numbers in a inverted right-angle triangle pattern?
+
+	input
+	------
+num=5
+
+	output
+	------
+5 4 3 2 1
+5 4 3 2
+5 4 3
+5 4
+5
+
+num=int(input("enter your number: "))
+for r in range(1,num+1):
+    for c in range(num,r-1,-1):
+        print(c,end=" ")
+    print()
+
+
+ex6:
+---
+write a python program to print 1-N natural numbers in a right-angle triangle pattern?
+
+	input
+	-----
+num=5
+
+	output
+	------
+        1
+      1 2
+    1 2 3
+  1 2 3 4
+1 2 3 4 5
+
+num=int(input("enter your number: "))
+for r in range(1,num+1):
+    for c in range(num-r):
+        print(" ",end=" ")
+    for c in range(1,r+1):
+        print(c,end=" ")
+    print()
+
+
+ex7:
+---
+write a python program to print 1-N natural numbers in a right-angle triangle pattern?
+
+	input
+	-----
+num=5
+
+	output
+	------
+        1
+      2 2
+    3 3 3
+  4 4 4 4
+5 5 5 5 5
+
+num=int(input("enter your number: "))
+for r in range(1,num+1):
+    for c in range(num-r):
+        print(" ",end=" ")
+    for c in range(1,r+1):
+        print(r,end=" ")
+    print()
+
+ex8:
+----
+write a python program to print 1-N natural numbers in a inverted right angle triangle pattern?
+
+	input
+	-----
+num=5
+
+	output
+	------
+1 2 3 4 5 
+  1 2 3 4
+    1 2 3
+      1 2
+	1
+
+num=int(input("enter your number: "))
+for r in range(1,num+1):
+    for c in range(1,r):
+        print(" ",end=" ")
+    for c in range(1,num-r+2):
+        print(c,end=" ")
+    print()
+
+
+ex9:
+----
+write a python program to print 1-N natural numbers in a inverted right angle triangle pattern?
+
+	input
+	-----
+num=5
+
+	output
+	------
+1 1 1 1 1
+  2 2 2 2
+    3 3 3
+      4 4
+        5
+
+num=int(input("enter your number: "))
+for r in range(1,num+1):
+    for c in range(1,r):
+        print(" ",end=" ")
+    for c in range(1,num-r+2):
+        print(r,end=" ")
+    print()
+
+ex10:
+----
+write a python program to print 1-N natural numbers in a floyd's triangle pattern?
+
+	input
+	-----
+num=5
+
+	output
+	------
+    1
+   1 2
+  1 2 3
+ 1 2 3 4
+1 2 3 4 5
+
+num=int(input("enter your number: "))
+for r in range(1,num+1):
+    for c in range(num-r):
+        print(" ",end="")
+    for c in range(1,r+1):
+        print(c,end=" ")
+    print()
+
+
+ex11:
+-----
+write a python program to print 1-N natural numbers in a diamond pattern?
+
+	input
+	-----
+num=5
+
+	output
+	------
+    1
+   1 2
+  1 2 3
+ 1 2 3 4
+1 2 3 4 5
+ 1 2 3 4
+  1 2 3
+   1 2
+    1
+
+
+num=int(input("enter your number: "))
+for r in range(1,num+1):
+    for c in range(num-r):
+        print(" ",end="")
+    for c in range(1,r+1):
+        print(c,end=" ")
+    print()
+for r in range(1,num):
+    for c in range(1,r+1):
+        print(" ",end="")
+    for c in range(1,num-r+1):
+        print(c,end=" ")
+    print()
+        
+ex12:
+-----
+write a python program to print 1-N natural numbers in a diamond pattern?
+
+	input
+	-----
+num=5
+
+	output
+	------
+    1
+   2 2
+  3 3 3
+ 4 4 4 4
+5 5 5 5 5
+ 4 4 4 4
+  3 3 3
+   2 2
+    1
+
+
+num=int(input("enter your number: "))
+for r in range(1,num+1):
+    for c in range(num-r):
+        print(" ",end="")
+    for c in range(1,r+1):
+        print(r,end=" ")
+    print()
+for r in range(num-1,0,-1):
+    for c in range(num-r):
+        print(" ",end="")
+    for c in range(1,r+1):
+        print(r,end=" ")
+    print()
+        
+ex13:
+-----
+write a python program to print 1-N natural numbers in a pyramid pattern?
+
+	input
+	-----
+num=5
+
+	output
+	------
+        5
+      4 5 4
+    3 4 5 4 3
+  2 3 4 5 4 3 2
+1 2 3 4 5 4 3 2 1
+
+num=int(input("enter your number: "))
+for r in range(1,num+1):
+    for c in range(num-r):
+        print(" ",end=" ")
+    for c in range(num-r+1,num+1):
+        print(c,end=" ")
+    for c in range(num-1,num-r,-1):
+        print(c,end=" ")
+    print()
+
+
+ex14:
+-----
+write a python program to print 1-N natural numbers in a pyramid pattern?
+
+	input
+	-----
+num=5
+
+	output
+	------
+        1
+      2 1 2
+    3 2 1 2 3 
+  4 3 2 1 2 3 4
+5 4 3 2 1 2 3 4 5
+
+num=int(input("enter your number: "))
+for r in range(1,num+1):
+    for c in range(num-r):
+        print(" ",end=" ")
+    for c in range(r,0,-1):
+        print(c,end=" ")
+    for c in range(2,r+1):
+        print(c,end=" ")
+    print()
+
+ex15:
+----
+write a python program to print 1-N natural numbers in a right-angle triangle pattern?
+
+	input
+	-----
+num=5
+
+	output
+	------
+1
+2 3
+4 5 6
+7 8 9 10
+11 12 13 14 15
+
+
+num=int(input("enter your number: "))
+i=1
+for r in range(1,num+1):
+    for c in range(1,r+1):
+        print(i,end=" ")
+        i+=1
+    print()
+
+
+

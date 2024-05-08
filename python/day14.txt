@@ -1,0 +1,215 @@
+Mutable Objects:
+----------------
+any object which allows to modify(insert,delete and update) the content/data, that type of objects are called Mutable objects.
+
+	ex: list,set,dict,bytearray,...
+
+ex1:
+----
+>>> x=[6,3,9,2]
+>>> x
+[6, 3, 9, 2]
+>>> type(x)
+<class 'list'>
+>>> id(x)
+1514483798464
+>>> x[1]
+3
+>>> x[1]=30
+>>> x
+[6, 30, 9, 2]
+>>> id(x)
+1514483798464
+
+Immutable Objects:
+----------------
+any object which don't allows to modify(insert,delete and update) the content/data, that type of objects are called Immutable objects.
+
+	ex: int,float,complex,bool,str,tuple,frozenset,bytes,
+	    range,xrange,...
+
+ex:
+---
+>>> y=(9,3,7,2)
+>>> y
+(9, 3, 7, 2)
+>>> type(y)
+<class 'tuple'>
+>>> id(y)
+1514486324400
+>>> y[1]
+3
+>>> y[1]=30
+TypeError: 'tuple' object does not support item assignment
+
+note:
+-----
+the different immutable objects having the same data but referenceing to same/single object in the memory.
+
+	ref fig: immutable objects
+
+ex1:
+----
+	demo.py
+	-------
+x=10
+y=10
+z=10
+print(id(x))
+print(id(y))
+print(id(z))
+
+	output
+	------
+140707870853848
+140707870853848
+140707870853848
+
+ex2:
+----
+	demo.py
+	-------
+x="hai siva krishna"
+y="hai siva krishna"
+z="hai siva krishna"
+print(id(x))
+print(id(y))
+print(id(z))
+
+	output
+	------
+2145109158768
+2145109158768
+2145109158768
+
+ex3:
+----
+	demo.py
+	-------
+x=(1,2,3)
+y=(1,2,3)
+z=(1,2,3)
+print(id(x))
+print(id(y))
+print(id(z))
+
+	output
+	------
+2436280517760
+2436280517760
+2436280517760
+
+
+the different mutable objects having the same data/content but referenceing to different objects in the memory.
+
+	ref fig: mutable objects
+
+ex:
+---
+	demo.py
+	-------
+x=[1,2,3]
+y=[1,2,3]
+z=[1,2,3]
+print(id(x))
+print(id(y))
+print(id(z))
+
+	output
+	------
+2381892212864
+2381892210944
+2381894462144
+
+
+
+		String Handling
+		----------------
+what is string?
+---------------
+a string is a charecter or collection of charecters or sequence of words.
+
+in python, the string datatype having 'str' class
+
+in python, the string object is a sequence,iterable and immutable object.
+
+how to represent the string objects in python?
+-----------------------------------------------
+we can represent the string objects in two ways, they are
+
+	1).single line strings
+
+		a). by using single-single quote's
+
+			ex: 'siva'
+
+		b). by using single-double quote's
+
+			ex: "siva"
+
+	2).multi line strings
+
+		a). by using tripple-single quote's
+			
+			ex: '''hai
+			       siva
+			       krishna'''
+
+		b). by using tripple-double quote's
+	
+			ex: """hai
+			       siva
+			       krishna"""
+
+ex1:
+----
+
+	strrep.py
+	----------
+x='siva'
+y="krishna"
+z='''siva
+ameerpet
+hyderabad
+telangana
+500016'''
+a="""krishna
+guntur
+amaravathi
+andhrapradesh
+522646"""
+print(x)
+print('='*30)
+print(y)
+print('='*30)
+print(z)
+print('='*30)
+print(a)
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python strrep.py
+siva
+==============================
+krishna
+==============================
+siva
+ameerpet
+hyderabad
+telangana
+500016
+==============================
+krishna
+guntur
+amaravathi
+andhrapradesh
+522646
+
+note:
+----
+a quote inside different quote is possible but a quote inside same quote is not possible.
+
+
+
+
+

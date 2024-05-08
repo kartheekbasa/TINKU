@@ -1,0 +1,160 @@
+how to install python software?
+--------------------------------
+	double click on python3.x versions downloaded file
+			|
+	to select any one option(Install Now/Customize Installation)
+			|
+	to enable all the optional features and click next
+			|
+	to select installation location and click on install
+			|
+		click on yes
+
+
+What is path?
+--------------
+a path is a system variable under the environment variables.
+
+it is completely related to the operating system.
+
+why we need to set the python path?
+-----------------------------------
+	after installation of python software, by default we can access the python interpreter on top of that particular installation location only.
+
+ex:
+---
+C:\Users\Lenovo>python
+	"python" is not recognized
+
+C:\Users\Lenovo>cd ..
+
+C:\Users>cd ..
+
+C:\>cd Python312
+
+C:\Python312>python
+Python 3.12.0 
+
+>>> print("hai")
+hai
+>>> x=10
+>>> y=20
+>>> print(x+y)
+30
+>>> ^Z #ctrl+z
+
+
+C:\Python312>d:
+
+D:\>python
+	"python" is not recognized
+
+D:\>
+
+
+if we want to access the python interpreter on top of any location in our computer, in that case we need to set the python path.
+
+how to set the python path?
+---------------------------
+we can set the python path in two ways, they are
+
+	1).Temporary Path setup
+
+	2).Permanent Path setup
+
+Temporary Path setup:
+---------------------
+if we want to set the python path temporary purpose, in that case we are using following command,
+
+	set path="our_python_installation_location"
+
+ex:
+---
+C:\Users\Lenovo>set path="C:\Python312"
+
+
+Permanent Path setup:
+----------------------
+if we want to set the python path permanently,in that case we are using following command
+
+	goto thispc
+	     |
+	right click on thispc
+	     |
+	click on the properties
+	     |
+	goto advanced system settings
+	     |
+	goto environment variables
+	     |
+	goto system variables
+	     |
+	to select path variable and click on edit
+(in windows8,10,11 versions,to press again click on edittext option 
+and  click on ok)
+	     |
+	to put ; and to add our python installation location
+	     |
+	click on ok
+	     |
+	click on ok
+	     |
+	click on ok
+
+
+How to develop/implement python applications/programs/projects?
+---------------------------------------------------------------
+	we can develop/implement the python applications/programs/projects in two mode's, they are
+
+	1).Interactive Mode
+
+	2).Batch Mode
+
+
+Interactive Mode:
+-------------------
+in Interactive Mode, we can write the one by one python statements directly on python interpreter and executeing.
+
+how to working with Interactive Mode?
+-------------------------------------
+if we want to working with Interactive Mode, in that case we are using following commands,
+
+	goto cmd(command prompt)/terminal
+		|
+	by typing python and to press enter key
+
+ex:
+---
+C:\Users\Lenovo>python
+Python 3.12.0 
+
+>>> print("hello world")
+hello world
+>>> x=10
+>>> y=20
+>>> print(x+y)
+30
+>>> print(x-y)
+-10
+>>>
+
+how to exit from python interactive mode?
+-----------------------------------------
+if we want to exit from python interactive mode, in that case we are using following options,
+
+	ctrl+z    or   exit()   or   quit()
+
+note:
+-----
+the python interactive mode working mechanism is based on REPL rule.
+
+	Read  Evaluate   Print  Loop
+
+Dis-Advantages/Problems in Interactive Mode?
+----------------------------------------------
+	once we are exit from python Interactive mode,in that case previous workdone will not be saved in any where because of that reason the python interactive mode is not suitable for development of the python applications but it is suitable for only learning the python.
+
+note:
+----
+to overcome the problems in Interactive mode we are going to using the concept called batch mode.
+

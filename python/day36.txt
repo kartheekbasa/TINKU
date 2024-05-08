@@ -1,0 +1,286 @@
+ex1:
+----
+write a python program to print the palindrom numbers from the given range of numbers?
+
+snum=int(input("enter your starting number: "))
+enum=int(input("enter your ending number: "))
+for num in range(snum,enum+1):
+    temp=num
+    rev=0
+    while num>=1:
+        dig=num%10
+        rev=rev*10+dig
+        num//=10
+    if temp==rev:
+        print(temp)
+
+output:
+------
+enter your starting number: 1
+enter your ending number: 50
+1
+2
+3
+4
+5
+6
+7
+8
+9
+11
+22
+33
+44
+
+ex2:
+----
+write a python program to print strong numbers from the given range of numbers?
+
+snum=int(input("enter your starting number: "))
+enum=int(input("enter your ending number: "))
+for num in range(snum,enum+1):
+    temp=num
+    s=0
+    while num>=1:
+        dig=num%10
+        i=1
+        f=1
+        while i<=dig:
+            f*=i
+            i+=1
+        s+=f        
+        num//=10
+    if temp==s:
+        print(temp)
+
+output:
+-------
+enter your starting number: 1
+enter your ending number: 100000
+1
+2
+145
+40585
+
+ex3:
+----
+write a python program to print the perfect numbers from the given range of numbers?
+
+snum=int(input("enter your starting number: "))
+enum=int(input("enter your ending number: "))
+for num in range(snum,enum+1):
+    i=1
+    s=0
+    while i<num:
+        if num%i==0:
+            s+=i
+        i+=1
+    if num==s:
+        print(num)
+
+output:
+-------
+enter your starting number: 1
+enter your ending number: 1000
+6
+28
+496
+
+
+		Star Patterns
+		--------------
+ex1:
+----
+write a python program to print '*'s in square pattern?
+
+	input
+	-----
+num=5
+
+	output
+	------
+* * * * *
+* * * * *
+* * * * *
+* * * * *
+* * * * *
+
+num=int(input("enter your number: "))
+r=1
+while r<=num:
+    c=1
+    while c<=num:
+        print("*",end=" ")
+        c+=1
+    r+=1
+    print()
+
+	(or)
+
+num=int(input("enter your number: "))
+for r in range(1,num+1):
+    for c in range(1,num+1):
+        print("*",end=" ")
+    print()
+
+ex2:
+----
+write a python program to print '*'s in hollow square pattern?
+
+	input
+	-----
+num=5
+
+	output
+	-------
+* * * * *
+*       *
+*       *
+*       *
+* * * * *
+
+num=int(input("enter your number: "))
+r=1
+while r<=num:
+    c=1
+    while c<=num:
+        if r==1 or r==num or c==1 or c==num:
+            print("*",end=" ")
+        else:
+            print(" ",end=" ")
+        c+=1
+    r+=1
+    print()
+
+	(or)
+
+num=int(input("enter your number: "))
+for r in range(1,num+1):
+    for c in range(1,num+1):
+        if r==1 or r==num or c==1 or c==num:
+            print("*",end=" ")
+        else:
+            print(" ",end=" ")        
+    print()
+
+ex3:
+----
+write a python program to print '*'s in right-angle tri-angle pattern?
+
+	input
+	-----
+num=5
+
+	output
+	------
+*
+* *
+* * *
+* * * *
+* * * * *
+
+num=int(input("enter your number: "))
+r=1
+while r<=num:
+    c=1
+    while c<=r:
+        print("*",end=" ")
+        c+=1
+    r+=1
+    print()
+
+	(or)
+
+num=int(input("enter your number: "))
+for r in range(1,num+1):
+    for c in range(1,r+1):
+        print("*",end=" ")        
+    print()
+
+
+ex4:
+----
+write a python program to print '*'s in hollow right-angle triangle pattern?
+
+	input
+	-----
+num=5
+
+	output
+	------
+*
+* *
+*   *
+*     *
+* * * * *
+
+num=int(input("enter your number: "))
+r=1
+while r<=num:
+    c=1
+    while c<=r:
+        if c==1 or r==num or r==c:
+            print("*",end=" ")
+        else:
+            print(" ",end=" ")
+        c+=1
+    r+=1
+    print()
+
+	(or)
+
+num=int(input("enter your number: "))
+for r in range(1,num+1):
+    for c in range(1,r+1):
+        if c==1 or r==num or r==c:
+            print("*",end=" ")
+        else:
+            print(" ",end=" ")        
+    print()
+
+ex5:
+----
+write a python program to pritn '*'s in inverted right angle triangle pattern?
+
+	input
+	-----
+num=5
+
+	output
+	-------
+* * * * *
+* * * *
+* * *
+* *
+*
+
+num=int(input("enter your number: "))
+r=1
+while r<=num:
+    c=1
+    while c<=num-r+1:
+        print("*",end=" ")
+        c+=1
+    r+=1
+    print()
+
+	(or)
+
+num=int(input("enter your number: "))
+for r in range(1,num+1):
+    for c in range(1,num-r+2):
+        print("*",end=" ")        
+    print()
+
+
+
+
+
+
+
+
+
+
+
+
+

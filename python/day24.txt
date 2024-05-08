@@ -1,0 +1,163 @@
+Membership Operators:
+---------------------
+the Membership operators are used to searching/finding an element/charecter in a given iterable object.
+
+the python supported Membership Operators are in,not in
+
+if element/char is find/match, the 'in' operator to return True otherwise the 'in' operator to return False.
+
+if element/char is not find/match, the 'not in' operator to return True otherwise the 'not in' operator to return False.
+
+ex1:
+----
+>>> x=[5,3,7,9]
+>>> 3 in x
+True
+>>> 7 not in x
+False
+>>> 8 in x
+False
+>>> 6 not in x
+True
+
+ex2:
+----
+>>> y="hai siva krishna"
+>>> y
+'hai siva krishna'
+>>> 'i' in y
+True
+>>> 'k' in y
+True
+>>> 'b' in y
+False
+>>> 'c' not in y
+True
+>>> 'v' not in y
+False
+>>> 'I' in y
+False
+>>> 'hai' in y
+True
+>>> 'Hai' not in y
+True
+
+Operator Presidency:
+--------------------
+whenever our expression contains multiple operators,in that case we need to identify which operator is executed first,which operator is executed second,...,which operator is executed last, in that case we are using operator presidency concept.
+
+in our expression,the multiple operators having the same priority, in that case we are follow the left to right associativity.
+
+in arithmetic operators we are follow the PEMDAS rule.
+
+	P	--> ()
+	E	--> **
+	MD	--> *,\,\\,%
+	AS	--> +,-
+
+ex1:
+----
+>>> x=3+2*3/(5-3)%3**2-3
+>>> x
+3.0
+
+
+	3+2*3/(5-3)%3**2-3
+	3+2*3/2%3**2-3
+	3+2*3/2%9-3
+	3+6/2%9-3
+	3+3.0%9-3
+	3+3.0-3
+	6.0-3
+	3.0
+
+
+
+in logical operators we are follow the and,or
+
+ex2:
+---
+>>> y=True and not False or not True and False or True and not True or False
+>>> y
+True
+
+
+
+	True and not False or not True and False or True and not True or False
+	True or not True and False or True and not True or False
+	True or False or True and not True or False
+	True or False or False or False
+	True or False or False
+	True or False
+	True
+
+in bitwise operators,we are follow the ~,<< or >>,&,^,|
+
+
+ex3:
+---
+>>> z=3&4<<2|3^5
+>>> z
+6
+
+
+
+	3&4<<2|3^5
+	3&16|3^5
+	0|3^5
+	0|6
+         6
+
+ex4:
+----
+>>> a=5^3<<2&~3|6
+>>> a
+15
+
+	5^3<<2&~3|6
+	5^3<<2&-4|6
+	5^12&-4|6
+	5^12|6
+	9|6
+	 15
+
+
+note:
+-----
+arithmetic operators are having the more priority when compared to other operators like bitwise operators.
+
+ex5:
+----
+>>> b=3+2&3*4|2-(3^2)%3<<2**2
+>>> b
+20
+
+
+
+	3+2&3*4|2-(3^2)%3<<2**2
+	3+2&3*4|2-1%3<<2**2
+	3+2&3*4|2-1%3<<4
+	3+2&12|2-1<<4
+	5&12|1<<4
+	5&12|16
+	4|16
+	20
+
+
+	
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+

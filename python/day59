@@ -1,0 +1,283 @@
+how to get the documentation string of a function?
+--------------------------------------------------
+	if we want to get the documentation string of a function, in that case we are using help() function.
+
+ex1:
+----
+>>> help(len)
+Help on built-in function len in module builtins:
+
+len(obj, /)
+    Return the number of items in a container.
+
+ex2:
+----
+>>> from math import sqrt
+>>> help(sqrt)
+Help on built-in function sqrt in module math:
+
+sqrt(x, /)
+    Return the square root of x.
+
+ex3:
+----
+	addition.py
+	-----------
+def add(x,y):
+    """addition of two numbers i.e., x+y"""
+    z=x+y
+    print(z)
+
+
+>>> from addition import add
+>>> help(add)help
+Help on function add in module addition:
+
+add(x, y)
+    addition of two numbers i.e., x+y
+
+
+Variables:
+-----------
+a variable is a name,which is referenceing to an object in the memory.
+
+the variables are used to store the data for future use/reference.
+
+in procedure oriented programming, the variables can be categorized into 3-types, they are
+
+	1).Local Variable's
+
+	2).Global Variable's
+
+	3).Non-Local Variable's
+
+
+Local Variable's:
+-----------------
+we can define a variables within/inside the function, that type of variables are called local variables.
+
+we can access the local variables data within that particular function only.
+
+ex1:
+----
+def f1():
+    x=10 #local variable
+    print(x)
+f1()
+
+output:
+------
+10
+
+we can't access the local variables data from outside of that function.
+
+ex2:
+----
+def f1():
+    x=10 #local variable
+    
+f1()
+print(x)
+
+output:
+-------
+NameError: name 'x' is not defined
+
+
+we can't access the local variables data within the another functions also.
+
+ex3:
+----
+def f1():
+    x=10 #local variable
+    
+f1()
+def f2():
+    print(x)
+f2()
+
+output:
+-------
+NameError: name 'x' is not defined
+
+
+directly we can modify the local variables data within the functions.
+
+ex4:
+---
+def f1():
+    x=10 #local variable
+    print(x)
+    x+=5
+    print(x)    
+f1()
+
+output:
+------
+10
+15
+
+Global Variables:
+-----------------
+we can define a variables above the function definition and at the begening of the program, that type of variables are called Global variables.
+
+directly we can access the global variables data at any location in our program.
+
+ex1:
+---
+x=10 #global variable
+def f1():
+    print(x)    
+f1()
+print(x)
+def f2():
+    print(x)
+f2()
+
+output:
+------
+10
+10
+10
+
+
+in python, directly we can't modify the global variables data within the functions.
+
+ex2:
+----
+x=10 #global variable
+def f1():
+    print(x)
+    x+=5
+    print(x)
+f1()
+print(x)
+def f2():
+    print(x)
+f2()
+
+output:
+------
+UnboundLocalError: cannot access local variable 'x' where it is not associated with a value
+
+
+if we want to modify the global variables data within the functions, in that case we are using forward decleration mechanism.
+
+	syntax
+	------
+	global globalvariablename
+
+once we can modify the global variables data that is effected in remaining all other cases.
+
+ex3:
+----
+x=10 #global variable
+def f1():
+    global x
+    print(x)
+    x+=5
+    print(x)
+f1()
+print(x)
+def f2():
+    print(x)
+f2()
+
+output:
+------
+10
+15
+15
+15
+
+nonlocal variables:
+-------------------
+	we can define a variables with in the outer function and above the inner function definition, that type of variables are called non-local variables to inner function.
+
+	we can access the non-local variables data within the outer function only i.e., inside the inner function and outside the inner function.
+
+ex1:
+----
+def f1():
+    x=10 #nonlocal to f2 and local to f1
+    def f2():
+        print(x)
+    f2()
+    print(x)
+f1()
+print(x)
+        
+output:
+------
+10
+10
+NameError: name 'x' is not defined
+
+
+
+in python, directly we can't modify the nonlocal variables data within the inner functions.
+
+ex2:
+---
+def f1():
+    x=10 #nonlocal to f2 and local to f1
+    def f2():
+        print(x)
+        x+=5
+        print(x)
+    f2()
+    print(x)
+f1()
+print(x)
+        
+output:
+-------
+UnboundLocalError: cannot access local variable 'x' where it is not associated with a value
+
+
+if we want to modify the nonlocal variables data within the inner functions, in that case we are using forward decleartion mechanism,
+
+	syntax
+	------
+	nonlocal nonlocalvariablename
+
+once we acn modify the non-local variables data that is effected in remaining all other cases.
+
+ex3:
+----
+def f1():
+    x=10 #nonlocal to f2 and local to f1
+    def f2():
+        nonlocal x
+        print(x)
+        x+=5
+        print(x)
+    f2()
+    print(x)
+f1()
+
+output:
+-------
+10
+15       
+15
+
+ex:
+----
+x=10 #global variable
+def f1():
+    y=20 #local to f1 and nonlocal to f2
+    def f2():
+        z=30 #local to f2
+        print(x,y,z)
+    f2()
+    print(x,y)
+f1()
+print(x)
+
+output:
+-------
+10 20 30
+10 20
+10
+

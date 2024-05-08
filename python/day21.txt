@@ -1,0 +1,257 @@
+isdigit()
+---------
+to check whether our string object contains only digits or not.
+
+	strobj.isdigit()
+
+ex:
+----
+>>> x="siva"
+>>> y="RAMA"
+>>> z="KriShNa"
+>>> a="Rama123"
+>>> b="123"
+>>> c="Rama@123"
+>>> d="Rama 123"
+>>> x.isdigit()
+False
+>>> y.isdigit()
+False
+>>> z.isdigit()
+False
+>>> a.isdigit()
+False
+>>> b.isdigit()
+True
+>>> c.isdigit()
+False
+>>> d.isdigit()
+False
+
+casefold()
+---------
+to convert the string into lowercase.
+
+if we want to compare the strings,in that case we are using casefold()
+
+	strobj.casefold()
+
+ex1:
+----
+>>> x="rama"
+>>> y="rama"
+>>> z="Rama"
+>>> x==y
+True
+>>> x==z
+False
+>>> x==z.casefold()
+True
+>>> x==z.lower()
+True
+
+ex2:
+----
+>>> a="RAMA"
+>>> a.casefold()
+'rama'
+>>> a.lower()
+'rama'
+
+format()
+--------
+to format the string into our required format.
+
+	strobj.format()
+
+ex:
+---
+>>> "{} {}".format("hai","siva","krishna")
+'hai siva'
+>>> "{1} {2}".format("hai","siva","krishna")
+'siva krishna'
+>>> "{0} {2} {1}".format("hai","siva","krishna")
+'hai krishna siva'
+>>> "{} {} {}".format("hai","siva","krishna")
+'hai siva krishna'
+>>> "{} {} {} {}".format("hai","siva","krishna")
+IndexError: Replacement index 3 out of range for positional args tuple
+>>> "{} {} {2}".format("hai","siva","krishna")
+ValueError: cannot switch from automatic field numbering to manual field specification
+>>> "{0} {} {}".format("hai","siva","krishna")
+ValueError: cannot switch from manual field specification to automatic field numbering
+>>> "{0} {0} {1}".format("hai","siva","krishna")
+'hai hai siva'
+
+ex:
+---
+name=input("enter your name: ")
+age=int(input("enter your age: "))
+print("hello",name,"you are",age,"year's old")
+print("hello %s you are %d year's old"%(name,age))
+print("hello {} you are {} year's old".format(name,age))
+print("hello {0} you are {1} year's old".format(name,age))
+print(f"hello {name} you are {age} year's old")
+
+output:
+-------
+enter your name: siva
+enter your age: 30
+hello siva you are 30 year's old
+hello siva you are 30 year's old
+hello siva you are 30 year's old
+hello siva you are 30 year's old
+hello siva you are 30 year's old
+
+removeprefix()
+--------------
+>>> x="aaabbaaa"
+>>> x
+'aaabbaaa'
+>>> x.lstrip('a')
+'bbaaa'
+>>> x
+'aaabbaaa'
+>>> x.removeprefix('a')
+'aabbaaa'
+>>> x
+'aaabbaaa'
+>>> x.removeprefix('aa')
+'abbaaa'
+>>> x
+'aaabbaaa'
+
+removesuffix()
+---------------
+>>> x="aaabbaaa"
+>>> x
+'aaabbaaa'
+>>> x.rstrip('a')
+'aaabb'
+>>> x
+'aaabbaaa'
+>>> x.removesuffix('a')
+'aaabbaa'
+>>> x
+'aaabbaaa'
+>>> x.removesuffix('aa')
+'aaabba'
+>>> x
+'aaabbaaa'
+
+
+			Operators
+			---------
+what is Operator?
+----------------
+an Operator is a special charecter, which is used to perform the operation on the data of the operands or objects.
+
+	ex:
+	---
+	x=10
+	y=20
+
+	x + y	--> expression(it is a combination of both operands and operators)
+
+		--> here x and y are operands
+		--> here + is a operator
+		--> here 10 and 20 are the data of the operands
+
+types of operators:
+------------------
+	Arithmetic Operator's
+	Comparission/Relational Operator's
+	Logical Operator's
+	Bitwise Operator's
+	Assignment Operator's
+	Identity Operator's
+	Memberhip Operator's
+
+
+Arithmetic Operator's:
+----------------------
+the Arithmetic Operator's are used to perform the Arithmetic calculation's/operation's.
+
+	Arithmetic	Arithmetic	input's		result
+	   Operation	    Operator	x=10,y=3
+	------------	------------	---------	----------
+	Addition	     +		x+y		13
+
+	Subtraction	     -		x-y		7
+
+	Multiplication	     *		x*y		30
+
+	Division	    /		x/y		3.333335
+		  (floating point division)
+
+	Floor Division	    //		x//y		3
+		    (Integer Division)
+
+	Modulo		    %		x%y		1
+
+	Exponent	    **		x**y		1000
+
+
+ex:
+---
+	demo.py
+	------
+x,y=10,3
+print(x+y)
+print(x-y)
+print(x*y)
+print(x/y)
+print(x//y)
+print(x%y)
+print(x**y)
+
+	output
+	-------
+13
+7
+30
+3.3333333333333335
+3
+1
+1000
+
+Comparission/Relational Operator's:
+------------------------------------
+these operators are used to compare the data of the operands/objects.
+
+these operators are to return the output as boolean values like True and False.
+
+the Comparission/Relational Operators are,
+
+	Equal Too			-->	==
+
+	not equal too			-->	!=
+
+	Lessthan			-->	<
+
+	Lessthan or Equal too		-->	<=
+
+	Greaterthan			-->	>
+
+	Greaterthan or Equal too	-->	>=
+
+ex:
+---
+	demo.py
+	------
+x,y=10,3
+print(x==y)
+print(x!=y)
+print(x<y)
+print(x<=y)
+print(x>y)
+print(x>=y)
+
+	output
+	------
+False
+True
+False
+False
+True
+True

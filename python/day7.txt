@@ -1,0 +1,118 @@
+how to working with Microsoft Visual Studio(vs) Code IDE?
+----------------------------------------------------------
+double click on Visual Studio(vs) Code IDE shortcut icon
+			|
+goto extensions tab and to install python extension for vs code IDE
+			|
+		select new file
+			|
+		enter filename with .py extension
+			|
+to write one or more python statements into that file and save that file
+
+
+how to run python file in Microsoft Visual Studio(vs) Code IDE?
+---------------------------------------------------------------
+	goto run menu
+	     |
+	to select any one option(run without debugging/start debugging)
+					|		    |
+				     ctrl+F5		   F5
+
+
+
+Keywords:
+---------
+a keyword is a special/reserved words for some special purpose, we can use that words only for that particular purpose.
+
+the python2.x versions support 31 keywords.
+
+the python3.x(3.0 to 3.6.x) versions support 33 keywords.
+
+the python3.x(3.7.0 to 3.8.x) versions support 35 keywords.
+
+the python3.x(3.9.0 to 3.9.x) versions support 36 keywords.
+
+the python3.x(3.10.0 to 3.12.x) versions support 35 keywords.
+
+
+ex1:
+----
+write a python script to print the list of keywords?
+
+	list_of_keywords.py
+	--------------------
+import keyword
+print(keyword.kwlist)
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python list_of_keywords.py
+
+['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+
+
+ex2:
+----
+write a python script to return the no.of keywords?
+
+	no_of_keywords.py
+	-----------------
+import keyword
+print(len(keyword.kwlist))
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python no_of_keywords.py
+35
+
+how to get python version through cmd/terminal?
+------------------------------------------------
+C:\Users\Lenovo\Desktop>python -V
+Python 3.12.0
+
+	(or)
+
+C:\Users\Lenovo\Desktop>python --version
+Python 3.12.0
+
+ex3:
+----
+write a python script to get the python version information?
+
+	version_info.py
+	---------------
+import sys
+print(sys.version)
+
+	(or)
+
+import platform
+print(platform.python_version())
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python version_info.py
+3.12.0
+
+note:
+-----
+from python3.11 versions onwards to introduce soft keywords.
+
+the soft keywords are used to implement the match-case(switch-case concept in C programming) concept in python.
+
+ex4:
+---
+write a python script/program to return the list of soft keywords?
+
+	list_of_soft_keywords.py
+	-------------------------
+import keyword
+print(keyword.softkwlist)
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python list_of_soft_keywords.py
+['_', 'case', 'match', 'type']
+
+	

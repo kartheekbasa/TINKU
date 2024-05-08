@@ -1,0 +1,247 @@
+		Control Flow Statements
+		-----------------------
+the Control Flow statements are used to control the flow of the program execution.
+
+why we need to Control the Flow of the Program Execution?
+---------------------------------------------------------
+in Any programming Language program, by default all the statements are executed at only once.
+
+if we want to execute some statements repeatedly, if we want to skip the execution of some statements, in that cases we need to control the flow of the program execution.
+
+how to control the flow of the program execution?
+--------------------------------------------------
+we can control the flow of the program execution by using control flow statements.
+
+the control flow statements can be categorized into 3-types, they are
+
+	1).Conditional/Sequential Statement's
+
+	2).Looping/Iterative Statement's
+
+	3).Jumping/Transform Statement's
+
+
+what is condition?
+------------------
+any expression to return the result as boolean values, that type of expressions are called conditions.
+
+x,y=10,3
+
+x+y	--> 13		--> expression
+x-y	--> 7		--> expression
+x*y	--> 30		--> expression
+x==y	--> False	--> expression		--> Condition
+x!=y	--> True	--> expression		--> Condition
+x>y	--> True	--> expression		--> Condition
+x&y	--> 2		--> expression
+x|y	--> 11		--> expression
+
+
+what is block?
+--------------
+in python, the group of statements which are follow the same space indentation, is known as a block/clause.
+
+	C/C++/Java			Python
+	----------			-------
+      stmt_1				stmt_1
+      stmt_2				stmt_2
+      {					     stmt_a
+         stmt_a				     stmt_b
+	 stmt_b				     ......
+	 ......				     stmt_z
+	 stmt_z
+       }				stmt_n-1
+      stmt_n-1				stmt_n
+      stmt_n
+
+
+Conditional statements:
+----------------------
+the Conditional statements are used to execute the block of statements or to skip the execution of block of statements or to execute one block of statements among from multiple blocks of statements.
+
+the python supported conditional statements are,
+
+	if
+	if else
+	if elif else (in c programming if else-if else)
+	elif ladder (in c programming else-if ladder)
+	nested if
+	match-case (in c programming switch case concept)
+
+if block:
+----------
+we can define any block,which is preceeded by "if" keyword, that block is called "if" block.
+
+	syntax
+	------
+	if condition: stmt
+
+		(or)
+
+	if condition:
+		stmt_1
+		stmt_2
+		......
+		stmt_n
+
+		(or)
+
+	if(condition):
+		stmt_1
+		stmt_2
+		......
+		stmt_n
+
+flowchart:
+
+	ref fig: if flowchart
+
+ex:
+---
+print("hai")
+num=int(input("enter your number: "))
+if num>5:print("siva")
+print("bye")
+
+output1:
+--------
+hai
+enter your number: 3
+bye
+
+output2:
+--------
+hai
+enter your number: 9
+siva
+bye
+
+if else:
+--------
+	syntax
+	------
+	if condition:
+		stmt_1
+		stmt_2
+		......
+		stmt_n
+	else:
+	    stmt_1
+	    stmt_2
+	    ......
+	    stmt_n
+
+flowchart:
+	
+	ref fig: if else block
+
+ex:
+---
+print("hai")
+hour=int(input("enter time in hours: "))
+if hour<=11.59:
+    print("siva")
+    print("good morning")
+else:
+    print("rama")
+    print("good afternoon")
+print("bye")
+
+output1:
+--------
+hai
+enter time in hours: 8
+siva
+good morning
+bye
+
+output2:
+--------
+hai
+enter time in hours: 13
+rama
+good afternoon
+bye
+
+ex2:
+----
+write a program to check whether that particular person is eligible for voter registration or not based on age?
+
+name=input("enter your name: ")
+age=int(input("enter your age: "))
+if age>=18:
+    print("Congratulations %s"%name)
+    print("you are eligible for voter registration")
+else:
+    print("Sorry %s"%name)
+    print("you are not eligible for voter registration")
+
+output1:
+-------
+enter your name: siva
+enter your age: 12
+Sorry siva
+you are not eligible for voter registration
+
+output2:
+--------
+enter your name: rama
+enter your age: 19
+Congratulations rama
+you are eligible for voter registration
+
+
+assignment-1:
+-------------
+write a python script/program to check whether given number is either even or odd?
+
+	input				output
+	-----				-------
+	5				odd
+
+	12				even
+
+
+assignment-2:
+--------------
+write a python script/program, to check whether given string object is either palindrom string or not,without ignore the cases?
+
+	input_string		Reverse_Order		Output
+	-------------		-------------		--------
+	siva			avis			not a palindrom string
+
+	madam			madam			palindrom string
+
+	LevEl			lEveL			not a palindrom string
+
+
+assignment-3:
+------------
+write a python script/program, to check whether given string object is either palindrom string or not,with ignore the cases?
+
+	input_string		Reverse_Order		Output
+	-------------		-------------		--------
+	siva			avis			not a palindrom string
+
+	madam			madam			palindrom string
+
+	LevEl			lEveL			palindrom string
+
+
+	
+assignment-4:
+-------------
+write a python script/program,to increment the 10% hike to the employe,which employe experience is greater than or equal to 5 year?
+
+	input				output
+	-----				------
+	50000
+	3				50000
+
+
+	50000
+	6				55000
+
+
+		
+

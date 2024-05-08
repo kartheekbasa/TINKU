@@ -1,0 +1,240 @@
+bitwise negation(~) example:
+----------------------------
+>>> x=10
+>>> ~x
+-11
+
+	10
+	| to convert decimal into binary
+      1010
+        | to apply the 1's compliment i.e., to chnage the 0 to 1 and 1 to 0
+      0101
+        | to padding one bit i.e., 1 at left side
+     10101
+	| to convert binary into decimal and 
+	| our padding bit result is always negative
+    -1*2**4+0*2**3+1*2**2+0*2**1+1*2**0
+	|
+    -1*16+0*8+1*4+0*2+1*1
+	|
+     -16+0+4+0+1
+	|
+       -11
+
+note:
+----
+the even no.of negations always to return the same number as a output.
+
+>>> x=6
+>>> ~~x
+6
+
+>>> y=9
+>>> ~~~~y
+9
+
+>>> z=-3
+>>> ~~~~~~z
+-3	
+
+the odd no.of negations to return the output as -(num+1)
+
+>>> x=6
+>>> ~x
+-7
+
+>>> y=9
+>>> ~~~y
+-10
+
+>>> z=-3
+>>> ~~~~~z
+2
+
+bitwise leftshift(<<) operator example:
+---------------------------------------
+>>> x=10
+>>> x<<2
+40
+
+	10
+	| to convert Decimal into Binary
+       1010
+        | to move the 2 bit's at leftside and
+        | to padding 2 zero's at rightside
+     101000
+        | the moveing bit's are included
+     101000
+        | to convert binary into decimal
+     1*2**5+0*2**4+1*2**3+0*2**2+0*2**1+0*2**0
+	|
+     1*32+0*16+1*8+0*4+0*2+0*1
+	|
+     32+0+8+0+0+0
+	|
+       40
+
+
+bitwise rightshift(<<) operator example:
+----------------------------------------
+>>> x=10
+>>> x>>2
+2
+
+	10
+	| to convert Decimal into Binary
+       1010
+        | to move the 2 bit's at righttside and
+        | to padding 2 zero's at lefttside
+       001010
+        | the moveing bit's are excluded
+       0010
+        | to convert binary into decimal
+     0*2**3+0*2**2+1*2**1+0*2**0
+	|
+     0*8+0*4+1*2+0*1
+	|
+     0+0+2+0
+	|
+        2
+
+
+note:
+----
+whenever we are moving the bit's at leftside that no.of bit's are fit into the memory and whenever we are moving the bit's at rightside that no.of bit's are exit from the memory.
+
+Assignment Operators:
+---------------------
+these operators are used to assign the values to the variables.
+
+in python,the assignment operators can be categorized into 3-types, they are
+
+	1).Normal Assignment Operator's
+
+	2).Shorthand Assignment Operator's
+
+	3).Walrus Assignment Operator's
+
+Normal Assignment Operator's:
+-----------------------------
+in python, the single equaltoo(=) operator is a Normal Assignment Operator's.
+
+this operator is used to assign the R-value to L-value.
+
+examples:
+--------
+>>> x=10
+>>> x
+10
+
+>>> a,b=1,2
+>>> a
+1
+>>> b
+2
+
+>>> y=x
+>>> y
+10
+
+>>> p=8,9,2
+>>> p
+(8, 9, 2)	
+
+Shorthand Assignment Operator's:
+--------------------------------
+the Normal Assignment Operator which contains prefix with any another operators like arithmetic and bitwise operators, that type of Assignment Operators are called Shorthand Assignment Operator's.
+
+ex:
+---
+x,y=10,3
+
+x+=y	--> x=x+y	--> x=13
+x-=y	--> x=x-y	--> x=7
+x*=y	--> x=x*y	--> x=30
+x&=y	--> x=x&y	--> x=2
+x|=y	--> x=x|y	--> x=11
+
+note:
+-----
+the python dont supporting both increment(++) and decrement(--) operators concept but we can achive that concept indirectly by using shorthand assignment operators concept.
+
+	C/C++/Java				Python
+	----------				-------
+	i++	--> i=i+1			i+=1	--> i=i+1
+
+	i--	--> i=i-1			i-=1	--> i=i-1
+
+Walrus Assignment Operator's:
+------------------------------
+in python,':=' is a Walrus Assignment Operator.
+
+this operator is introduced from python3.8 versions onwards.
+
+this operator is used to perform both initialization and evalution at a time.
+
+ex:
+---
+x=10
+print(x)
+y=20
+print(y)
+print(x+y)
+
+output:
+-------
+10
+20
+30
+
+ex:
+---
+print(x:=10)
+print(y:=20)
+print(x+y)
+
+output:
+-------
+10
+20
+30
+
+Identity Operators:
+-------------------
+the Identity Operators are used to compare the address of the objects.
+
+the python supported Identity Operators are is,is not
+
+if address are equal, the "is" operator to return True otherwise the "is" operator to return False.
+
+if address are not equal, the "is not" operator to return True otherwise the "is not" operator to return False.
+
+ex1:
+---
+>>> x=10
+>>> y=10
+>>> x==y
+True
+>>> x is y
+True
+>>> id(x)
+140708230974168
+>>> id(y)
+140708230974168
+>>> x is not y
+False
+
+ex2:
+---
+>>> a=[1,2,3]
+>>> b=[1,2,3]
+>>> a==b
+True
+>>> a is b
+False
+>>> id(a)
+2350459113728
+>>> id(b)
+2350461145472
+>>> a is not b
+True

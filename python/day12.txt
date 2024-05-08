@@ -1,0 +1,191 @@
+assignment-1:
+-------------
+write a python program,to read fname and lname of the employe from the user input, to generate the full name of the employe?
+
+	input
+	----
+enter employe first name: siva
+enter employe last name: krishna
+
+	output
+	------
+fullname of the employe: siva krishna
+
+sol:
+-----
+fname=input("enter your first name: ")
+lname=input("enter your last name: ")
+print("fullname of the employee:",fname,lname)
+
+	(or)
+
+fname=input("enter your first name: ")
+lname=input("enter your last name: ")
+print("fullname of the employee: "+fname+' '+lname)
+
+
+
+assignment-2:
+-------------
+write a python program to read the 3-different numerical values from the user input, to perform the addition operation?
+
+	input
+	-----
+enter a value: 4
+enter b value: 2.3
+enter c value: 2+3j
+
+	output
+	------
+(8.3+3j)
+
+sol:
+----
+x=int(input("enter x value: "))
+y=float(input("enter y value: "))
+z=complex(input("enter z value: "))
+print(x+y+z)
+
+
+assignment-3:
+--------------
+write a python program to read the principle ammount,time and rate of intrest from the user input and to calculate the simple intrest?
+
+
+sol:
+----
+p=float(input("enter your principle ammount: "))
+t=int(input("enter time in years: "))
+r=int(input("enter rate of intrest: "))
+si=(p*(t*12)*r)/100
+print(si)
+
+
+Number System's:
+-----------------
+the Number System's are used to represent the numbers in a computer memory.
+
+generally, the number system's can be categorized into 4-types, they are
+
+	1).Binary Number System's
+
+	2).Octal Number System's
+
+	3).Decimal Number System's
+
+	4).Hexadecimal Number System's
+
+Binary Number System's:
+----------------------
+the Binary Number System base value is 2
+
+it contains 0-1
+
+we can represent the Binary Number System's in python, that number system contains prefix with '0b'
+
+	ex: 0b1010
+
+Octal Number System's:
+----------------------
+the Octal Number System base value is 8
+
+it contains 0-7
+
+we can represent the Octal Number System's in python, that number system contains prefix with '0o'
+
+	ex: 0o37
+
+Decimal Number System's:
+------------------------
+the Decimal Number System base value is 10
+
+it contains 0-9
+
+there's no special charecter to represent the Decimal Number System's in python.
+
+the Decimal Number System contains '0' but dont starts with '0'.
+
+	ex: 39 #valid
+	    309	#valid
+	    039 #invalid
+
+Hexadecimal Number System's:
+-----------------------------
+the Hexadecimal Number System base value is 16
+
+it contains 0-15(0123456789abcdef/0123456789ABCDEF)
+
+we can represent the Hexadecimal Number System's in python,that number system contains prefix with '0x'.
+
+	ex: 0x2c
+
+examples:
+---------
+>>> x=0b1010 #binary
+>>> x
+10 #decimal
+
+>>> y=0o37 #octal
+>>> y
+31 #decimal
+
+>>> z=39 #decimal
+>>> z
+39 #decimal
+
+>>> p=0x2c #hexadecimal
+>>> p
+44 #decimal
+
+note:
+----
+we can pass any number system as a input to the python interpreter by default our python interpreter to return the output as decimal number system only.
+
+if we want to our required number system as a output,in that case we are using number system conversions.
+
+number system conversions:
+---------------------------
+the number system conversions are used to convert the one number system into another number system.
+
+	1).to convert Binary into Decimal
+
+>>> x=0b1011 #binary
+>>> x
+11 #decimal
+
+
+	2).to convert Decimal into Binary
+
+in python, we can convert any number system into Binary number system,in that case we are using bin() function.
+
+>>> y=13 #decimal
+>>> bin(y)
+0b1101 #binary
+
+	3).to convert Octal into Decimal
+
+>>> x=0o37 #octal
+>>> x
+31 #decimal
+
+	4).to convert Decimal into Octal
+
+in python, we can convert any number system into Octal number system,in that case we are using oct() function.
+
+>>> y=29 #decimal
+>>> oct(y)
+0o35 #octal
+
+	5).to convert Hexadecimal into Decimal
+
+>>> x=0x2c #hexadecimal
+>>> x
+44 #decimal
+	
+	6).to convert Decimal into Hexadecimal
+
+in python,we can convert any number system into hexadecimal number system, in that case we are using hex() function.
+
+>>> y=39 #decimal
+>>> hex(y)
+0x27 #hexadecimal

@@ -1,0 +1,304 @@
+Identifier's:
+-------------
+an Identifier is a name, it's may be either variable name or function name or class name or method name,....
+
+in python, at the time of defineing a identifiers we are follow the some rules, they are
+
+	rule1: the identifier contains alphabets(lower or upper or both cases),digits(0-9) and underscore(_) symbols.
+
+	rule2: the identifier must begin with either alphabets or 
+underscore(_) symbols only.
+
+		(or)
+
+		the identifier should not begin with digits
+
+	rule3: we can't assign any keyword as identifier
+
+note:
+-----
+in python, the identifiers are case sensitive because of that reason the python language is a case-sensitive language.
+
+
+what is Variable?
+-----------------
+a variable is a name,which is referenceing to an object in the memory.
+
+the variables are used to store the data for future reference/use.
+
+	syntax
+	------
+	variable_name=value
+
+examples:
+---------
+>>> x=10
+>>> x
+10
+
+>>> My_Name_123="siva"
+>>> My_Name_123
+'siva'
+
+>>> _y=45
+>>> _y
+45
+
+>>> __z=56
+>>> __z
+56
+
+>>> __in__=90
+>>> __in__
+90
+
+>>> 2c=40
+SyntaxError: invalid decimal literal
+
+>>> and=89
+SyntaxError: invalid syntax
+
+>>> break=97
+SyntaxError: invalid syntax
+
+>>> Break=97
+>>> Break
+97
+
+>>> my name="siva"
+SyntaxError: invalid syntax
+
+>>> my@name="siva"
+SyntaxError: invalid syntax
+
+note:
+----
+in python, the variable names are unlimited length
+
+if we want to assign the same value to the multiple variables at a time,in that case we are using following syntax,
+
+	var_1=var_2=...=var_n=value
+
+ex:
+---
+>>> x=y=z=10
+>>> x
+10
+>>> y
+10
+>>> z
+10
+
+if we want to assign the different values to different variables at a time, in that case we are using following syntax,
+
+	var_1,var_2,...,var_n=value_1,value_2,...,value_n
+
+ex:
+---
+>>> a,b,c=10,20,30
+>>> a
+10
+>>> b
+20
+>>> c
+30
+
+in python, we can assing the multiple values to single variable at a time is possible.
+
+>>> p=6,9,3
+>>> p
+(6, 9, 3)
+
+>>> q,r,s=7
+TypeError: cannot unpack non-iterable int object
+
+>>> q,r,s=9,7
+ValueError: not enough values to unpack (expected 3, got 2)
+
+>>> q,r,s=3,6,0,7
+ValueError: too many values to unpack (expected 3)
+
+>>> q,r,s=p
+>>> q
+6
+>>> r
+9
+>>> s
+3
+
+ex1:
+---
+write a python program to perform the swapping of two numbers with the help of third/temporary variable?
+
+	swapping.py
+	-----------
+x,y=10,20
+print("Before swapping:",x,y)
+z=x
+x=y
+y=z
+print("After swapping:",x,y)
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python swapping.py
+Before swapping: 10 20
+After swapping: 20 10
+
+
+note:
+----
+	Integers	--> %d
+
+	Float		--> %f
+
+	String		--> %s
+
+
+ex2:
+----
+	swapping.py
+	-----------
+x,y=10,20
+print("Before swapping x=%d and y=%d"%(x,y))
+z=x
+x=y
+y=z
+print("After swapping x=%d and y=%d"%(x,y))
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python swapping.py
+Before swapping x=10 and y=20
+After swapping x=20 and y=10
+
+ex3:
+---
+write a python program to perform the swapping of two numbers with out help of third/temporary variable?
+
+	swapping.py
+	-----------
+x,y=10,20
+print("Before swapping x=%d and y=%d"%(x,y))
+x=x+y
+y=x-y
+x=x-y
+print("After swapping x=%d and y=%d"%(x,y))
+
+	(or)
+
+x,y=10,20
+print("Before swapping x=%d and y=%d"%(x,y))
+x,y=y,x
+print("After swapping x=%d and y=%d"%(x,y))
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python swapping.py
+Before swapping x=10 and y=20
+After swapping x=20 and y=10
+
+
+working with builtin functions:
+-------------------------------
+print() function:
+------------------
+the print() is a builtin function in both python2.x and python3.x versions.
+
+the print() is used to print the result/output on the output screen/window.
+
+	print(value_1,value_2,...,value_n,sep=" ",end="\n",
+	      file=sys.stdout,flush=False)
+
+			(or)
+
+	print(*values,sep=" ",end="\n",file=sys.stdout,flush=False)
+
+ex1:
+---
+	demo.py
+	-------
+print("hai")
+print("hai","siva")
+print("hai","siva","krishna")
+print("hai","siva","krishna",sep=",")
+print("hai","siva","krishna",sep="::")
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python demo.py
+hai
+hai siva
+hai siva krishna
+hai,siva,krishna
+hai::siva::krishna
+
+ex2:
+----
+	demo.py
+	-------
+print("hai")
+print("siva")
+print("krishna")
+print("="*40)
+print("hai",end=" ")
+print("siva",end=" ")
+print("krishna")
+
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python demo.py
+hai
+siva
+krishna
+========================================
+hai siva krishna
+
+type() function:
+----------------
+in python2.x versions, the type() function to return the type of the object.
+
+in python3.x versions, the type() function to return the class of the object.
+
+ex1:
+----
+>>> x=10
+>>> x
+10
+>>> type(x)
+<class 'int'>
+
+ex2:
+----
+>>> y=2.3
+>>> y
+2.3
+>>> type(y)
+<class 'float'>
+
+id() function:
+--------------
+the id() is used to identify an object in the memory.
+
+		(or)
+
+the id() to return the address of the object.
+
+ex:
+---
+	demo.py
+	-------
+x=10
+y=2.3
+z=20
+print(id(x))
+print(id(y))
+print(id(z))
+
+	output
+	-------
+C:\Users\Lenovo\Desktop>python demo.py
+140707802565336
+2545837490960
+140707802565656

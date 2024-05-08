@@ -1,0 +1,361 @@
+strip()
+-------
+to remove all the possible occurencess of given charecters in a string object at begening or ending or both places.
+
+	strobj.strip(chars)
+
+ex1:
+---
+>>> x="siva krishna"
+>>> x
+'siva krishna'
+>>> x.strip('s')
+'iva krishna'
+>>> x
+'siva krishna'
+>>> x.strip('a')
+'siva krishn'
+>>> x
+'siva krishna'
+>>> x.strip('siva')
+' krishn'
+>>> x
+'siva krishna'
+
+ex2:
+----
+>>> y="madam"
+>>> y
+'madam'
+>>> y.strip('m')
+'ada'
+>>> y
+'madam'
+>>> y.strip('a')
+'madam'
+>>> y
+'madam'
+>>> y.strip('am')
+'d'
+>>> y
+'madam'
+>>> y.strip('k')
+'madam'
+>>> y
+'madam'
+>>> y.strip('dam')
+''
+>>> y
+'madam'
+
+note:
+----
+the strip(), by default to remove whitespace charecters.
+
+ex3:
+---
+>>> x=" siva "
+>>> x
+' siva '
+>>> x.strip()
+'siva'
+>>> x
+' siva '
+
+ex4:
+----
+>>> y="\n\t siva \t\n"
+>>> y
+'\n\t siva \t\n'
+>>> y.strip()
+'siva'
+>>> y
+'\n\t siva \t\n'
+
+
+lstrip()
+-------
+to remove all the possible occurencess of given charecters in a string object at begening position only.
+
+	strobj.lstrip(chars)
+
+ex1:
+---
+>>> x="madam"
+>>> x
+'madam'
+>>> x.lstrip('m')
+'adam'
+>>> x
+'madam'
+>>> x.lstrip('am')
+'dam'
+>>> x
+'madam'
+>>> x.lstrip('dma')
+''
+>>> x
+'madam'
+>>> x.lstrip('a')
+'madam'
+>>> x
+'madam'
+
+ex2:
+----
+>>> y=" siva "
+>>> y
+' siva '
+>>> y.lstrip()
+'siva '
+>>> y
+' siva '
+
+ex3:
+----
+>>> z="\n\t siva \n\t"
+>>> z
+'\n\t siva \n\t'
+>>> z.lstrip()
+'siva \n\t'
+>>> z
+'\n\t siva \n\t'
+
+rstrip()
+---------
+to remove all the possible occurencess of given charecters in a string object at ending position only.
+
+	strobj.rstrip(chars)
+
+ex1:
+----
+>>> x="madam"
+>>> x
+'madam'
+>>> x.rstrip('m')
+'mada'
+>>> x
+'madam'
+>>> x.rstrip('am')
+'mad'
+>>> x
+'madam'
+>>> x.rstrip('dma')
+''
+>>> x
+'madam'
+>>> x.rstrip('d')
+'madam'
+>>> x
+'madam'
+
+ex2:
+----
+>>> y=" siva "
+>>> y
+' siva '
+>>> y.rstrip()
+' siva'
+>>> y
+' siva '
+
+ex3:
+----
+>>> z="\n\t siva \n\t"
+>>> z
+'\n\t siva \n\t'
+>>> z.rstrip()
+'\n\t siva'
+>>> z
+'\n\t siva \n\t'
+
+
+split()
+-------
+to split the string into list of words based on given seperator/delimeter.
+
+by default, the split() to split the string from left to right.
+
+by default, the split() to return the output as list format.
+
+	strobj.split(sep/delimeter)
+
+by default seperator is space charecter.
+
+ex1:
+----
+>>> x="hai siva krishna good morning"
+>>> x.split()
+['hai', 'siva', 'krishna', 'good', 'morning']
+>>> x.split(' ')
+['hai', 'siva', 'krishna', 'good', 'morning']
+>>> x.split('i')
+['ha', ' s', 'va kr', 'shna good morn', 'ng']
+
+ex2:
+----
+>>> y="hai,siva krishna,good morning"
+>>> y
+'hai,siva krishna,good morning'
+>>> y.split(",")
+['hai', 'siva krishna', 'good morning']
+>>> y
+'hai,siva krishna,good morning'
+>>> y.split()
+['hai,siva', 'krishna,good', 'morning']
+>>> y
+'hai,siva krishna,good morning'
+>>> y.split(":")
+['hai,siva krishna,good morning']
+
+rsplit()
+--------
+to split the string into list of words based on given seperator/delimeter.
+
+by default, the rsplit() to split the string from right to left.
+
+by default, the rsplit() to return the output as list format.
+
+	strobj.rsplit(sep/delimeter)
+
+by default seperator is space charecter.
+
+ex1:
+----
+>>> x="hai siva krishna good morning"
+>>> x
+'hai siva krishna good morning'
+>>> x.split()
+['hai', 'siva', 'krishna', 'good', 'morning']
+>>> x.split(" ")
+['hai', 'siva', 'krishna', 'good', 'morning']
+>>> x.rsplit()
+['hai', 'siva', 'krishna', 'good', 'morning']
+>>> x.rsplit(" ")
+['hai', 'siva', 'krishna', 'good', 'morning']
+
+join()
+------
+to join the elements of given iterable object with our string object.
+
+	strobj.join(iterableobj)
+
+ex1:
+---
+>>> x="siva"
+>>> y=" "
+>>> y.join(x)
+'s i v a'
+
+ex2:
+----
+>>> a="."
+>>> b=["D","Siva"]
+>>> a.join(b)
+'D.Siva'
+
+
+assignment-1:
+-------------
+write a program to read the string object as a input from the user and to print that string in reverse order?
+
+	input			output
+	-----			------
+	siva			avis
+
+	siva krishna		anhsirk avis
+
+sol:
+----
+x=input("enter your string: ")
+print("the reverse order of '%s' is: '%s'"%(x,x[::-1]))
+
+
+
+assignment-2:
+--------------
+write a program to read the string object as a input from the user and to swap the first charecter and last charecters in that string?
+
+	input			output
+	-----			-------
+	siva			aivs
+
+	siva krishna		aiva krishns
+
+	good morning rama	aood morning ramg
+
+sol:
+----
+x=input("enter your string: ")
+print(x[-1]+x[1:-1]+x[0])
+
+
+
+
+assignment-3:
+-------------
+write a program to read the string object as a input from the user and to seperate even indexing charecters and odd indexing charecters from that particular string?
+
+	input			output
+	----			-------
+	siva			sv,ia
+
+	krishna			kiha,rsn
+
+	good morning		go onn,odmrig
+
+sol:
+----
+x=input("enter your string: ")
+print(x[::2],x[1::2],sep=",")
+
+
+assignment-4:
+--------------
+write a program to read the string object as a input from the user,to print that string object repeatedly depends on the no_of_charecters in that string?
+
+	input			output
+	-----			------
+	siva			sivasivasivasiva
+
+	hai			haihaihai
+
+	hello			hellohellohellohellohello
+
+sol:
+----
+x=input("enter your string: ")
+print(x*len(x))
+
+
+assignment-1:
+------------
+write a program to remove the space's in the given string object?
+
+	input			output
+	-----			-------
+	hai siva		haisiva
+
+	hai siva good morning	haisivagoodmorning
+
+assignment-2:
+------------
+write a program to print the no.of words in a given string based on space charecter?
+
+	input			output
+	-----			------
+	hai			  1
+	hai siva		  2
+	hai siva krishna	  3
+	hai siva good morning	  4
+
+
+assignment-3:
+------------
+write a program to remove the space's in the given string object?
+
+	input			output
+	-----			-------
+	hai siva		HaiSiva
+
+	hai siva good morning	HaiSivaGoodMorning

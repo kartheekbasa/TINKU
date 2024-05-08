@@ -1,0 +1,391 @@
+Data types:
+------------
+the datatypes are used to represent the type of the data.
+
+in generally, the datatypes can be categorized into 2-types, they are
+
+	1).static datatypes
+
+	2).dynamic datatypes
+
+static datatypes:
+-----------------
+the programmer/developer to assign the data type to the variables by explicitly at the time of defineing/declaring the variables,is knonw as a static datatypes concept.
+
+any high-level programming language which support static datatypes concept, that type of high-level programming languages are called static typed languages.
+
+	ex: C,C++,Java,.Net languages,...
+
+
+ex: in C programming
+---
+#include<stdio.h>
+void main()
+{
+   int eid=101;
+   char ename[20]="siva";
+   float esal=3000.0;
+   printf("%d %s %f",eid,ename,esal);
+}
+
+
+dynamic datatypes:
+------------------
+the programmer/developer dont assign the any datatype to the variables by explicitly at the time of declaring the variables but at runtime to assign the datatype to the variables automatically based on the value of that variables, is known as a dynamic datatypes concept.
+
+any high-level programming langauge which support dynamic datatypes concept, that type of high-level programming languages are called Dynamically typed languages.
+
+	ex: Python,JavaScript,....
+
+ex: in Python programming
+---
+eid=101
+ename="siva"
+esal=3000.0
+print(eid,ename,esal)
+
+
+Python Datatypes:
+-----------------
+Python is a Dynamically Typed Language
+
+in Python,every datatype having it's own class.
+
+the Python Supported Datatype's are
+
+	1).Numerical/Number Datatype's
+		a).int
+		b).float
+		c).complex
+
+	2).Boolean Datatype's
+
+	3).Text Sequence Datatype's
+		a).string
+
+	4).Number Sequence Datatype's
+		a).list
+		b).tuple
+		c).range
+		d).xrange
+
+	5).set Datatype's
+		a).set
+		b).frozenset
+
+	6).mapping Datatype's
+		a).dictionary
+
+	7).None Datatype's
+
+	8).Binary Sequence Datatype's
+		a).bytes
+		b).bytearray
+		c).memoryview
+
+
+Numerical/Number Datatype's:
+-----------------------------
+these datatypes are used to store the numerical values.
+
+the Numerical/Number Datatype's can be categorized into 3-types, they are
+
+	1).Integer Number Datatype's
+
+	2).Floating Point Number Datatype's
+
+	3).Complex Number Datatype's
+
+
+Integer Number Datatype:
+------------------------
+in python, the Integer Number Datatype having 'int' class
+
+ex:
+---
+>>> x=10
+>>> x
+10
+>>> type(x)
+<class 'int'>
+
+
+in python,we can assign the any number system as a integer object.
+
+	binary			--> 0b
+
+	octal			--> 0o
+
+	decimal	
+
+	hexadecimal		--> 0x
+
+ex:
+---
+>>> x=0b1010 #binary
+>>> type(x)
+<class 'int'>
+
+>>> y=0o37 #octal
+>>> type(y)
+<class 'int'>
+
+>>> z=39 #decimal
+>>> type(z)
+<class 'int'>
+
+>>> p=0x2c #hexadecimal
+>>> type(p)
+<class 'int'>
+
+Floating Point Number Datatype's:
+---------------------------------
+in python, the Floating Point Number Datatype having "float" class
+
+ex:
+---
+>>> x=2.3
+>>> x
+2.3
+>>> type(x)
+<class 'float'>
+
+>>> y=2.3e2
+>>> y
+230.0
+>>> type(y)
+<class 'float'>
+
+>>> z=2.3e-2
+>>> z
+0.023
+>>> type(z)
+<class 'float'>
+
+in python,we can assign the only decimal number system as a floating point object.
+
+>>> x=0b101.01 #binary
+SyntaxError: invalid syntax
+
+>>> y=0o37.3 #octal
+SyntaxError: invalid syntax
+
+>>> z=0x2c.5 #hexadecimal
+SyntaxError: invalid syntax
+
+>>> p=39.5 #decimal
+>>> type(p)
+<class 'float'>
+
+Complex Number Datatype's:
+--------------------------
+in python, the Complex Number Datatype having 'complex' class.
+
+	c=a+bj	(or)	c=bj	(or)  c=a+bJ   (or)  c=bJ
+
+ex:
+---
+>>> x=2+3j
+>>> x
+(2+3j)
+>>> type(x)
+<class 'complex'>
+
+>>> y=3j
+>>> y
+3j
+>>> type(y)
+<class 'complex'>
+
+>>> z=2+3J
+>>> z
+(2+3j)
+>>> type(z)
+<class 'complex'>
+
+>>> a=2+3i
+SyntaxError: invalid decimal literal
+
+>>> b=2+3k
+SyntaxError: invalid decimal literal
+
+note:
+-----
+int()		--> to convert any type of data into integer
+		--> by default return value is 0
+
+ex1:
+----
+>>> x=int()
+>>> x
+0
+
+ex2:
+----
+>>> y=2.3 #float
+>>> int(y)
+2
+
+ex3:
+----
+>>> z=2+3j #complex
+>>> int(z)
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'complex'
+
+
+float()		--> to convert any type of data into float
+		--> by default return value is 0.0
+
+ex1:
+---
+>>> x=float()
+>>> x
+0.0
+
+ex2:
+----
+>>> y=3 #int
+>>> float(y)
+3.0
+
+ex3:
+----
+>>> z=2+3j #complex
+>>> float(z)
+TypeError: float() argument must be a string or a real number, not 'complex'
+
+
+
+complex()	--> to convert any type of data into complex data
+		--> by default return value is 0j
+
+ex1:
+----
+>>> x=complex()
+>>> x
+0j
+
+ex2:
+----
+>>> y=3 #int
+>>> complex(y)
+(3+0j)
+
+ex3:
+----
+>>> z=2.3 #float
+>>> complex(z)
+(2.3+0j)
+
+Boolean datatype:
+-----------------
+in python, the boolean datatype having 'bool' class.
+
+in python, the boolean values are represented as True and False
+
+ex1:
+----
+>>> x=False
+>>> x
+False
+>>> type(x)
+<class 'bool'>
+
+ex2:
+----
+>>> y=True
+>>> y
+True
+>>> type(y)
+<class 'bool'>
+
+ex3:
+----
+>>> a=false
+NameError: name 'false' is not defined. Did you mean: 'False'?
+
+ex4:
+----
+>>> b=true
+NameError: name 'true' is not defined. Did you mean: 'True'?
+
+
+bool()		--> to convert any type of data into boolean
+		--> by default return value is False
+
+ex1:
+----
+>>> x=bool()
+>>> x
+False
+
+note:
+----
+except zero's, we can take any value that value will be treated as True
+
+ex2:
+---
+>>> a=9
+>>> b=0
+>>> c=1
+>>> bool(a)
+True
+>>> bool(b)
+False
+>>> bool(c)
+True
+
+ex3:
+----
+>>> a=2.3
+>>> b=0.0
+>>> c=1.0
+>>> bool(a)
+True
+>>> bool(b)
+False
+>>> bool(c)
+True
+
+ex4:
+----
+>>> a=2+3j
+>>> b=3j
+>>> c=0+3j
+>>> d=3+0j
+>>> e=0j
+>>> f=0+0j
+>>> g=0.0+0j
+>>> bool(a)
+True
+>>> bool(b)
+True
+>>> bool(c)
+True
+>>> bool(d)
+True
+>>> bool(e)
+False
+>>> bool(f)
+False
+>>> bool(g)
+False
+
+ex5:
+----
+>>> x=False
+>>> y=True
+>>> int(x)
+0
+>>> int(y)
+1
+>>> float(x)
+0.0
+>>> float(y)
+1.0
+>>> complex(x)
+0j
+>>> complex(y)
+(1+0j)
+
+

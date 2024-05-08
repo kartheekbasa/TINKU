@@ -1,0 +1,242 @@
+assignment-1:
+-------------
+write a python program to check whether given number is prime number or not?
+
+	any number which contains only two divisibles like 1 and itself, that number is called prime number.
+
+number		divisibles	divisibles_count	result
+------		-----------	----------------	------
+2		1,2			2		prime number
+
+9		1,3,9			3		not a prime number
+
+13		1,13			2		prime number
+
+12		1,2,3,4,6,12		6		not a prime number
+
+
+sol:
+---
+num=int(input("enter your number: "))
+div_count=0
+i=1
+while i<=num:
+    if num%i==0:
+        div_count+=1
+    i+=1
+if div_count==2:
+    print("Given number is a Prime number")
+else:
+    print("Given number is not a Prime number")
+
+
+assignment-2:
+--------------
+write a python program to check whether given number is perfect number or not?
+
+number	divisibles_except_that_number	sum_of_the_divisibles	result
+-----	-----------------------------	---------------------	---------
+6	1,2,3				1+2+3			6	yes
+
+8	1,2,4				1+2+4			7	no
+
+12	1,2,3,4,6			1+2+3+4+6		16	no
+
+28	1,2,4,7,14			1+2+4+7+14		28	yes
+
+
+sol:
+---
+num=int(input("enter your number: "))
+s=0
+i=1
+while i<num:
+    if num%i==0:
+        s+=i
+    i+=1
+if num==s:
+    print("Given number is a Perfect number")
+else:
+    print("Given number is not a Perfect number")
+
+
+ex:
+---
+write a python script to print the sum of the digits in a given number?
+
+number		digits		sum_of_the_digits	result
+------		------		-----------------	-------
+345		3,4,5		3+4+5			12
+
+23		2,3		2+3			5
+
+3721		3,7,2,1		3+7+2+1			13
+
+
+sol:
+---
+num=int(input("enter your number: "))
+s=0
+while num>=1:
+    dig=num%10
+    s+=dig
+    num//=10
+print(s)
+
+ex2:
+---
+write a python script to print the no.of digits in a given number?
+
+	number	  digits	no_of_digits
+	------	  ------	-------------
+	3	    3		     1
+
+	23	    2,3		     2
+
+	0	    1		     1
+
+	3251	    3,2,5,1	     4
+
+	-34	    3,4		     2
+
+
+sol:
+----
+num=int(input("enter your number: "))
+div_count=0
+if num==0:
+    div_count+=1
+    print(div_count)
+elif num>0:
+    while num>=1:
+        dig=num%10
+        div_count+=1
+        num//=10 #num=num//10
+    print(div_count)
+else:
+    x=-(num)
+    while x>=1:
+        dig=x%10
+        div_count+=1
+        x//=10
+    print(div_count)
+    
+Infinite While Loop:
+---------------------
+Infinite while loop means our while condition is always True.
+
+	syntax:
+	-------
+	while condition:
+		stmt_1
+		stmt_2
+		.....
+		stmt_n
+
+flowchart:
+---------
+	ref fig: infinite while loop flowchart
+
+ex1:
+---
+while True:
+    print("hai")
+
+output:
+------
+hai
+hai
+hai
+hai
+hai
+...., keep on executeing upto sufficient memory
+
+ex2:
+----
+while 1:
+    print("hai")
+
+	
+output:
+------
+hai
+hai
+hai
+hai
+hai
+...., keep on executeing upto sufficient memory	
+
+ex3:
+----
+while 3<5:
+    print("hai")
+
+output:
+------
+hai
+hai
+hai
+hai
+hai
+...., keep on executeing upto sufficient memory
+
+
+Jumping/Transform Statements:
+----------------------------
+the python supported jumping/transform statements are,
+
+	break
+	continue
+	pass
+
+break statement:
+----------------
+the break is a keyword in python, which is used in the looping statements.
+
+if we want to exit from the loop execution at the time of middle of the loop execution, in that case we are using "break" statement.
+
+once the control reach the "break" statement, then immediately the control will goto outside the loop.
+
+ex:
+---
+i=0
+while True:
+    print("hai",i)
+    if i==3:
+        break
+    i+=1
+print("bye")
+
+output:
+-------
+hai 0
+hai 1
+hai 2
+hai 3
+bye
+
+continue statement:
+-------------------
+the continue is a keyword in python, which is used in the looping statements.
+
+if we want to skip the execution of one particular iteration, in that case we are using continue statement.
+
+once the control reach the continue statement to skip the execution of remaining statements in our loop,then immediately the control will goto main loop condition.
+
+ex:
+---
+i=0
+while i<5:
+    i+=1
+    if i==3:
+        continue
+    print("hai",i)
+print("bye")
+
+output:
+-------
+hai 1
+hai 2
+hai 4
+hai 5
+bye

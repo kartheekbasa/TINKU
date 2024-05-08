@@ -1,0 +1,309 @@
+ex2:
+----
+	strrep.py
+	--------
+x='hai "siva" krishna'
+y="hai 'siva' krishna"
+z='''siva
+"ameerpet"
+'hyderabad'
+"""telangana"""
+500016'''
+a="""krishna
+'guntur'
+"amaravathi"
+'''andhrapradesh'''
+522646"""
+print(x)
+print('='*30)
+print(y)
+print('='*30)
+print(z)
+print('='*30)
+print(a)
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python strrep.py
+hai "siva" krishna
+==============================
+hai 'siva' krishna
+==============================
+siva
+"ameerpet"
+'hyderabad'
+"""telangana"""
+500016
+==============================
+krishna
+'guntur'
+"amaravathi"
+'''andhrapradesh'''
+522646
+
+ex3:
+----
+	strrep.py
+	---------
+x='hai 'siva' krishna'
+print(x)
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python strrep.py
+
+SyntaxError: invalid syntax
+
+ex4:
+----
+	strrep.py
+	---------
+x="hai "siva" krishna"
+print(x)
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python strrep.py
+
+SyntaxError: invalid syntax
+
+ex5:
+----
+	strrep.py
+	---------
+x="""hai """siva""" krishna"""
+print(x)
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python strrep.py
+
+SyntaxError: invalid syntax
+
+ex6:
+----
+	strrep.py
+	---------	
+x='''hai '''siva''' krishna'''
+print(x)
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python strrep.py
+
+SyntaxError: invalid syntax
+
+ex7:
+----
+	strrep.py
+	---------
+x='''hai """siva 'krishna "bye"'"""'''
+print(x)
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python strrep.py
+hai """siva 'krishna "bye"'"""
+
+ex8:
+----
+	strrep.py
+	----------
+x="hai\nsiva\nkrishna"
+print(x)
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python strrep.py
+hai
+siva
+krishna
+
+ex9:
+----
+	strrep.py
+	---------
+x="hai\tsiva\tkrishna"
+print(x)
+	
+	output
+	------
+C:\Users\Lenovo\Desktop>python strrep.py
+hai     siva    krishna
+
+ex10:
+----
+	strrep.py
+	--------
+x="hai\n\tsiva\n\t\tkrishna"
+print(x)
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python strrep.py
+hai
+        siva
+                krishna
+
+
+ex11:
+-----
+	strrep.py
+	---------
+x="hai\rsiva\rkrishna"
+print(x)
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python strrep.py
+krishna
+
+ex12:
+-----
+	strrep.py
+	---------
+x="krishna\rhai\rsiva"
+print(x)
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python strrep.py
+sivahna
+
+
+the string object supporting indexing concept, in python the indexing can be categorized into 2-type's they are
+
+	1).Positive/Forward Indexing
+
+	2).Negative/Backward Indexing
+
+
+			Indexing
+			    |
+		-------------------------
+		|			|
+	Positive/Forward	Negative/Backward
+		|			|
+takes from left to right	takes from right to left
+		|			|
+by default starts with '0'	by default starts with '-1'
+
+
+in string object each and every charecter having unique indexing.
+
+	ref fig: string indexing
+
+by using indexing concept we can retreive only one charecter from the string object at a time.
+
+ex:
+---
+>>> x="siva krishna"
+>>> x
+'siva krishna'
+>>> x[2]
+'v'
+>>> x[-10]
+'v'
+>>> x[4]
+' '
+>>> x[-8]
+' '
+>>> x[9]
+'h'
+>>> x[-3]
+'h'
+>>> x[12]
+IndexError: string index out of range
+>>> x[-12]
+'s'
+
+the string object supporting slicing concept also.
+
+by using slicing concept we can retreive one or more charecters from the string object at a time.
+
+	scenario-1
+	----------
+	if we want to retreive first-N charecters from the string object,in that case we are using following syntax,
+
+	strobj[:stop]
+
+	here the stop index is a exclusive value
+	     by default starts with 0 indexing
+	     by default increment by '1'
+
+
+ex:
+---
+>>> x="siva krishna"
+>>> x
+'siva krishna'
+>>> x[:4]
+'siva'
+>>> x[:7]
+'siva kr'
+>>> x[:-8]
+'siva'
+
+	scenario-2
+	-----------
+	if we want to retreive last-N charecters from the string object, in that case we are using following syntax,
+
+	strobj[start:]
+
+	here the start index is a inclusive value
+	     by default increment by '1'
+
+ex:
+---
+>>> x="siva krishna"
+>>> x
+'siva krishna'
+>>> x[-3:]
+'hna'
+>>> x[-7:]
+'krishna'
+>>> x[5:]
+'krishna'
+>>> x[-5:]
+'ishna'
+>>> x[7:]
+'ishna'
+
+	scenario-3
+	----------
+	if we want to print some middle charecters from the string object, in that case we are using following syntax,
+
+	strobj[start:stop]
+
+	here the start value is a inclusive value
+	     the stop value is a exclusive value
+	     by default increment by '1'
+
+ex:
+---
+>>> x="siva krishna"
+>>> x
+'siva krishna'
+>>> x[5:10]
+'krish'
+>>> x[-7:-2]
+'krish'
+>>> x[3:6]
+'a k'
+>>> x[-9:-6]
+'a k'
+>>> x[5:-2]
+'krish'
+>>> x[-7:10]
+'krish'
+
+ex:
+---
+>>> x="siva krishna"
+>>> x
+'siva krishna'
+>>> x[4] #indexing
+' '
+>>> x[4:5] #slicing
+' '
+

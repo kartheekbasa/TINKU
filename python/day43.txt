@@ -1,0 +1,303 @@
+the list object supporting nested list mechanism i.e., a list allows another list.
+
+ex:
+---
+>>> x=[[],[]]
+>>> x
+[[], []]
+
+
+>>> y=[[4,3,6],[8,9,2]]
+>>> y
+[[4, 3, 6], [8, 9, 2]]
+>>> y[1]
+[8, 9, 2]
+>>> y[0][1]
+3
+>>> y[-1][-1]
+2
+
+
+>>> z=[4,3,6,[7,0,9,[12,34],31],28]
+>>> z
+[4, 3, 6, [7, 0, 9, [12, 34], 31], 28]
+>>> z[3][3][1]
+34
+>>> z[3][2]
+9
+>>> z[-2][-1]
+31
+>>> z[-2][-5]
+7
+>>> z[1]
+3
+
+working with builtin functions:
+--------------------------------
+>>> x=[5,3,7,9]
+>>> x
+[5, 3, 7, 9]
+
+>>> len(x)
+4
+
+>>> min(x)
+3
+
+>>> max(x)
+9
+
+>>> sum(x)
+24
+
+>>> sorted(x)
+[3, 5, 7, 9]
+
+>>> sorted(x,reverse=True)
+[9, 7, 5, 3]
+
+>>> list(reversed(x))
+[9, 7, 3, 5]
+
+ex:
+---
+x=eval(input("enter your nested list: "))
+for i in x:
+    print(i)
+print("="*45)
+for i in x:
+    print(i)
+    for j in i:
+        print(j)
+
+output:
+-------
+enter your nested list: [[4,2,8],[9,3,7]]
+[4, 2, 8]
+[9, 3, 7]
+=============================================
+[4, 2, 8]
+4
+2
+8
+[9, 3, 7]
+9
+3
+7
+
+if we want to display all the available list class method names with syntax and description, in that case we are using help() function.
+
+	help(list)
+
+if we want to display the list of all the available list class method names without syntax and description, in that case we are using dir() function.
+
+	dir(list)
+
+examples of list class dunder methods:
+---------------------------------------
+ex1:
+----
+>>> x=[1,2,3]
+>>> y=[4,5,6]
+>>> x+y
+[1, 2, 3, 4, 5, 6]
+>>> x.__add__(y)
+[1, 2, 3, 4, 5, 6]
+
+ex2:
+----
+>>> y=[4,5,6]
+>>> y*3
+[4, 5, 6, 4, 5, 6, 4, 5, 6]
+>>> y.__mul__(3)
+[4, 5, 6, 4, 5, 6, 4, 5, 6]
+
+ex3:
+----
+>>> x=[1,2,3]
+>>> y=[4,5,6]
+>>> x==y
+False
+>>> x.__eq__(y)
+False
+
+>>> x!=y
+True
+>>> x.__ne__(y)
+True
+
+>>> x>y
+False
+>>> x.__gt__(y)
+False
+
+>>> x>=y
+False
+>>> x.__ge__(y)
+False
+
+>>> x<y
+True
+>>> x.__lt__(y)
+True
+
+>>> x<=y
+True
+>>> x.__le__(y)
+True
+
+ex4:
+----
+>>> y=[4,5,6]
+>>> 5 in y
+True
+>>> y.__contains__(y)
+False
+
+ex5:
+----
+>>> y=[4,5,6]
+>>> len(y)
+3
+>>> y.__len__()
+3
+
+examples of list class normal methods:
+---------------------------------------
+append()
+--------
+to add/append an element into the list object at the end of the previous elements in that list object.
+
+	listobj.append(element)
+
+ex:
+---
+>>> x=[5,2.3,4j,False]
+>>> x
+[5, 2.3, 4j, False]
+>>> x.append(9)
+>>> x
+[5, 2.3, 4j, False, 9]
+>>> x.append("siva")
+>>> x
+[5, 2.3, 4j, False, 9, 'siva']
+>>> x.append((7,2))
+>>> x
+[5, 2.3, 4j, False, 9, 'siva', (7, 2)]
+
+clear()
+-------
+to clear the list object i.e., to remove all the elements from the list object at a time.
+
+	listobj.clear()
+
+ex:
+---
+>>> x=[5,2.3,4j,False]
+>>> x
+[5, 2.3, 4j, False]
+>>> len(x)
+4
+>>> x.clear()
+>>> x
+[]
+>>> len(x)
+0
+
+copy()
+------
+to create a shallow copy of a list object.
+
+	listobj.copy()
+
+ex:
+---
+>>> x=[5,2.3,4j,False]
+>>> y=x #hard copy
+>>> z=x.copy() #shallow copy
+>>> x
+[5, 2.3, 4j, False]
+>>> y
+[5, 2.3, 4j, False]
+>>> z
+[5, 2.3, 4j, False]
+>>> id(x)
+2573643963584
+>>> id(y)
+2573643963584
+>>> id(z)
+2573640185856
+
+count()
+-------
+to return the no.of occurencess of given element in a list object.
+
+	listobj.count(element)
+
+ex:
+---
+>>> x=[10,20,30,10,30,20,10,40,30,10]
+>>> x
+[10, 20, 30, 10, 30, 20, 10, 40, 30, 10]
+>>> x.count(10)
+4
+>>> x.count(20)
+2
+>>> x.count(30)
+3
+>>> x.count(40)
+1
+>>> x.count(50)
+0
+
+assignment-1:
+--------------
+write a python program to print the no_of_elements in a given list object, dont use builtin len() function?
+
+	input				output
+	-----				------
+	[5,3,7,2]			4
+
+
+assignment-2:
+--------------
+write a python program to print the sum of given list object elements,dont use builtin sum() function?
+
+	input				output
+	-----				------
+	[5,3,7,2]			17
+
+
+assignment-3:
+--------------
+write a python program to perform the accumulated sum of the given list object elements?
+
+	input				output
+	-----				------
+	[5,3,7,2]			[5,8,15,17]
+
+
+assignment-4:
+-------------
+write a python program to searching/finding an element in a given list, if element is find to retur True otherwise to return False?
+
+	input		element		output
+	-----		-------		-------
+	[5,3,7,2]	  7		True
+
+			  6		False
+
+
+assignment-5:
+-------------
+write a python program to read the list object as a input from the user,to split that list into two sublist, one sublist contains even numbers in ascending order and another sublist contains odd numbers in dscending order?
+
+	input				output
+	-----				-------
+[5,2,8,9,1,12,3,4,7,6]		[[2,4,6,8,12],[9,7,5,3,1]]
+
+
+
+
+
+	

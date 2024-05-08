@@ -1,0 +1,247 @@
+	strobj[start:stop:step],we are not passing any start value,stop value and step value, in that case our original string exactly printed i.e., our string is printed left to right and increment by 1.
+
+>>> x="siva"
+>>> x
+'siva'
+>>> x[::]
+'siva'
+>>> x[::1]
+'siva'
+
+	strobj[start:stop:step],we are not passing any start value and stop value but we are passing step value as a negative, in that case our string is printed in reverse order i.e., our string is printed from right to left and decrement by 'step' value.
+
+>>> x="siva"
+>>> x[::-1]
+'avis'
+
+ex:
+---
+>>> y="siva krishna"
+>>> y
+'siva krishna'
+>>> y[::2]
+'sv rsn'
+>>> y[::-2]
+'ahikai'
+>>> y[1::3]
+'i in'
+>>> y[5:10:2]
+'kih'
+>>> y[-1:-8:-2]
+'ahik'
+>>> y[-1:4:-2]
+'ahik'
+
+
+working with builtin functions:
+--------------------------------
+len()
+-----
+to return the no_of charecters/elements/items from the given iterable objects.
+
+	len(iterableobj)
+
+ex:
+---
+>>> x="siva"
+>>> y=[7,3,8,2,9]
+>>> z={'m':45,'sc':90,'so':21}
+>>> a=34
+>>> len(x)
+4
+>>> len(y)
+5
+>>> len(z)
+3
+>>> len(a)
+TypeError: object of type 'int' has no len()
+
+ord()
+-----
+to return the ASCII(American Standard Code for Information and Interchange) value of the given charecter.
+
+	ord(char)
+
+note:
+-----
+	A - Z	--> 65 - 90
+	a - z	--> 97 - 122
+	0 - 9	--> 48 - 57
+
+ex:
+---
+>>> ord('a')
+97
+>>> ord('A')
+65
+>>> ord('9')
+57
+>>> ord('@')
+64
+>>> ord('re')
+TypeError: ord() expected a character, but string of length 2 found
+
+chr()
+-----
+to return the charecter of the given ASCII value.
+
+	chr(ASCIIvalue)
+
+ex:
+---
+>>> chr(65)
+'A'
+>>> chr(64)
+'@'
+>>> chr(100)
+'d'
+>>> chr(53)
+'5'
+
+min()
+-----
+to return the minimum element/charecter from the given iterable object.
+
+	min(iterableobj)
+
+ex:
+---
+>>> x=[4,9,2,7]
+>>> y="SiVa"
+>>> z=56
+>>> min(x)
+2
+>>> min(y)
+'S'
+>>> min(z)
+TypeError: 'int' object is not iterable
+
+max()
+-----
+to return the maximum element/charecter from the given iterable object.
+
+	max(iterableobj)
+
+ex:
+---
+>>> x=[4,9,2,7]
+>>> y="SiVa"
+>>> z=56
+>>> max(x)
+9
+>>> max(y)
+'i'
+>>> max(z)
+TypeError: 'int' object is not iterable
+
+
+sorted()
+-------
+to return the elements/charecters in sorting order.
+
+by default, the sorted() to return the output as list format.
+
+by default, the sorted() to return the output as ascending order.
+
+	sorted(iterableobj,reverse=False)
+
+ex:
+---
+>>> x=[4,9,2,7]
+>>> y="SiVa"
+>>> z=56
+>>> sorted(x)
+[2, 4, 7, 9]
+>>> sorted(y)
+['S', 'V', 'a', 'i']
+>>> sorted(z)
+TypeError: 'int' object is not iterable
+
+if we want to print elements/charecters in descending order, in that case we are changeing the reverse attribute value False to True in the sorted() function.
+
+ex:
+---
+>>> x=[4,9,2,7]
+>>> y="SiVa"
+>>> z=56
+>>> sorted(x,reverse=True)
+[9, 7, 4, 2]
+>>> sorted(y,reverse=True)
+['i', 'a', 'V', 'S']
+>>> sorted(z,reverse=True)
+TypeError: 'int' object is not iterable
+
+reversed()
+---------
+to return the elements/charecters in reverse order from the given iterable object.
+
+the reversed() to return the output as reversed-iterator object,that reversed object contains elements in reverse order.
+
+	reversed(iterableobj)
+
+ex:
+---
+>>> x=[4,9,2,7]
+>>> y="SiVa"
+>>> z=56
+>>> reversed(x)
+<list_reverseiterator object at 0x000001F56A95B940>
+>>> list(reversed(x))
+[7, 2, 9, 4]
+
+>>> reversed(y)
+<reversed object at 0x000001F56A95B940>
+>>> list(reversed(y))
+['a', 'V', 'i', 'S']
+
+>>> reversed(z)
+TypeError: 'int' object is not reversible
+
+
+assignment-1:
+-------------
+write a program to read the string object as a input from the user and to print that string in reverse order?
+
+	input			output
+	-----			------
+	siva			avis
+
+	siva krishna		anhsirk avis
+
+assignment-2:
+--------------
+write a program to read the string object as a input from the user and to swap the first charecter and last charecters in that string?
+
+	input			output
+	-----			-------
+	siva			aivs
+
+	siva krishna		aiva krishns
+
+	good morning rama	aood morning ramg
+
+assignment-3:
+-------------
+write a program to read the string object as a input from the user and to seperate even indexing charecters and odd indexing charecters from that particular string?
+
+	input			output
+	----			-------
+	siva			sv,ia
+
+	krishna			kiha,rsn
+
+	good morning		go onn,odmrig
+
+
+assignment-4:
+--------------
+write a program to read the string object as a input from the user,to print that string object repeatedly depends on the no_of_charecters in that string?
+
+	input			output
+	-----			------
+	siva			sivasivasivasiva
+
+	hai			haihaihai
+
+	hello			hellohellohellohellohello
+

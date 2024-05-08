@@ -1,0 +1,75 @@
+how to install PycharmIDE?
+--------------------------
+	double click on PycharmIDE downloaded file
+			|
+		click on yes
+			|
+		click on next
+			|
+	to select installation location and click on next
+			|
+	to enable desktop shortcut icon and click on next
+			|
+	to choose the start menu folder name and click on install
+			|
+		click on finish
+
+
+how to working with PycharmIDE?
+--------------------------------
+	double click on PycharmIDE shortcut icon
+			|
+	click on create new project
+			|
+	to set the project name,select the interpreter and
+	click on create
+			|
+	right click on our project,goto new and to select python file
+			|
+	to set the filename and press enter key
+			|
+	to write one or more python statements into that file
+
+
+how to run python file/module/script in PycharmIDE?
+----------------------------------------------------
+	goto main menu
+	     |
+	goto run menu
+	     |
+	click on run
+	     |
+	to confirm our file
+
+
+how to download Microsoft Visual Studio(vs) Code IDE?
+--------------------------------------------------
+	goto https://code.visualstudio.com/download
+			|
+	select our operating system
+		   (windows)
+			|
+	to download user installer file related to our 
+	operating system bit number
+
+
+how to install Microsoft Visual Studio(vs) Code IDE?
+----------------------------------------------------
+	double click on Microsoft Visual Studio(vs) Code IDE downloaded file
+			|
+	to accept the license aggrement and click on next
+			|
+	to select the installation location and click on next
+			|
+	to select the start menu folder name and click on next
+			|
+	to enable the desktop shortcut icon and click on next
+			|
+		click on install
+			|
+		click on finish
+
+	
+	
+	
+

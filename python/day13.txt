@@ -1,0 +1,148 @@
+	7). to convert Binary into Octal
+
+>>> x=0b11010 #binary
+>>> oct(x)
+0o32 #octal
+
+	8). to convert Octal into Binary
+
+>>> y=0o37 #octal
+>>> bin(y)
+0b11111 #binary
+
+	9). to convert Binary into Hexadecimal
+
+>>> x=0b11001 #binary
+>>> hex(x)
+0x19 #hexadecimal
+
+	10). to convert Hexadecimal into Binary
+
+>>> y=0x2c #hexadecimal
+>>> bin(y)
+0b101100  #binary
+
+	11).to convert Octal to Hexadecimal
+
+>>> x=0o37 #octal
+>>> hex(x)
+0x1f #hexadecimal
+
+	12).to convert Hexadecimal into Octal
+
+>>> y=0x2c #hexadecimal
+>>> oct(y)
+0o54 #octal
+
+
+Objects:
+--------
+in python,everything we are treated as objects.
+
+in python, the objects can be categorized into 3-types,they are
+
+	scenario-1: based on insertion order
+	----------
+	Sequence Objects
+	Non-Sequence Objects
+
+	scenario-2: based on iteration
+	-----------
+	Iterable Objects
+	Non-Iterable Objects
+
+	scenario-3: based on mutability
+	----------
+	Mutable Objects
+	Immutable Objects
+
+Sequence Objects:
+------------------
+any object which follow the insertion order is preserved concept i.e., both input order and output order will be same.
+
+	ex: str,list,tuple,dict(from python3.4+ versions onwards),...
+
+ex1:
+---
+>>> x="krishna"
+>>> x
+'krishna'
+>>> type(x)
+<class 'str'>
+
+ex2:
+----
+>> y=[5,3,8,9]
+>>> y
+[5, 3, 8, 9]
+>>> type(y)
+<class 'list'>
+
+
+Non-Sequence Objects:
+------------------
+any object which don't follow the insertion order is preserved concept i.e., both input order and output order always will not be same.
+
+	ex: set,frozenset,dict(2.x and 3.x(3.0 to 3.4) versions),...
+
+ex1:
+---
+>>> x={4,9,12,8}
+>>> x
+{8, 9, 4, 12}
+>>> type(x)
+<class 'set'>
+
+ex2:
+----
+>>> z={1,2,3,4}
+>>> z
+{1, 2, 3, 4}
+>>> type(z)
+<class 'set'>
+
+
+Iterable Objects:
+------------------
+any object which allow the iterations, that type of objects are called Iterable objects.
+
+		(or)
+
+we can use any object as a repeated purpose, that type of objects are called Iterable objects.
+
+	ex: str,list,tuple,set,frozenset,dict,range,xrange(2.x),...
+
+ex1:
+---
+>>> x="krishna"
+>>> y="hai siva good morning"
+>>> for ch in x:
+        print(y)
+
+hai siva good morning
+hai siva good morning
+hai siva good morning
+hai siva good morning
+hai siva good morning
+hai siva good morning
+hai siva good morning
+
+Non-Iterable Objects:
+--------------------
+any object which don't allow the iterations, that type of objects are called Non-Iterable objects.
+
+		(or)
+
+we can't use any object as a repeated purpose, that type of objects are called Non-Iterable objects.
+
+	ex: int,float,complex,bool
+
+ex:
+---
+>>> x=4536
+>>> y="hai siva good morning"
+>>> for i in x:
+        print(y)
+
+TypeError: 'int' object is not iterable
+

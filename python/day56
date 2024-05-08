@@ -1,0 +1,195 @@
+User Defined Functions:
+-----------------------
+we can define a function to perform a particular operation according to our business requirements.
+
+	syntax
+	------
+	def  functionname(p_1,p_2,...,p_n):
+		"""doc string"""
+		statement_1
+		statement_2
+		........
+		........
+		statement_n
+		return [value]
+
+
+	ref fig: function syntax
+
+ex1:
+----
+write a python program to create a simple function?
+
+	demo.py
+	-------
+print("hai")
+def msg():
+    print("siva")
+    print("krishna")
+    print("good morning")
+print("bye")
+
+	output
+	------
+hai
+bye
+
+
+note:
+-----
+in the above example, our program successfully executed but our function is not executed automatically, whenever we are calling a function then only our function logic will be executed.
+
+how to call the function?
+-------------------------
+we can call the function directly by using function name.
+
+	syntax
+	------
+	functioname(arg_1,arg_2,...,arg_n)
+
+
+ex2:
+----
+	demo.py
+	------
+print("hai")
+def msg():
+    print("siva")
+    print("krishna")
+    print("good morning")
+msg()
+print("bye")
+    
+	output
+	-------
+hai
+siva
+krishna
+good morning
+bye
+
+
+we can call one function N-no.of times.
+
+ex3:
+---
+	demo.py
+	-------
+print("hai")
+def msg():    
+    print("good morning")
+print("siva")
+msg()
+print("hello")
+msg()
+print("krishna")
+print("bye")
+    
+	output
+	------
+hai
+siva
+good morning
+hello
+good morning
+krishna
+bye
+
+ex4:
+----
+write a python program to create a function with parameters?
+
+	demo.py
+	--------
+def add(x,y):
+    z=x+y
+    print(z)
+add()
+
+	output
+	------
+TypeError: add() missing 2 required positional arguments: 'x' and 'y'
+
+
+	demo.py
+	-------
+def add(x,y):
+    z=x+y
+    print(z)
+add(4)
+
+	output
+	------
+TypeError: add() missing 1 required positional argument: 'y'
+
+	demo.py
+	-------
+def add(x,y):
+    z=x+y
+    print(z)
+add(4,5)
+
+	output
+	------
+9
+
+
+types of Arguments:
+--------------------
+the Arguments can be categorized into 3-types, they are
+
+	1).Normal Arguments
+
+		a).based on function definition
+
+			i). non-default arguments/parameters
+			ii).default arguments/parameters
+
+		b).based on function calling
+
+			i).non-keyword arguments
+			ii).keyword arguments
+
+	2).Arbitrary arguments
+
+	3).Kw Args i.e., variable keyword arguments
+
+
+Non-Default arguments/parameters:
+---------------------------------
+	The programmer or developer dont assign the any values to the parameters at the time of function definition, that type of parameters are called Non-Default arguments/parameters.
+
+ex:
+---
+	demo.py
+	-------
+def add(x,y): #here x and y are non-default arguments
+    z=x+y
+    print(z)
+add(4,5)
+
+	output
+	-----
+9
+
+
+default arguments/parameters:
+-----------------------------
+	The programmer/developer to assign the values to the parameters at the time function definition, that type of parameters are called default arguments/parameters.
+
+ex:
+---
+	demo.py
+	-------
+def add(x=1,y=2): # here x and y are default arguments
+    z=x+y
+    print(z)
+add(4,5)
+add(4)
+add()
+
+	output
+	------
+9
+6
+3

@@ -1,0 +1,303 @@
+pass statement:
+----------------
+the "pass" is a keyword in python, which is used to create a empty blocks in python i.e., to create a empty if block,else block,elif block,while block,for block,function block,class block,method block,...
+
+syntax
+------
+	C/C++/JAVA			Python
+	----------			-------
+	if(condition)			if condition:
+	{					pass
+
+	}				(or)
+
+					if condition:
+						...
+
+ex1:
+----
+print("hai")
+if 3<5:
+    pass
+print("bye")
+
+	(or)
+
+print("hai")
+if 3<5:
+    ...
+print("bye")
+
+output:
+------
+hai
+bye
+
+while else:
+----------
+	syntax
+	------
+	while condition:
+		stmt_1
+		stmt_2
+		......
+		stmt_n
+	else:
+	    stmt_1
+	    stmt_2
+	    ......
+	    stmt_n
+
+whenever while condition is Fail/False then only the control will goto else block otherwise the control dont goto the else block.
+
+flowchart:
+----------
+	ref fig: while else flowchart
+
+ex1:
+----
+i=0
+while i<5:
+    print("hai",i)
+    i+=1
+else:
+    print("hello")
+print("bye")
+
+output:
+------
+hai 0
+hai 1
+hai 2
+hai 3
+hai 4
+hello
+bye
+
+ex2:
+----
+i=0
+while i<5:
+    print("hai",i)
+    if i==2:
+        break
+    i+=1
+else:
+    print("hello")
+print("bye")
+
+output:
+------
+hai 0
+hai 1
+hai 2
+bye
+
+ex3:
+----
+i=0
+while i<5:
+    i+=1
+    if i==3:
+        continue
+    print("hai",i)
+else:
+    print("hello")
+print("bye")
+
+output:
+-------
+hai 1
+hai 2
+hai 4
+hai 5
+hello
+bye
+
+for loop:
+----------
+the for loop is used to execute the block of statements repeatedly with respect to each and every element in a given iterable object.
+
+	syntax
+	------
+	for variable in iterableobj:
+		stmt_1
+		stmt_2
+		......
+		stmt_n
+
+if no-more elements in our iterable object, then immediately the control will goto outside the for loop.
+
+ex:
+---
+x=[5,3,9,2]
+for i in x:
+    print("hai",i)
+    print("siva krishna")
+    print("good morning")
+print("bye")
+
+output:
+------
+hai 5
+siva krishna
+good morning
+hai 3
+siva krishna
+good morning
+hai 9
+siva krishna
+good morning
+hai 2
+siva krishna
+good morning
+bye
+
+ex2:
+----
+for j in "krishna":
+    print("hai",j)    
+print("bye")
+
+output:
+-------
+hai k
+hai r
+hai i
+hai s
+hai h
+hai n
+hai a
+bye
+
+for else:
+---------
+	syntax:
+	-------
+	for variable in iterableobj:
+		stmt_1
+		stmt_2
+		......
+		stmt_n
+	else:
+	     stmt_1
+	     stmt_2
+	     ......
+	     stmt_n
+
+if no-more elements in our iterable object then only the control will goto else block and else block logic will be executed.
+
+ex1:
+----
+for j in "krishna":
+    print("hai",j)
+else:
+    print("hello")
+print("bye")
+
+output:
+-------
+hai k
+hai r
+hai i
+hai s
+hai h
+hai n
+hai a
+hello
+bye
+
+ex2:
+----
+for j in "krishna":
+    print("hai",j)
+    if j=='s':
+        break
+else:
+    print("hello")
+print("bye")
+
+output:
+------
+hai k
+hai r
+hai i
+hai s
+bye
+
+ex3:
+----
+for j in "krishna":    
+    if j=='s':
+        continue
+    print("hai",j)
+else:
+    print("hello")
+print("bye")
+
+output:
+-------
+hai k
+hai r
+hai i
+hai h
+hai n
+hai a
+hello
+bye
+
+ex:
+---
+x=[5,3,7,2]
+for _ in x:
+    print(_)
+
+output:
+------
+5
+3
+7
+2
+
+ex:
+---
+data=[(101,'siva'),(102,'rama'),(103,'krishna')]
+for i in data:
+    print(i)
+print("="*35)
+for i,j in data:
+    print(i,j)
+print("="*35)
+for i,_ in data:
+    print(i,_)
+print("="*35)
+for i,_ in data:
+    print(_)
+print("="*35)
+for i,_ in data:
+    print(i)
+
+
+output:
+------
+(101, 'siva')
+(102, 'rama')
+(103, 'krishna')
+===================================
+101 siva
+102 rama
+103 krishna
+===================================
+101 siva
+102 rama
+103 krishna
+===================================
+siva
+rama
+krishna
+===================================
+101
+102
+103
+
+

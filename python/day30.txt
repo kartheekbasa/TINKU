@@ -1,0 +1,143 @@
+ex1:
+----
+write a python script/program to check whether given number is Armstrong number or not?
+
+number	  no_of_digits		sum_of_the_digits_with		Result
+				the_power_of_no_of_digits
+-------	  -------------		--------------------------	-----------
+2	       1		2**1				2	yes
+
+12	       2		1**2+2**2
+				1+4				5	no
+
+153	       3		1**3+5**3+3**3
+				1+125+27			153	yes
+
+145	       3		1**3+4**3+5**3
+				1+64+125			190	no
+
+370	       3		3**3+7**3+0**3
+				27+343+0			370	yes
+
+1634	       4		1**4+6**4+3**4+4**4
+				1+1296+81+256			1634	yes
+
+
+num=int(input("enter your number: "))
+no_of_dig=len(str(num))
+temp=num
+s=0
+while num>=1:
+    dig=num%10
+    s+=dig**no_of_dig 
+    num//=10
+
+if temp==s:
+    print("Given number is a Armstrong Number")
+else:
+    print("Given number is not a Armstrong Number")
+
+ex2:
+---
+write a python script to check whether given number is Palindrom number or not?
+
+number		reverse_order		result
+-----		-------------		--------
+5		5			palindrom number
+
+11		11			palindrom number
+
+12		21			not a palindrom number
+
+123		321			not a palindrom number
+
+121		121			palindrom number
+
+
+num=int(input("enter your number: "))
+temp=num
+rev=0
+while num>=1:
+    dig=num%10
+    rev=rev*10+dig 
+    num//=10
+
+if temp==rev:
+    print("Given number is a Palindrom Number")
+else:
+    print("Given number is not a Palindrom Number")
+
+ex3:
+----
+write a python script to check wheather given number is strong number or not?
+
+number	  sum_of_the_digist_with_the			result
+	  factoarial_of_each_and_every_digit
+------	  -----------------------------------		-------
+2		2!					2	yes
+
+5		5!					120	no
+
+12		1!+2!
+		1+2					3	no
+
+153		1!+5!+3!
+		1+120+6					127	no
+
+145		1!+4!+5!
+		1+24+120				145	yes
+
+
+
+num=int(input("enter your number: "))
+temp=num
+s=0
+while num>=1:
+    dig=num%10
+    i=1
+    f=1
+    while i<=dig:
+        f*=i
+        i+=1
+    s+=f     
+    num//=10
+
+if temp==s:
+    print("Given number is a Strong Number")
+else:
+    print("Given number is not a Strong Number")
+
+
+assignment-1:
+-------------
+write a python program to check whether given number is prime number or not?
+
+	any number which contains only two divisibles like 1 and itself, that number is called prime number.
+
+number		divisibles	divisibles_count	result
+------		-----------	----------------	------
+2		1,2			2		prime number
+
+9		1,3,9			3		not a prime number
+
+13		1,13			2		prime number
+
+12		1,2,3,4,6,12		6		not a prime number
+
+assignment-2:
+--------------
+write a python program to check whether given number is perfect number or not?
+
+number	divisibles_except_that_number	sum_of_the_divisibles	result
+-----	-----------------------------	---------------------	---------
+6	1,2,3				1+2+3			6	yes
+
+8	1,2,4				1+2+4			7	no
+
+12	1,2,3,4,6			1+2+3+4+6		16	no
+
+28	1,2,4,7,14			1+2+4+7+14		28	yes
+
+
+
+

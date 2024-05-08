@@ -1,0 +1,159 @@
+assignment-1:
+--------------
+write a python script to implement the following inventory management application?
+	
+	takes 5 product prices from the user input and to calculate the total ammount,
+
+	if total ammount is >= 10,000		--> to apply 20% discount
+	   total ammount<10,000 and >=7000	--> to apply 15% discount
+	   total ammount<7000 and >=5000	--> to apply 10% discount
+	   total ammount<5000 and >=3000	--> to apply  5% discount
+	   bellow 3000				--> 0% discount
+
+	to apply 18% GST on to total bill after discount
+	finally to print the final bill ammount with GST
+
+sol:
+----
+p1=float(input("enter Product_1 Price: "))
+p2=float(input("enter Product_2 Price: "))
+p3=float(input("enter Product_3 Price: "))
+p4=float(input("enter Product_4 Price: "))
+p5=float(input("enter Product_5 Price: "))
+total=p1+p2+p3+p4+p5
+if total>=10000:
+    dis=(20/100)*total
+    sub_total=total-dis
+    gst=(18/100)*sub_total
+    final_bill=sub_total+gst
+    print("Total bill Ammount:%.2f Rs"%total)
+    print("Discount:%.2f Rs"%dis)
+    print("Tax GST(CGST+SGST):%.2f Rs"%gst)
+    print("Final Ammount:%.2f Rs"%final_bill)
+elif total>=7000 and total<10000:
+    dis=(15/100)*total
+    sub_total=total-dis
+    gst=(18/100)*sub_total
+    final_bill=sub_total+gst
+    print("Total bill Ammount:%.2f Rs"%total)
+    print("Discount:%.2f Rs"%dis)
+    print("Tax GST(CGST+SGST):%.2f Rs"%gst)
+    print("Final Ammount:%.2f Rs"%final_bill)
+elif total>=5000 and total<7000:
+    dis=(10/100)*total
+    sub_total=total-dis
+    gst=(18/100)*sub_total
+    final_bill=sub_total+gst
+    print("Total bill Ammount:%.2f Rs"%total)
+    print("Discount:%.2f Rs"%dis)
+    print("Tax GST(CGST+SGST):%.2f Rs"%gst)
+    print("Final Ammount:%.2f Rs"%final_bill)
+elif total>=3000 and total<5000:
+    dis=(5/100)*total
+    sub_total=total-dis
+    gst=(18/100)*sub_total
+    final_bill=sub_total+gst
+    print("Total bill Ammount:%.2f Rs"%total)
+    print("Discount:%.2f Rs"%dis)
+    print("Tax GST(CGST+SGST):%.2f Rs"%gst)
+    print("Final Ammount:%.2f Rs"%final_bill)
+else:
+    dis=(0/100)*total
+    sub_total=total-dis
+    gst=(18/100)*sub_total
+    final_bill=sub_total+gst
+    print("Total bill Ammount:%.2f Rs"%total)
+    print("Discount:%.2f Rs"%dis)
+    print("Tax GST(CGST+SGST):%.2f Rs"%gst)
+    print("Final Ammount:%.2f Rs"%final_bill)
+
+    
+
+assignment-2:
+-------------
+write a program to implement student grading system application based on average of given marks?
+
+	takes 6 subject marks from the user input,to calculate total,average and grade.
+
+	if average>=75					--> A+ Grade
+	   average<75 and >=65				--> A Grade
+	   average<65 and >=55				--> B Grade
+	   average<55 and >=45				--> C Grade
+	   average<45 and >=35				--> Pass
+	   bellow 35					--> Fail
+
+sol:
+-----
+s1=int(input("enter subject_1 marks: "))
+s2=int(input("enter subject_2 marks: "))
+s3=int(input("enter subject_3 marks: "))
+s4=int(input("enter subject_4 marks: "))
+s5=int(input("enter subject_5 marks: "))
+s6=int(input("enter subject_6 marks: "))
+total_marks=s1+s2+s3+s4+s5+s6
+total_subjects=6
+avg_marks=total_marks/total_subjects
+if s1>=35 and s2>=35 and s3>=35 and s4>=35 and s5>=35 and s6>=35:
+    if avg_marks>=75:
+        print("Total Marks:",total_marks)
+        print("Average of Marks:%.2f"%avg_marks)
+        print("A+ Grade")
+    elif avg_marks>=65 and avg_marks<75:
+        print("Total Marks:",total_marks)
+        print("Average of Marks:%.2f"%avg_marks)
+        print("A Grade")
+    elif avg_marks>=55 and avg_marks<65:
+        print("Total Marks:",total_marks)
+        print("Average of Marks:%.2f"%avg_marks)
+        print("B Grade")
+    elif avg_marks>=45 and avg_marks<55:
+        print("Total Marks:",total_marks)
+        print("Average of Marks:%.2f"%avg_marks)
+        print("C Grade")
+    elif avg_marks>=35 and avg_marks<45:
+        print("Total Marks:",total_marks)
+        print("Average of Marks:%.2f"%avg_marks)
+        print("Pass")
+else:
+    print("Fail")
+    
+    
+
+
+assignment-3:
+------------
+write a python script to check whether given charecter is either alphabet or not,if it is alphabet to check whether that alphabet is either vowel or consonents?
+
+	input				output
+	----				------
+	a				vowel
+	t				consonent
+	E				vowel
+	R				consonent
+	@				not a alphabet
+	8				not a alphabet
+
+
+SOL:
+----
+ch=input("enter your charecter: ")
+if ch>='a' and ch<='z' or ch>='A' and ch<='Z':
+    if ch=='a' or ch=='e' or ch=='i' or ch=='o' or ch=='u' or\
+       ch=='A' or ch=='E' or ch=='I' or ch=='O' or ch=='U':
+        print("Given Alphabet is a Vowel")
+    else:
+        print("Given Alphabet is a Consonent")
+else:
+    print("Given charecter is not a Alphabet")
+
+
+		(OR)
+
+ch=input("enter your charecter: ").casefold()
+if ch.isalpha():
+    if ch in "aeiou":
+        print("Given Alphabet is a Vowel")
+    else:
+        print("Given Alphabet is a Consonent")
+else:
+    print("Given charecter is not a Alphabet")

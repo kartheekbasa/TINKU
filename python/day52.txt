@@ -1,0 +1,264 @@
+the dict object dont allow the another dict object as a key but it allows another dict object as a value.
+
+>>> x={'name':'siva','marks':{'m':45,'sc':56,'tel':23}}
+>>> x
+{'name': 'siva', 'marks': {'m': 45, 'sc': 56, 'tel': 23}}
+
+>>> y={'name':'siva',{'m':45,'sc':56,'tel':23}:'marks'}
+TypeError: unhashable type: 'dict'
+
+working with functions:
+-----------------------
+>>> x={'m':45,'sc':23,'tel':37,'so':41}
+>>> x
+{'m': 45, 'sc': 23, 'tel': 37, 'so': 41}
+>>> len(x)
+4
+>>> min(x)
+'m'
+>>> max(x)
+'tel'
+>>> sorted(x)
+['m', 'sc', 'so', 'tel']
+>>> sorted(x,reverse=True)
+['tel', 'so', 'sc', 'm']
+>>> reversed(x)
+<dict_reversekeyiterator object at 0x00000249F3A59E90>
+>>> list(reversed(x))
+['so', 'tel', 'sc', 'm']
+
+
+>>> min(x.values())
+23
+>>> max(x.values())
+45
+>>> sorted(x.values())
+[23, 37, 41, 45]
+>>> sorted(x.values(), reverse=True)
+[45, 41, 37, 23]
+>>> list(reversed(x.values()))
+[41, 37, 23, 45]
+
+
+>>> min(x.items())
+('m', 45)
+>>> max(x.items())
+('tel', 37)
+>>> sorted(x.items())
+[('m', 45), ('sc', 23), ('so', 41), ('tel', 37)]
+>>> sorted(x.items(),reverse=True)
+[('tel', 37), ('so', 41), ('sc', 23), ('m', 45)]
+>>> reversed(x.items())
+<dict_reverseitemiterator object at 0x00000249F3A59DF0>
+>>> list(reversed(x.items()))
+[('so', 41), ('tel', 37), ('sc', 23), ('m', 45)]
+>>> dict(reversed(x.items()))
+{'so': 41, 'tel': 37, 'sc': 23, 'm': 45}
+
+working with dict class methods:
+--------------------------------
+if we want to display all the available dict class methods with syntax and description, in that case we are using help() function.
+
+	help(dict)
+
+if we want to display the list of all the available dict class method names without syntax and description, in that case we are using dir() function.
+
+	dir(dict)
+
+
+clear()
+-------
+to clear the dict object i.e., to remove all the item's from the dict object at a time.
+
+	dictobj.clear()
+
+ex1:
+---
+>>> x={'m':45,'sc':23,'tel':37,'so':41}
+>>> x
+{'m': 45, 'sc': 23, 'tel': 37, 'so': 41}
+>>> len(x)
+4
+>>> x.clear()
+>>> x
+{}
+>>> len(x)
+0
+
+copy()
+------
+to create a shallow copy of a dict object.
+
+	dictobj.copy()
+
+ex:
+----
+>>> x={'m':45,'sc':23,'tel':37,'so':41}
+>>> x
+{'m': 45, 'sc': 23, 'tel': 37, 'so': 41}
+>>> y=x.copy()
+>>> y
+{'m': 45, 'sc': 23, 'tel': 37, 'so': 41}
+
+
+fromkeys()
+---------
+to assign the single value to multiple keys at a time.
+
+	dictobj.fromkeys(key,value)
+
+	here key must be iterable object
+	     value is either iterable or non-iterable object
+
+ex:
+---
+>>> {}.fromkeys("siva",4)
+{'s': 4, 'i': 4, 'v': 4, 'a': 4}
+
+>>> {}.fromkeys(['m','sc','so'],45)
+{'m': 45, 'sc': 45, 'so': 45}
+
+>>> {}.fromkeys(['m','sc','so'],[56,34,21])
+{'m': [56, 34, 21], 'sc': [56, 34, 21], 'so': [56, 34, 21]}
+
+>>> {}.fromkeys(4,"siva")
+TypeError: 'int' object is not iterable
+
+
+get()
+-----
+to get the value from the dict object based on key.
+
+	dictobj.get(key)
+
+ex:
+---
+>>> x={'m':45,'sc':23,'tel':37,'so':41}
+>>> x
+{'m': 45, 'sc': 23, 'tel': 37, 'so': 41}
+>>> x['sc'] #hashing
+23
+>>> x.get('sc') #by using get() method
+23
+>>> x['py'] #hashing
+KeyError: 'py'
+>>> x.get('py')
+>>>
+>>> x
+{'m': 45, 'sc': 23, 'tel': 37, 'so': 41}
+>>> x.get('sc',89)
+23
+>>> x.get('py',89)
+89
+>>> x
+{'m': 45, 'sc': 23, 'tel': 37, 'so': 41}
+
+items()
+-------
+to return the list of items from the dict object.
+
+	dictobj.items()
+
+ex:
+---
+>>> x={'m':45,'sc':23,'tel':37,'so':41}
+>>> x
+{'m': 45, 'sc': 23, 'tel': 37, 'so': 41}
+
+>>> x.items()
+dict_items([('m', 45), ('sc', 23), ('tel', 37), ('so', 41)])
+
+>>> for i in x.items():
+        print(i)
+
+('m', 45)
+('sc', 23)
+('tel', 37)
+('so', 41)
+
+keys()
+------
+to return the list of keys from the dict object.
+
+	dictobj.keys()
+
+ex:
+---
+>>> x={'m':45,'sc':23,'tel':37,'so':41}
+>>> x
+{'m': 45, 'sc': 23, 'tel': 37, 'so': 41}
+
+>>> x.keys()
+dict_keys(['m', 'sc', 'tel', 'so'])
+
+>>> for k in x.keys():
+        print(k)
+
+m
+sc
+tel
+so
+
+values()
+--------
+to return the list of values from the dict object.
+
+	dictobj.values()
+
+ex:
+---
+>>> x={'m':45,'sc':23,'tel':37,'so':41}
+>>> x
+{'m': 45, 'sc': 23, 'tel': 37, 'so': 41}
+
+>>> x.values()
+dict_values([45, 23, 37, 41])
+
+>>> for v in x.values():
+        print(v)
+
+45
+23
+37
+41
+
+pop()
+-----
+to remove an particular item from the dict object based on key.
+
+	dictobj.pop(key)
+
+ex:
+---
+>>> x={'m':45,'sc':23,'tel':37,'so':41}
+>>> x
+{'m': 45, 'sc': 23, 'tel': 37, 'so': 41}
+>>> x.pop('sc')
+23
+>>> x
+{'m': 45, 'tel': 37, 'so': 41}
+>>> x.pop('py')
+KeyError: 'py'
+>>> x.pop()
+TypeError: pop expected at least 1 argument, got 0
+
+popitem()
+---------
+to remove an item from right to left.
+
+	dictobj.popitem()
+
+ex:
+---
+>>> x={'m':45,'sc':23,'tel':37,'so':41}
+>>> x
+{'m': 45, 'sc': 23, 'tel': 37, 'so': 41}
+>>> x.popitem()
+('so', 41)
+>>> x
+{'m': 45, 'sc': 23, 'tel': 37}
+>>> x.popitem()
+('tel', 37)
+>>> x
+{'m': 45, 'sc': 23}
+

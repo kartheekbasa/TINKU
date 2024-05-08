@@ -1,0 +1,317 @@
+ex:
+---
+>>> x=[5]
+>>> x
+[5]
+>>> type(x)
+<class 'list'>
+
+>>> y=(5)
+>>> y
+5
+>>> type(y)
+<class 'int'>
+
+>>> z=(5,)
+>>> z
+(5,)
+>>> type(z)
+<class 'tuple'>
+
+>>> a=5
+>>> a
+5
+>>> type(a)
+<class 'int'>
+
+>>> b=5,
+>>> b
+(5,)
+>>> type(b)
+<class 'tuple'>
+
+note:
+-----
+the tuple object dont support comprihension technique because the tuple object is a immutable object.
+
+>>> x=[i for i in range(1,11) if i%2==0]
+>>> x
+[2, 4, 6, 8, 10]
+>>> type(x)
+<class 'list'>
+
+>>> y=(i for i in range(1,11) if i%2==0)
+>>> y
+<generator object <genexpr> at 0x00000166071A3780>
+>>> type(y)
+<class 'generator'>
+
+
+set data structure:
+--------------------
+in python, the set data type having 'set' class
+
+we can create a set object by using {} or by calling set() or set(iterableobj)
+
+
+ex:
+---
+>>> x={}
+>>> x
+{}
+>>> type(x)
+<class 'dict'>
+
+>>> y=set()
+>>> y
+set()
+>>> type(y)
+<class 'set'>
+
+>>> z={8,3,9,7}
+>>> z
+{8, 9, 3, 7}
+>>> type(z)
+<class 'set'>
+
+>>> a=set("siva")
+>>> a
+{'v', 's', 'a', 'i'}
+>>> type(a)
+<class 'set'>
+
+>>> b=set([7,9,3,12])
+>>> b
+{9, 3, 12, 7}
+>>> type(b)
+<class 'set'>
+
+in set object, the insertion order is not preserved because of that reason the set object is a non-sequence object.
+
+the set object is a mutable object but it allows only immutable objects.
+
+>>> x={2,3.2,4j,False,"siva",(6,7)}
+>>> x
+{False, (6, 7), 2, 3.2, 'siva', 4j}
+
+>>> y={2,3.2,4j,False,"siva",[6,7]}
+TypeError: unhashable type: 'list'
+
+the set object dont allow the duplicate elements, by mistakely we are trying to insert duplicate elements, in that case the set object allows only first inserted elements.
+
+>>> a={5,9,7,9,5,3,9,7,9,5}
+>>> a
+{9, 3, 5, 7}
+
+>>> b={True,0,False,1}
+>>> b
+{0, True}
+
+>>> c={1,False,True,0}
+>>> c
+{False, 1}
+
+the set object allows both homogenious and hetrogenious elements.
+
+	homogenious(same/similar type of elements)
+	-----------
+>>> p={6,9,3,7}
+>>> p
+{9, 3, 6, 7}
+
+>>> q={4.5,9.2,3.1,7.3}
+>>> q
+{9.2, 3.1, 4.5, 7.3}
+
+	hetrogenious(different/dissimilar type of elements)
+	------------
+>>> x={2,3.2,4j,False,"siva",(6,7)}
+>>> x
+{False, (6, 7), 2, 3.2, 'siva', 4j}
+
+the set object dont supporting both indexing and slicing concept's.
+
+>>> x={2,3.2,4j,False,"siva",(6,7)}
+>>> x
+{False, (6, 7), 2, 3.2, 'siva', 4j}
+>>> x[0] #indexing
+TypeError: 'set' object is not subscriptable
+
+>>> x[:3] #slicing
+TypeError: 'set' object is not subscriptable
+
+the set object dont support nested set mechanism.
+
+>>> a={2,3.1,{4j,False},"siva"}
+TypeError: unhashable type: 'set'
+
+working with functions:
+-----------------------
+>>> x={5,3,7,9}
+>>> x
+{9, 3, 5, 7}
+>>> len(x)
+4
+>>> min(x)
+3
+>>> max(x)
+9
+>>> sum(x)
+24
+>>> sorted(x)
+[3, 5, 7, 9]
+>>> sorted(x,reverse=True)
+[9, 7, 5, 3]
+>>> reversed(x)
+TypeError: 'set' object is not reversible
+
+note:
+-----
+the reversed() is applicable only on sequence objects.
+
+working with set class methods:
+------------------------------
+	if we want to display all the properties of set class method names with syntax and description, in that case we are using help() function.
+
+	help(set)
+
+	if we want to display the list of all the available set class method names without syntax and description, in that case we are using dir() function.
+
+	dir(set)
+
+
+add()
+-----
+to add an element into the set object.
+
+	setobj.add(element)
+
+	the element must be immutable object
+
+ex:
+---
+>>> x={5,2.3,4j,"siva"}
+>>> x
+{2.3, 4j, 5, 'siva'}
+>>> x.add((5,2))
+>>> x
+{2.3, 5, 'siva', 4j, (5, 2)}
+>>> x.add(False)
+>>> x
+{False, 2.3, 5, 'siva', 4j, (5, 2)}
+>>> x.add(9)
+>>> x
+{False, 2.3, 5, 'siva', 9, 4j, (5, 2)}
+>>> x.add([6,7])
+TypeError: unhashable type: 'list'
+
+clear()
+-------
+to clear the set object i.e., to remove all the elements from the set object at a time.
+
+	setobj.clear()
+
+ex:
+---
+>>> x={5,2.3,4j,"siva"}
+>>> x
+{2.3, 4j, 5, 'siva'}
+>>> len(x)
+4
+>>> x.clear()
+>>> x
+set()
+>>> len(x)
+0
+
+copy()
+-------
+to create a shallow copy of a set object.
+
+	setobj.copy()
+
+ex:
+---
+>>> x={5,2.3,4j,"siva"}
+>>> x
+{2.3, 4j, 5, 'siva'}
+>>> y=x.copy()
+>>> y
+{2.3, 4j, 5, 'siva'}
+
+discard()
+---------
+to remove an particular element from the set object.
+
+	setobj.discard(element)
+
+ex:
+---
+>>> x={5,2.3,4j,"siva"}
+>>> x
+{2.3, 4j, 5, 'siva'}
+>>> x.discard(4j)
+>>> x
+{2.3, 5, 'siva'}
+>>> x.discard(100)
+>>> x
+{2.3, 5, 'siva'}
+
+remove()
+--------
+to remove an particular element from the set object.
+
+	setobj.remove(element)
+
+ex:
+--
+>>> x={5,2.3,4j,"siva"}
+>>> x
+{2.3, 4j, 5, 'siva'}
+>>> x.remove(4j)
+>>> x
+{2.3, 5, 'siva'}
+>>> x.remove(100)
+KeyError: 100
+>>> x
+{2.3, 5, 'siva'}
+
+pop()
+------
+to remove an element in our set object from left to right.
+
+	setobj.pop()
+
+ex:
+---
+>>> x={5,2.3,4j,"siva"}
+>>> x
+{2.3, 4j, 5, 'siva'}
+>>> x.pop()
+2.3
+>>> x
+{4j, 5, 'siva'}
+>>> x.pop()
+4j
+>>> x
+{5, 'siva'}
+
+update()
+--------
+to update the set object elements.
+
+	setobj.update(iterableobj)
+
+ex:
+---
+>>> x={5,2.3,4j,"siva"}
+>>> y=[9,2.3,(5,6),4j]
+>>> x.update(y)
+>>> x
+{2.3, 5, 'siva', 9, 4j, (5, 6)}
+>>> y
+[9, 2.3, (5, 6), 4j]
+
+
+
+

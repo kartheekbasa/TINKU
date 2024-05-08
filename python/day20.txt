@@ -1,0 +1,311 @@
+assignment-1:
+------------
+write a program to remove the space's in the given string object?
+
+	input			output
+	-----			-------
+	hai siva		haisiva
+
+	hai siva good morning	haisivagoodmorning
+
+sol:
+----
+x=input("enter your string: ")
+print("".join(x.split()))
+
+assignment-2:
+------------
+write a program to print the no.of words in a given string based on space charecter?
+
+	input			output
+	-----			------
+	hai			  1
+	hai siva		  2
+	hai siva krishna	  3
+	hai siva good morning	  4
+
+sol:
+----
+x=input("enter your string: ")
+print("the no.of words in a given string are:",len(x.split()))
+
+
+assignment-3:
+------------
+write a program to remove the space's in the given string object?
+
+	input			output
+	-----			-------
+	hai siva		HaiSiva
+
+	hai siva good morning	HaiSivaGoodMorning
+
+sol:
+----
+x=input("enter your string: ").title()
+print("".join(x.split()))
+
+
+replace()
+--------
+to replace the existed char/substr with new char/substr.
+
+	strobj.replace(old char/substr,new char/substr)
+
+ex:
+---
+>>> x="siva krishna"
+>>> x
+'siva krishna'
+>>> x.replace('i','u')
+'suva krushna'
+>>> x
+'siva krishna'
+>>> x.replace('siva','rama')
+'rama krishna'
+>>> x
+'siva krishna'
+>>> x.replace('krishna','ram')
+'siva ram'
+>>> x
+'siva krishna'
+
+lower()
+-------
+to convert the string into lower case.
+
+	strobj.lower()
+
+ex:
+---
+>>> x="siva"
+>>> y="RAMA"
+>>> z="KrIsHnA"
+>>> a="siva@123"
+>>> b="RAMA@123"
+>>> x.lower()
+'siva'
+>>> y.lower()
+'rama'
+>>> z.lower()
+'krishna'
+>>> a.lower()
+'siva@123'
+>>> b.lower()
+'rama@123'
+
+upper()
+-------
+to convert the string into upper case.
+
+	strobj.upper()
+
+ex:
+---
+>>> x="siva"
+>>> y="RAMA"
+>>> z="KrIsHnA"
+>>> a="siva@123"
+>>> b="RAMA@123"
+>>> x.upper()
+'SIVA'
+>>> y.upper()
+'RAMA'
+>>> z.upper()
+'KRISHNA'
+>>> a.upper()
+'SIVA@123'
+>>> b.upper()
+'RAMA@123'
+
+swapcase()
+---------
+to swap the cases i.e., to convert lowercase into uppercase and vice-versa.
+
+	strobj.swapcase()
+
+ex:
+---
+>>> x="siva"
+>>> y="RAMA"
+>>> z="KrIsHnA"
+>>> a="siva@123"
+>>> b="RAMA@123"
+>>> x.swapcase()
+'SIVA'
+>>> y.swapcase()
+'rama'
+>>> z.swapcase()
+'kRiShNa'
+>>> a.swapcase()
+'SIVA@123'
+>>> b.swapcase()
+'rama@123'
+
+isupper()
+---------
+to check whether our string object contains only uppercase alphabets or not.
+
+	strobj.isupper()
+
+ex:
+---
+>>> x="siva"
+>>> y="RAMA"
+>>> z="KrIsHnA"
+>>> a="siva@123"
+>>> b="RAMA@123"
+>>> x.isupper()
+False
+>>> y.isupper()
+True
+>>> z.isupper()
+False
+>>> a.isupper()
+False
+>>> b.isupper()
+True
+
+islower()
+---------
+to check whether our string object contains only lowercase alphabets or not.
+
+	strobj.islower()
+
+ex:
+---
+>>> x="siva"
+>>> y="RAMA"
+>>> z="KrIsHnA"
+>>> a="siva@123"
+>>> b="RAMA@123"
+>>> x.islower()
+True
+>>> y.islower()
+False
+>>> z.islower()
+False
+>>> a.islower()
+True
+>>> b.islower()
+False
+
+isspace()
+---------
+to check whether our string object contains only white-space charecters or not.
+
+	strobj.isspace()
+
+ex:
+---
+>>> x=" "
+>>> y=""
+>>> z="   "
+>>> a=" siva krishn 123 "
+>>> b="\n\t"
+>>> x.isspace()
+True
+>>> y.isspace()
+False
+>>> z.isspace()
+True
+>>> a.isspace()
+False
+>>> b.isspace()
+True
+
+istitle()
+---------
+to check whether the string object to follow the title case or not.
+
+	strobj.istitle()
+
+ex:
+---
+>>> x="hai"
+>>> y="Hai"
+>>> z="Hello Rama"
+>>> a="Hello RAMA"
+>>> b="123Rama"
+>>> c="123rama"
+>>> d="Hello Rama Good Morning"
+>>> e="Hello Rama Good morning"
+>>> f="HELLO"
+>>> x.istitle()
+False
+>>> y.istitle()
+True
+>>> z.istitle()
+True
+>>> a.istitle()
+False
+>>> b.istitle()
+True
+>>> c.istitle()
+False
+>>> d.istitle()
+True
+>>> e.istitle()
+False
+>>> f.istitle()
+False
+
+isalnum()
+---------
+to check whether our string object contains only alphabets or only digits or both combination alphabets and digits.
+
+	strobj.isalnum()
+
+ex:
+---
+>>> x="siva"
+>>> y="RAMA"
+>>> z="KrIsHnA"
+>>> a="Rama123"
+>>> b="Rama@123"
+>>> c="Rama 123"
+>>> d="123"
+>>> x.isalnum()
+True
+>>> y.isalnum()
+True
+>>> z.isalnum()
+True
+>>> a.isalnum()
+True
+>>> b.isalnum()
+False
+>>> c.isalnum()
+False
+>>> d.isalnum()
+True
+
+isalpha()
+---------
+to check whether our string object contains only alphabets or not.
+
+	strobj.isalpha()
+
+ex:
+---
+>>> x="siva"
+>>> y="RAMA"
+>>> z="KrIsHnA"
+>>> a="Rama123"
+>>> b="Rama@123"
+>>> c="Rama 123"
+>>> d="123"
+>>> x.isalpha()
+True
+>>> y.isalpha()
+True
+>>> z.isalpha()
+True
+>>> a.isalpha()
+False
+>>> b.isalpha()
+False
+>>> c.isalpha()
+False
+>>> d.isalpha()
+False

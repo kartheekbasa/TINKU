@@ -1,0 +1,194 @@
+assignment-1:
+-------------
+write a python program to move the zero's at the end of the list object elements?
+
+	input			output
+	-----			------
+[6,0,9,3,0,7,2,0,1]	      [6,9,3,7,2,1,0,0,0]
+
+sol:
+----
+x=eval(input("enter your list: "))
+for ele in x:
+    if ele==0:
+        x.remove(ele)
+        x.append(ele)
+print(x)
+
+
+assignment-2:
+--------------
+write a python program to convert nested list into flatted/single list?
+
+
+	input			output
+	-----			------
+[[5,3,6],[9,7,2]]		[5,3,6,9,7,2]
+
+sol:
+---
+x=eval(input("enter your nested list: "))
+y=[]
+for i in x:
+    for j in i:
+        y.append(j)
+print(y)
+
+
+
+assignment-3:
+-------------
+write a python program to find the most common occured element in a list object?
+
+	input				output
+	-----				------
+[10,20,30,10,20,10,40,30,10]		10
+
+sol:
+----
+x=eval(input("enter your list: "))
+c=0
+y=[]
+for ele in x:
+    if ele not in y:
+        y.append(ele)
+for ele in y:
+    if c<x.count(ele):
+        i,c=ele,x.count(ele)
+print(f"Element {i} occured {c} time's")
+
+	(or)
+
+x=eval(input("enter your list: "))
+c=0
+for ele in x:
+    if c<x.count(ele):
+        i,c=ele,x.count(ele)
+print(f"Element {i} occured {c} time's")
+
+	(or)
+
+x=eval(input("enter your list: "))
+print(max(x,key=x.count))
+
+assignment-4:
+--------------
+write a python program to find the longest sub string in a given string object?
+
+	input				output
+	-----				------
+hello siva krishna good afternoon	afternoon
+
+
+x=input("enter your string: ")
+words=x.split()
+no_of_char=0
+for w in words:
+    if no_of_char<len(w):
+        word,no_of_char=w,len(w)
+print(f"'{word}' is a logest substring,that substring having\
+ {no_of_char} charecters")
+
+	(or)
+
+x=input("enter your string: ")
+words=x.split()
+print(max(words,key=len))
+
+
+what is Comprihension?
+----------------------
+	to generate the elements/items into the container/iterable object dynamically by writeing some logic in that iterable/container object, is known as a Comprihension.
+
+the Comprihension technique is applicable only on mutable objects like list,set,dict objects.
+
+what is List Comprihension?
+---------------------------
+	to Generate the elements into the list object dynamically by writeing some logic in that list object, is known as a List Comprihension.
+
+	we can implement the list comprihension,in that case we need to required minimum one for loop and one list object.
+
+ex1:
+----
+write a python program input to the N no.of elements into list object?
+
+num=int(input("enter no.of elements: "))
+x=[]
+for i in range(num):
+    x.append(eval(input("enter element: ")))
+print(x)
+
+output:
+-------
+enter no.of elements: 5
+enter element: 2.3
+enter element: 9
+enter element: 4j
+enter element: False
+enter element: "siva"
+[2.3, 9, 4j, False, 'siva']
+
+write a python program input to the N no.of elements into list object by using list comprihension?
+
+num=int(input("enter no.of elements: "))
+print([eval(input("enter elements: ")) for i in range(num)])
+
+output:
+-------
+enter no.of elements: 5
+enter element: 2.3
+enter element: 9
+enter element: 4j
+enter element: False
+enter element: "siva"
+[2.3, 9, 4j, False, 'siva']
+
+ex2:
+----
+write a python program to generate the even numbers into list object from 1-N natural numbers?
+
+num=int(input("enter your number: "))
+x=[]
+for ele in range(1,num+1):
+    if ele%2==0:
+        x.append(ele)
+print(x)
+
+output:
+-------
+enter your number: 10
+[2, 4, 6, 8, 10]
+
+write a python program to generate the even numbers into list object from 1-N natural numbers by using list comprihension?
+
+num=int(input("enter your number: "))
+print([ele for ele in range(1,num+1) if ele%2==0])
+
+output:
+-------
+enter your number: 10
+[2, 4, 6, 8, 10]
+
+ex3:
+----
+write a python program to append the True and False values into list object from 1-N natural numbers?
+
+num=int(input("enter your number: "))
+x=[]
+for ele in range(1,num+1):
+    if ele%2==0:
+        x.append(True)
+    else:
+        x.append(False)
+print(x)
+
+	(or)
+
+num=int(input("enter your number: "))
+print([True if ele%2==0 else False for ele in range(1,num+1)])
+
+output:
+-------
+enter your number: 10
+[False, True, False, True, False, True, False, True, False, True]
+

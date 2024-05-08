@@ -1,0 +1,146 @@
+applications of python:
+-----------------------
+1).Robotic Process Automation(RPA)
+	Robotics	--> Artificial Intelligence(AI)
+
+2).Data Science
+	Machine Learning
+	Deep Learning
+	Natural Language Processing
+	Image Processing
+	Stastical Analysis
+	Sentimental Analysis
+	Computer Vision
+	....
+	....
+
+3).Bigdata-Hadoop
+	     |--> HDFS(Hadoop Distributed File System's)
+		    |--> to store the Bigdata
+
+	     |--> MapReduce
+		    |--> to process the BIgdata
+		    |--> it is suitable for only offline data i.e., already 		         existed data
+
+	     |--> Spark
+		   |--> to perform the Live Data Analysis
+
+		   |--> Python/Scala
+
+
+4).Web Application Development
+
+	a web application is a server side program that utilizes webbrowsers and webtechnologies to perform a task over the web.
+
+	Presentation Logics	--> UI/FrontEnd Technologies
+				   (html,css,javascript
+					        |--> bootstrap
+					        |--> jquery
+						|--> Angular
+						|--> react
+						|--> NodeJS
+
+
+	Business Logics		--> BackEnd Technologies
+			(Python	--> Django,Flask,Bottle,web2py,FastAPI,..)
+			(Java	--> Strut,Hibernate,Spring,spring boot,..)
+
+	
+	Database Logics		--> Database Technologies
+				    (SQL)
+
+	
+	UI Developer
+
+	BackEnd Developer
+
+	Full Stack Developer(UI + BackEnd + SQL + Git + GitHub + Cloud,..)
+		|--> Python Full Stack Development
+			    |--> Python, Django/Flask,
+			    |--> html,css,javascript,Bootstrap,Jquery
+			    |--> SQL,Git,GitHub,Cloud Basics,...
+
+		|--> Java Full Stack Development
+			    |--> Java,Spring/Hibernate/Strut
+			    |--> html,css,javascript,Bootstrap,Jquery
+			    |--> SQL,Git,GitHub,Cloud Basics,...
+
+		|--> MERN stack		    
+		      |--> html,css,javascript,Bootstrap,Jquery
+				        |--> frontend(ExpressJs,ReactJs)
+					|--> backend(NodeJs)
+
+		      |--> MongoDB,Git,GitHub,Cloud Basics,...
+
+		|--> MEAN stack		    
+		      |--> html,css,javascript,Bootstrap,Jquery
+				        |--> frontend(ExpressJs,AngularJs)
+					|--> backend(NodeJs)
+
+		      |--> MongoDB,Git,GitHub,Cloud Basics,...
+	
+
+5).DevOps
+
+6).Cloud Computing
+
+7).Embedded System's
+
+8).IOT(Internet Of Things)
+
+9).Quantom Computing
+
+10).Networking Application Development(chatbot's,chatGPT,...)
+
+11).Scientific Application Development(R&D)
+
+12).Animations(3D,VFX,Graphic Design,CAD,...)
+
+13).Automation Testing(Selenium)
+	|-->python(selenium,pytest/unittest,behave)
+	|-->java(selenium,junit/TestNG,Cucumber)
+
+14).Mobile Application Development
+
+15).GUI(Graphical User Interface)/Desktop Application Development
+
+16).Games Development
+
+17).Admin Activities(DBA,Sys Admin,OS Admin,N/W Admin,...)
+
+18).GIS(Geographical Information System's)
+
+19).Ethical Hacking(Cyber Security)
+
+20).Blockchain
+
+21).ETL(Extraction Transformation and Loading)
+	ETL tools: Informatica,DataStage,Abinito,Talend,
+		   ADF,Snowflake --> Cloud ETL tools
+
+	ETL Developer
+	ETL Admin
+	ETL Tester
+
+22).BI(Business Intelligence)
+	Reporting/BI/Visualization Tools: Cognos,QlickView,QlickSense,
+					  MSBI(SSRS),TableAu,PowerBI
+
+	BI Developer
+	BI Admin(python/R)
+
+23).ERP(Enterprise Resource Planning) application Development
+
+	python	--> odoo
+
+24).Medical Coding(SAS/Python)
+
+25).Web-Scrapping
+	(python	--> Beautifulsoup,scrapy,..)
+
+26).Prompt Engineering
+
+
+
+	
+

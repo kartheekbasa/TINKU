@@ -1,0 +1,113 @@
+Flavour's of Python:
+--------------------
+	the python runtime environment is implemented by using C-programming, is known as a "CPython".
+
+	the "CPython" is a standard,builtin and most widely used python implementation/flavour.
+
+	the python runtime environment is implemented by using "Java programming", is known as a "Jython".
+
+	the python runtime environment is implemented by using ".net programming", is known as a "IronPython".
+
+	the python runtime environment is implemented by using "Rust programming", is known as a "RustPython".
+
+	the python runtime environment is implemened by Anaconda Corporation, is known as a "AnacondaPython".
+
+	the python runtime environment implementation is based on Embedded system's, is known as a "EmbeddedPython"/"MicroPython".
+
+	the python runtime environment is implemented by it-self without other programming stack, is known as a "StacklessPython/Stackless".
+
+	whenever we are adding the JIT(Just-In-Time) compiler to the "Cpython" for faster execution, is known as a "PyPy".
+
+		......
+		......	
+
+
+what is Comment?
+---------------
+Generally in programming terminalogy, a comment is a unexecuted statement.
+
+in our program(source code),which statements we dont want to executed, that type of statements we are put into a comment section.
+
+in our program, if we want to write the user friendly messages related to the source code for easily understanding purpose, that user friendly messages we are put into a comment section.
+
+in generally, we can represent the comments in two ways,they are
+
+	1).single line comment
+		
+		C Programming		Python Programming
+		-------------		--------------------
+		// comment line		# comment line
+	
+
+	2).multi line comment
+
+		C Programming		Python Programming
+		-------------		--------------------
+	    /* comment_line_1		''' comment_line_1
+	       comment_line_2		    comment_line_2
+	           ....				....
+		   ....				....
+	       comment_line_n */	    comment_line_n '''
+
+
+versions of python:
+-------------------
+initially, the python released into the market in the year of 1991.
+
+the python1.0 version is released into the market in the year of 1994.
+
+the python1.x(1.0,1.1,1.2,...) versions dont support Garbage Collector Concept.
+
+the python2.0 version is released into the market in the year of 2000.
+
+from python2.0 versions onwards, the python language support Garbage Collector Concept.
+
+the python3.0 version is released into the market in the year of 2008.
+
+note:
+-----
+the PSF(Python Software Foundation) Team,completely to stop the python2.x versions.
+
+the python2.7.18 is the last release of python2.x versions.
+
+currently,all the companies are using only python3.x versions.
+
+	python3.x	--> 3.0,3.1,3.2,3.3,....,3.12.0
+
+Python Environment Setup:
+-------------------------
+the Python Environment Setup Can be Categorized into 3-parts, they are
+
+	1).Downloading Python Software
+
+	2).Installation of Python Software
+
+	3).Python Path Setup
+
+How to Downloading Python Software?
+-----------------------------------
+	Before Downloading Python Software,first we need to identify which bit operating system we are using because the python interpreter is changeing from one bit operating system to another bit operating system.
+
+		Operating System
+			|
+	---------------------------------
+	|		|		|
+     windows       linux/unix          mac
+	|
+   -----------
+   |         |
+  32 bit    64 bit
+(x86)       (x64)
+
+
+	after identify our operating system bit number, next we are going to python official website www.python.org
+			      |
+			goto downloads
+			      |
+			select our operating system
+			   (windows)
+			      |
+			to download any one file of that particular
+			operating system bit number
+
+

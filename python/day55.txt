@@ -1,0 +1,411 @@
+how to delete an object?
+------------------------
+if we want to delete the object manually, in that case we are using "del" keyword.
+
+ex1:
+---
+>>> x=10
+>>> y=20
+>>> x+y
+30
+>>> del x
+>>> x+y
+NameError: name 'x' is not defined
+
+ex2:
+----
+>>> x=[5,9,2,10,7]
+>>> x
+[5, 9, 2, 10, 7]
+>>> x.remove(9)
+>>> x
+[5, 2, 10, 7]
+>>> x.pop(-2)
+10
+>>> x
+[5, 2, 7]
+>>> del x[1]
+>>> x
+[5, 7]
+
+
+		Functions
+		----------
+what is Function?
+-----------------
+a function is a block of organized,reusable code to perform a single action.
+
+		(or)
+
+a function is a syntaxer structure, which is used to represent the business logics to perform a particular operation.
+
+advantages of functions:
+-------------------------
+functions provides reusability of code
+
+functions provides better modularity of our applications
+
+Types of Functions:
+-------------------
+the functions can be categorized into 2-types, they are
+
+	1).Builtin/Predefined Functions
+
+	2).User-Defined Functions
+
+
+Builtin/Predefined Functions:
+------------------------------
+	these functions are already predefined for some special purpose, we can use that functions only for that particular purpose.
+
+ex1:
+----
+write a python script to print the list of all the builtin functions and no.of builtin functions?
+
+	demo.py
+	-------
+import builtins
+func=[]
+for i in dir(builtins):
+    if i[0].isalpha():
+        if i[0].islower():
+            func.append(i)
+print(func)
+print("="*45)
+print(len(func))
+
+	output
+	------
+['abs', 'aiter', 'all', 'anext', 'any', 'ascii', 'bin', 'bool', 'breakpoint', 'bytearray', 'bytes', 'callable', 'chr', 'classmethod', 'compile', 'complex', 'copyright', 'credits', 'delattr', 'dict', 'dir', 'divmod', 'enumerate', 'eval', 'exec', 'exit', 'filter', 'float', 'format', 'frozenset', 'getattr', 'globals', 'hasattr', 'hash', 'help', 'hex', 'id', 'input', 'int', 'isinstance', 'issubclass', 'iter', 'len', 'license', 'list', 'locals', 'map', 'max', 'memoryview', 'min', 'next', 'object', 'oct', 'open', 'ord', 'pow', 'print', 'property', 'quit', 'range', 'repr', 'reversed', 'round', 'set', 'setattr', 'slice', 'sorted', 'staticmethod', 'str', 'sum', 'super', 'tuple', 'type', 'vars', 'zip']
+=============================================
+75
+
+
+abs()
+------
+to return the absolute value of the given number.
+
+	abs(number)
+
+ex:
+---
+>>> abs(5)
+5
+>>> abs(-6)
+6
+>>> abs(2.3)
+2.3
+>>> abs(-3.4)
+3.4
+>>> abs(2+3j)
+3.605551275463989
+
+all()
+----
+if all the elements are True in our iterable object then only the all() to return True otherwise the all() to return False.
+
+	all(iterableobj)
+
+ex:
+---
+>>> x=[5,3.2,3j,"siva"]
+>>> y=[9,0,7,2]
+>>> z=[False,True,0]
+>>> a=[False,True]
+>>> b=[False,0]
+>>> c="siva"
+>>> d=23
+>>> all(x)
+True
+>>> all(y)
+False
+>>> all(z)
+False
+>>> all(a)
+False
+>>> all(b)
+False
+>>> all(c)
+True
+>>> all(d)
+TypeError: 'int' object is not iterable
+
+any()
+-----
+if any one element is True in our iterable object then only the any() to return True otherwise the any() to return False.
+
+	any(iterableobj)
+
+ex:
+---
+>>> x=[5,3.2,3j,"siva"]
+>>> y=[9,0,7,2]
+>>> z=[False,True,0]
+>>> a=[False,True]
+>>> b=[False,0]
+>>> c="siva"
+>>> d=23
+>>> any(x)
+True
+>>> any(y)
+True
+>>> any(z)
+True
+>>> any(a)
+True
+>>> any(b)
+False
+>>> any(c)
+True
+>>> any(d)
+TypeError: 'int' object is not iterable
+
+bytes()
+------
+to return the byte's object, the bytes object is a immutable object.
+
+ex:
+---
+>>> x=[4,9,35,69]
+>>> x
+[4, 9, 35, 69]
+>>> type(x)
+<class 'list'>
+>>> y=bytes(x)
+>>> y
+b'\x04\t#E'
+>>> id(y)
+2856322641536
+>>> y[0]
+4
+>>> y[0]=40
+TypeError: 'bytes' object does not support item assignment
+
+bytearray()
+----------
+to return the bytearray object, the bytearray object is a mutable object.
+
+	bytearray(iterableobj)
+
+ex:
+---
+>>> x=[4,9,35,69]
+>>> x
+[4, 9, 35, 69]
+>>> type(x)
+<class 'list'>
+>>> z=bytearray(x)
+>>> z
+bytearray(b'\x04\t#E')
+>>> type(z)
+<class 'bytearray'>
+>>> id(z)
+2856322783792
+>>> z[0]
+4
+>>> z[0]=40
+>>> z
+bytearray(b'(\t#E')
+>>> id(z)
+2856322783792
+
+memoryview()
+-------------
+to return the memoryview object.
+
+ex1:
+---
+>>> x=[4,9,35,69]
+>>> y=bytes(x)
+>>> z=memoryview(y)
+>>> z
+<memory at 0x0000029909E77280>
+>>> z[0]
+4
+>>> z[0]=40
+TypeError: cannot modify read-only memory	
+    
+ex2:
+----
+>>> x=[4,9,35,69]
+>>> x
+[4, 9, 35, 69]
+>>> x=[4,9,35,69]
+>>> y=bytearray(x)
+>>> z=memoryview(y)
+>>> z
+<memory at 0x0000029909E77340>
+>>> z[0]
+4
+>>> z[0]=40
+>>> z
+<memory at 0x0000029909E77340>
+>>> z[0]
+40
+
+eval()
+------
+to read one or more input values from the user with homogenious and hetrogenious values at a time.
+
+in eval(), our input values must be seperated by "," only.
+
+ex1:
+---
+x=int(input("enter x value: "))
+y=float(input("enter y value: "))
+z=complex(input("enter z value: "))
+print(x+y+z)
+
+output:
+-------
+enter x value: 3
+enter y value: 2.3
+enter z value: 2+3j
+(7.3+3j)
+
+ex2:
+---
+x,y,z=eval(input("enter x, and z values: "))
+print(x+y+z)
+
+output:
+------
+enter x, and z values: 3,2.3,2+3j
+(7.3+3j)
+
+enumerate()
+-----------
+to return the enumerate object, that object contains elements of given iterable object with indexes.
+
+	enumerate(iterableobj,start=0)
+
+ex:
+---
+x=[4,2.3,4j,False,"siva"]
+y=enumerate(x)
+print(y)
+print(type(y))
+for i,j in y:
+    print(i,j)
+
+output:
+------
+<enumerate object at 0x0000028A05DE2D40>
+<class 'enumerate'>
+0 4
+1 2.3
+2 4j
+3 False
+4 siva
+
+pow()
+-----
+to return the power of the given two numbers.
+
+	pow(x,y)	--> x**y
+
+	pow(x,y,z)	--> x**y%z
+
+ex:
+---
+>>> pow(2,3)
+8
+>>> pow(3,2)
+9
+>>> pow(2,3,3)
+2
+>>> pow(2,3,2)
+0
+>>> pow(3,2,2)
+1
+>>> pow(3,2,3)
+0
+
+
+round()
+------
+to return the round figure value of the given number.
+
+	round(number,[decimal_places])
+
+ex1:
+---
+>>> round(2.49)
+2
+>>> round(2.50)
+2
+>>> round(2.51)
+3
+
+ex2:
+---
+>>> x=2.346273
+>>> x
+2.346273
+>>> round(x)
+2
+>>> round(x,1)
+2.3
+>>> round(x,2)
+2.35
+>>> round(x,3)
+2.346
+>>> round(x,4)
+2.3463
+
+
+zip()
+-----
+to combine the elements from the given iterable objects.
+
+	zip(iterableobj)
+
+the zip() to return the zip object.
+
+ex1:
+---
+eid=[101,102,103,104]
+ename=["siva","rama","krishna","sachin"]
+esal=[3000,4000,2000,5000]
+dno=[10,20,30,40]
+x=zip(eid,ename,esal,dno)
+print(x)
+print(type(x))
+for rec in x:
+    print(rec)
+
+output:
+------
+<zip object at 0x0000025958F6E8C0>
+<class 'zip'>
+(101, 'siva', 3000, 10)
+(102, 'rama', 4000, 20)
+(103, 'krishna', 2000, 30)
+(104, 'sachin', 5000, 40)
+
+ex2:
+----
+eid=[101,102,103,104]
+ename=["siva","rama","krishna","sachin"]
+esal=[3000,4000,2000,5000]
+dno=[10,20,30,40]
+print(list(zip(eid,ename,esal,dno)))
+
+output:
+------
+[(101, 'siva', 3000, 10), (102, 'rama', 4000, 20), (103, 'krishna', 2000, 30), (104, 'sachin', 5000, 40)]
+
+ex3:
+-----
+eid=[101,102,103,104]
+ename=["siva","rama","krishna"]
+esal=[3000]
+dno=[10,20]
+print(list(zip(eid,ename,esal,dno)))
+
+output:
+------
+[(101, 'siva', 3000, 10)]
+
+
+

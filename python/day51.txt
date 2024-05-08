@@ -1,0 +1,225 @@
+working with functions:
+-----------------------
+>>> x=frozenset([6,3,7,9,12])
+>>> x
+frozenset({3, 6, 7, 9, 12})
+>>> len(x)
+5
+>>> min(x)
+3
+>>> max(x)
+12
+>>> sum(x)
+37
+>>> sorted(x)
+[3, 6, 7, 9, 12]
+>>> sorted(x,reverse=True)
+[12, 9, 7, 6, 3]
+>>> reversed(x)
+TypeError: 'frozenset' object is not reversible
+
+note:
+-----
+the reversed function is applicable only on sequence objects.
+
+working with frozenset class methods:
+-------------------------------------
+	if we want to display the frozenset class method names with syntax and description, in that case we are using help() function.
+
+	help(frozenset)
+
+	if we want to display the list of frozenset class method names without syntax and description, in that case we are using dir() function.
+
+	dir(frozenset)
+
+
+copy()
+------
+>>> x=frozenset([5,3.2,4j,"siva"])
+>>> x
+frozenset({'siva', 3.2, 4j, 5})
+>>> y=x.copy()
+>>> y
+frozenset({'siva', 3.2, 4j, 5})
+
+union()
+-------
+>>> x=frozenset([1,2,3,4])
+>>> y=frozenset([3,4,5,6])
+>>> x
+frozenset({1, 2, 3, 4})
+>>> y
+frozenset({3, 4, 5, 6})
+>>> x.union(y)
+frozenset({1, 2, 3, 4, 5, 6})
+
+intersection()
+--------------
+>>> x=frozenset([1,2,3,4])
+>>> y=frozenset([3,4,5,6])
+>>> x
+frozenset({1, 2, 3, 4})
+>>> y
+frozenset({3, 4, 5, 6})
+>>> x.intersection(y)
+frozenset({3, 4})
+
+difference()
+------------
+>>> x=frozenset([1,2,3,4])
+>>> y=frozenset([3,4,5,6])
+>>> x
+frozenset({1, 2, 3, 4})
+>>> y
+frozenset({3, 4, 5, 6})
+>>> x.difference(y)
+frozenset({1, 2})
+>>> x
+frozenset({1, 2, 3, 4})
+>>> y
+frozenset({3, 4, 5, 6})
+>>> y.difference(x)
+frozenset({5, 6})
+
+symmetric_difference()
+----------------------
+>>> x=frozenset([1,2,3,4])
+>>> y=frozenset([3,4,5,6])
+>>> x
+frozenset({1, 2, 3, 4})
+>>> y
+frozenset({3, 4, 5, 6})
+>>> x.symmetric_difference(y)
+frozenset({1, 2, 5, 6})
+
+issuperset()
+------------
+>>> a=frozenset([1,2,3,4,5])
+>>> b=frozenset([1,3,5])
+>>> c=frozenset([2,4,6])
+>>> a
+frozenset({1, 2, 3, 4, 5})
+>>> b
+frozenset({1, 3, 5})
+>>> c
+frozenset({2, 4, 6})
+>>> a.issuperset(b)
+True
+>>> a.issuperset(c)
+False
+
+issubset()
+----------
+>>> a=frozenset([1,2,3,4,5])
+>>> b=frozenset([1,3,5])
+>>> c=frozenset([2,4,6])
+>>> a
+frozenset({1, 2, 3, 4, 5})
+>>> b
+frozenset({1, 3, 5})
+>>> c
+frozenset({2, 4, 6})
+>>> b.issubset(a)
+True
+>>> c.issubset(a)
+False
+
+isdisjoint()
+------------
+>>> x=frozenset([1,2,3,4])
+>>> y=frozenset([5,6,7])
+>>> z=frozenset([0,4,8])
+>>> x
+frozenset({1, 2, 3, 4})
+>>> y
+frozenset({5, 6, 7})
+>>> z
+frozenset({0, 8, 4})
+>>> x.isdisjoint(y)
+True
+>>> x.isdisjoint(z)
+False
+>>> y.isdisjoint(z)
+True
+
+note:
+-----
+the frozenset object dont support comprihension concept.
+
+Dictionary Data Structure:
+--------------------------
+in python, the dictionary datatype having "dict" class
+
+we can create a dict object by using {} or by calling dict() function.
+
+>>> x={}
+>>> x
+{}
+>>> type(x)
+<class 'dict'>
+
+>>> y=dict()
+>>> y
+{}
+>>> type(y)
+<class 'dict'>
+
+the dict object contains group of key-value pairs, each key-value pair act as a one item in our dict object.
+
+	{key_1:value_1,key_2:value_2,....,key_n:value_n}
+	 -------------,-------------,.....,-------------
+	      |		    |			|
+	    item_1       item_2		     item_n
+
+the dict object is a mutable object but key's must be immutable and values are either mutable or immutable objects.
+
+>>> x={'name':"siva",(8,2):9,2.3:[6,7],4j:{9,5}}
+>>> x
+{'name': 'siva', (8, 2): 9, 2.3: [6, 7], 4j: {9, 5}}
+
+>>> y={'name':"siva",[8,2]:9,2.3:(6,7),4j:{9,5}}
+TypeError: unhashable type: 'list'
+
+the dict object dont allow the duplicate key's but it allows duplicate values.
+
+>>> a={'m':56,'sc':90,'so':34,'tel':34,'m':31}
+>>> a
+{'m': 31, 'sc': 90, 'so': 34, 'tel': 34}
+
+in dict object insertion order is preserved because of that reason the dict object act as a sequence object.
+
+the dict object dont support both indexing concept and slicing concept but it support hashing concept i.e., we are using key's
+
+by using hshing concept we can retreive the values from the dict object based on key.
+
+>>> x={'name':"siva",(8,2):9,2.3:[6,7],4j:{9,5}}
+>>> x
+{'name': 'siva', (8, 2): 9, 2.3: [6, 7], 4j: {9, 5}}
+>>> x['name']
+'siva'
+>>> x[(8,2)]
+9
+>>> x[2.3]
+[6, 7]
+>>> x[4j]
+{9, 5}
+
+by using hashing concept we can update the dict object value.
+
+>>> a={'m':56,'sc':90,'so':34,'tel':34}
+>>> a
+{'m': 56, 'sc': 90, 'so': 34, 'tel': 34}
+>>> a['so']=75
+>>> a
+{'m': 56, 'sc': 90, 'so': 75, 'tel': 34}
+
+by using hashing concept we can add an item into dict object.
+
+>>> a={'m':56,'sc':90,'so':34,'tel':34}
+>>> a
+{'m': 56, 'sc': 90, 'so': 34, 'tel': 34}
+>>> a['py']=41
+>>> a
+{'m': 56, 'sc': 90, 'so': 34, 'tel': 34, 'py': 41}
+
+

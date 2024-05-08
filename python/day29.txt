@@ -1,0 +1,169 @@
+Looping Statements:
+-------------------
+the Looping statements are used to execute the block of statements repeatedly or repeated no.of times.
+
+the python supported Looping statements are,
+
+	while loop
+	while else
+	for loop
+	for else
+
+while loop:
+-----------
+the while loop is used to execute the block of statements repeatedly or repeated no.of times until while condition become fail/false.
+
+the while loop can be categorized into 2-type's, they are
+
+	1).Finite while loop
+
+	2).Infinite while loop
+
+Finite while loop:
+------------------
+Finite while loop means at any one point of time our while condition become Fail/False.
+
+	syntax
+	------
+	while condition:
+		stmt_1
+		stmt_2
+		......
+		stmt_n
+
+flowchart:
+	ref fig: while flowchart
+
+ex1:
+---
+write a python program to print 1-N natural numbers?
+
+num=int(input("enter your number: "))
+i=1
+while i<=num:
+    print(i)
+    i+=1
+
+output:
+-------
+enter your number: 10
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+ex2:
+---
+write a python program to print 1-N natural numbers?
+
+num=int(input("enter your number: "))
+i=1
+while i<=num:
+    print(i,end=" ")
+    i+=1
+
+output:
+-------
+enter your number: 10
+1 2 3 4 5 6 7 8 9 10 
+
+ex3:
+---
+write a python program to print the sum of 1-N natural numbers?
+
+num=int(input("enter your number: "))
+i=1
+s=0
+while i<=num:
+    s+=i
+    i+=1
+print(s)
+
+output:
+------
+enter your number: 5
+15
+
+ex4:
+----
+write a python program to print even numbers from 1-N natural numbers?
+
+num=int(input("enter your number: "))
+i=1
+while i<=num:
+    if i%2==0:
+        print(i)
+    i+=1
+
+output:
+-------
+enter your number: 10
+2
+4
+6
+8
+10
+
+ex5:
+----
+write a python program to print the sum of odd numbers from the given range of numbers?
+
+num=int(input("enter your number: "))
+i=1
+s=0
+while i<=num:
+    if i%2!=0:
+        s+=i
+    i+=1
+print(s)
+
+output:
+------
+enter your number: 10
+25
+
+ex6:
+---
+write a python program to print the divisibles of the given number?
+
+num=int(input("enter your number: "))
+i=1
+while i<=num:
+    if num%i==0:
+        print(i)
+    i+=1
+
+output:
+-------
+enter your number: 28
+1
+2
+4
+7
+14
+28
+
+ex7:
+---
+write a python program to print the fibonacci sequence upto N?
+
+	input
+	-----
+N=100
+
+	output
+	------
+0 1 1 2 3 5 8 13 21 34 55 89
+
+num=int(input("enter your number: "))
+i,j=0,1
+while i<=num:
+    print(i,end=" ")
+    i,j=j,i+j
+

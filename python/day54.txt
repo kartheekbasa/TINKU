@@ -1,0 +1,297 @@
+Differencess between list and tuple:
+------------------------------------
+		List
+		----
+1).the list object is a mutable object
+2).the list object support comprihension concept
+3).on top of the list object we can perform insert,delete,update and retreival operations.
+4).we can't assign the list object as a key to the dict object
+5).we can create a list object by using [] or list()
+6).list object is a variable size
+7).list performance is slow when compared to tuple with respect to memory utilization.
+
+		Tuple
+		------
+1).the tuple object is a immutable object
+2).the tuple object dont support comprihension concept
+3).on top of the tuple object we can perform only retreival operations.
+4).we can assign the tuple object as a key to the dict object
+5).we can create a tuple object by using () or tuple()
+6).tuple object is a fixed size
+7).tuple performance is more when compared to list with respect to memory utilization.
+
+
+Differencess between set and frozenset:
+---------------------------------------
+		set
+		----
+1).the set object is a mutable object
+2).the set object support comprihension concept
+3).on top of the set object we can perform insert,delete and update operations.
+4).we can't assign the set object as a key to the dict object
+5).we can create a set object by using set()
+6).the set object is a variable size
+7).the set object dont support nested set mechanism
+8).the set object to allow the frozenset object
+
+		frozenset
+		---------
+1).the frozenset object is a immutable object
+2).the frozenset object dont support comprihension concept
+3).on top of the frozenset object we can't perform the insert,delete and update operations.
+4).we can assign the frozenset object as a key to the dict object
+5).we can create a frozenset object by using frozenset()
+6).the frozenset object is a fixed size
+7).the frozenset object support nested frozenset mechanism
+8).the frozenset object dont allow the set object
+
+
+how to copy the data from one object to another object?
+--------------------------------------------------------
+we can copy the data from one object to another object in 3 ways, they are
+
+	1). hard copy
+
+	2). shallow copy
+
+	3). deep copy
+
+Hard Copy:
+-----------
+we can implement the Hard Copy by using "=" (single equal too) i.e., normal assignment operator.
+
+whenever we are trying to implement the Hard Copy, in that case our original data and copied data are referenceing to same object in the memory.
+
+in single dimensional, we can change the original data that is effected in our copied data and vice-versa.
+
+in multi-dimensional, we can change the original data that is effected in our copied data and vice-versa.
+
+
+ex:
+---
+>>> x=[1,2,3,[4,5,[6,7]]]
+>>> x
+[1, 2, 3, [4, 5, [6, 7]]]
+>>> y=x #hard copy
+>>> y
+[1, 2, 3, [4, 5, [6, 7]]]
+>>> id(x)
+2297383279232
+>>> id(y)
+2297383279232
+
+	single-dimensional
+	-------------------
+>>> x
+[1, 2, 3, [4, 5, [6, 7]]]
+>>> y
+[1, 2, 3, [4, 5, [6, 7]]]
+>>> x[1]=20
+>>> x
+[1, 20, 3, [4, 5, [6, 7]]]
+>>> y
+[1, 20, 3, [4, 5, [6, 7]]]
+>>> y[0]=10
+>>> y
+[10, 20, 3, [4, 5, [6, 7]]]
+>>> x
+[10, 20, 3, [4, 5, [6, 7]]]
+
+	multi-dimensional
+	-----------------
+>>> x
+[10, 20, 3, [4, 5, [6, 7]]]
+>>> y
+[10, 20, 3, [4, 5, [6, 7]]]
+>>> x[3][1]=50
+>>> x
+[10, 20, 3, [4, 50, [6, 7]]]
+>>> y
+[10, 20, 3, [4, 50, [6, 7]]]
+>>> y[-1][-1][-1]=70
+>>> y
+[10, 20, 3, [4, 50, [6, 70]]]
+>>> x
+[10, 20, 3, [4, 50, [6, 70]]]
+
+shallow copy:
+-------------
+we can implement the shallow copy in 4-ways,they are
+
+	1). by using builtin functions
+
+	2). by using builtin methods
+
+	3). by using comprihension concept
+
+	4). by using copy() function of copy module
+
+whenever we are trying to implement the shallow copy, in that case both original data and copied data are referenceing to different objects in the memory.
+
+in single dimensional, we can change the original data that is not effected in copied data and vice versa.
+
+in multi-dimensional, we can change the original data that is effected in copied data and vice versa.
+
+ex1: by using builtin functions
+----
+>>> x=[1,2,3]
+>>> y=list(x)
+>>> x
+[1, 2, 3]
+>>> y
+[1, 2, 3]
+>>> id(x)
+2297384606976
+>>> id(y)
+2297380337792
+
+ex2: by using builtin methods
+----
+>>> p=[1,2,3]
+>>> q=p.copy()
+>>> p
+[1, 2, 3]
+>>> q
+[1, 2, 3]
+>>> id(p)
+2297383279232
+>>> id(q)
+2297380000128
+
+ex3: by using comprihension concept
+----
+>>> a=[1,2,3]
+>>> b=[i for i in a]
+>>> a
+[1, 2, 3]
+>>> b
+[1, 2, 3]
+>>> id(a)
+2297380000320
+>>> id(b)
+2297384609664
+
+ex4: by using copy() function of copy module
+----
+>>> p=[1,2,3]
+>>> import copy
+>>> q=copy.copy(p)
+>>> p
+[1, 2, 3]
+>>> q
+[1, 2, 3]
+>>> id(p)
+2297384603328
+>>> id(q)
+2297384514624
+
+ex5:
+----
+>>> from copy import copy
+>>> x=[1,2,3,[4,5,[6,7]]]
+>>> y=copy(x)
+>>> x
+[1, 2, 3, [4, 5, [6, 7]]]
+>>> y
+[1, 2, 3, [4, 5, [6, 7]]]
+>>> id(x)
+2297384603904
+>>> id(y)
+2297384606976
+
+	single-dimensional
+	------------------
+>>> x
+[1, 2, 3, [4, 5, [6, 7]]]
+>>> y
+[1, 2, 3, [4, 5, [6, 7]]]
+>>> x[1]=20
+>>> x
+[1, 20, 3, [4, 5, [6, 7]]]
+>>> y
+[1, 2, 3, [4, 5, [6, 7]]]
+>>> y[0]=10
+>>> y
+[10, 2, 3, [4, 5, [6, 7]]]
+>>> x
+[1, 20, 3, [4, 5, [6, 7]]]
+
+	multi-dimensional
+	-----------------
+>>> x
+[1, 20, 3, [4, 5, [6, 7]]]
+>>> y
+[10, 2, 3, [4, 5, [6, 7]]]
+>>> x[3][1]=50
+>>> x
+[1, 20, 3, [4, 50, [6, 7]]]
+>>> y
+[10, 2, 3, [4, 50, [6, 7]]]
+>>> y[-1][-1][-1]=70
+>>> y
+[10, 2, 3, [4, 50, [6, 70]]]
+>>> x
+[1, 20, 3, [4, 50, [6, 70]]]
+
+
+deep copy:
+-------------
+we can implement the deep copy by using deepcopy() function of copy module
+
+whenever we are trying to implement the deep copy, in that case both original data and copied data are referenceing to different objects in the memory.
+
+in single dimensional, we can change the original data that is not effected in copied data and vice versa.
+
+in multi-dimensional, we can change the original data that is not effected in copied data and vice versa.
+
+ex:
+----
+>>> from copy import deepcopy
+>>> x=[1,2,3,[4,5,[6,7]]]
+>>> y=deepcopy(x)
+>>> x
+[1, 2, 3, [4, 5, [6, 7]]]
+>>> y
+[1, 2, 3, [4, 5, [6, 7]]]
+>>> id(x)
+2297384601088
+>>> id(y)
+2297380337792
+
+	single-dimensional
+	------------------
+>>> x
+[1, 2, 3, [4, 5, [6, 7]]]
+>>> y
+[1, 2, 3, [4, 5, [6, 7]]]
+>>> x[1]=20
+>>> x
+[1, 20, 3, [4, 5, [6, 7]]]
+>>> y
+[1, 2, 3, [4, 5, [6, 7]]]
+>>> y[0]=10
+>>> y
+[10, 2, 3, [4, 5, [6, 7]]]
+>>> x
+[1, 20, 3, [4, 5, [6, 7]]]
+
+	multi-dimensional
+	-----------------
+>>> x
+[1, 20, 3, [4, 5, [6, 7]]]
+>>> y
+[10, 2, 3, [4, 5, [6, 7]]]
+>>> x[3][1]=50
+>>> x
+[1, 20, 3, [4, 50, [6, 7]]]
+>>> y
+[10, 2, 3, [4, 5, [6, 7]]]
+>>> y[-1][-1][-1]=70
+>>> y
+[10, 2, 3, [4, 5, [6, 70]]]
+>>> x
+[1, 20, 3, [4, 50, [6, 7]]]
+
+
+
+

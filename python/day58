@@ -1,0 +1,269 @@
+Kw args(variable keyword arguments)
+------------------------------------
+the Kw args takes 0 or more keyword arguments.
+
+by default, the kw args type is dictionary
+
+	syntax
+	------
+	def functionname(**parameter):
+		----------
+		----------
+		----------
+
+ex1:
+----
+def f1(**x):
+    print(x,type(x))
+f1()
+
+output:
+-------
+{} <class 'dict'>
+
+ex2:
+----
+def f1(**x):
+    print(x,type(x))
+f1(name="siva")
+
+output:
+-------
+{'name': 'siva'} <class 'dict'>
+
+ex3:
+----
+def f1(**x):
+    print(x,type(x))
+f1(name="siva",age=30,sal=3000.0)
+
+output:
+-------
+{'name': 'siva', 'age': 30, 'sal': 3000.0} <class 'dict'>
+
+ex4:
+----
+def f1(x,*y,**z):
+    print(x,type(x))
+    print(y,type(y))
+    print(z,type(z))
+f1()
+
+output:
+-------
+TypeError: f1() missing 1 required positional argument: 'x'
+
+ex5:
+----
+def f1(x,*y,**z):
+    print(x,type(x))
+    print(y,type(y))
+    print(z,type(z))
+f1(5)
+
+output:
+-------
+5 <class 'int'>
+() <class 'tuple'>
+{} <class 'dict'>
+
+ex6:
+----
+def f1(x,*y,**z):
+    print(x,type(x))
+    print(y,type(y))
+    print(z,type(z))
+f1(2.3,4j,False,9,name="siva",age=30,sal=3000.0)
+
+output:
+-------
+2.3 <class 'float'>
+(4j, False, 9) <class 'tuple'>
+{'name': 'siva', 'age': 30, 'sal': 3000.0} <class 'dict'>
+
+ex7:
+----
+def f1(*x,y,**z):
+    print(x,type(x))
+    print(y,type(y))
+    print(z,type(z))
+f1(2.3,4j,False,9,name="siva",age=30,sal=3000.0)
+
+output:
+-------
+TypeError: f1() missing 1 required keyword-only argument: 'y'
+
+ex8:
+----
+def f1(*x,y,**z):
+    print(x,type(x))
+    print(y,type(y))
+    print(z,type(z))
+f1(2.3,4j,False,y=9,name="siva",age=30,sal=3000.0)
+
+output:
+-------
+(2.3, 4j, False) <class 'tuple'>
+9 <class 'int'>
+{'name': 'siva', 'age': 30, 'sal': 3000.0} <class 'dict'>
+
+ex9:
+----
+def f1(**x,y,*z):
+    print(x,type(x))
+    print(y,type(y))
+    print(z,type(z))
+f1(2.3,4j,False,y=9,name="siva",age=30,sal=3000.0)
+
+SyntaxError: arguments(normal and arbitrary) can't follow the var-keyword(kw) arguements
+
+ex10:
+----
+def f1(**x,*y,z):
+    print(x,type(x))
+    print(y,type(y))
+    print(z,type(z))
+f1(2.3,4j,False,y=9,name="siva",age=30,sal=3000.0)
+
+SyntaxError: arguments(normal and arbitrary) can't follow the var-keyword(kw) arguements
+
+
+what is return statement?
+-------------------------
+the return statement is a one keyword in python, which is used to returneing a value.
+
+ex1:
+----
+def add(x,y):
+    z=x+y
+    print(z)
+add(4,5)
+
+output:
+-------
+9
+
+ex2:
+----
+def add(x,y):
+    z=x+y
+    return z
+add(4,5)
+
+output:
+-------
+no output i.e., here we can't handle the return statement
+
+how to handle the return statement?
+----------------------------------
+we can handle the return statement in two ways, they are
+
+	scenario-1
+	----------
+def add(x,y):
+    z=x+y
+    return z
+print(add(4,5))
+
+output:
+-------
+9
+
+	scenario-2
+	-----------
+def add(x,y):
+    z=x+y
+    return z
+a=add(4,5)
+print(a)
+
+output:
+-------
+9
+
+ex:
+---
+def add(x,y):
+    z=x+y
+    return z
+a=add(4,5)
+print(a)
+def sub(b):
+    c=a-b
+    print(c)
+sub(4)
+
+output:
+-------
+9
+5
+
+in python, we can return multiple values also possible, by default these multiple values will be represented in the form of tuple.
+
+ex:
+---
+def cal(x,y):
+    return x+y,x-y,x*y,x/y
+print(cal(4,5))
+
+output:
+-------
+(9, -1, 20, 0.8)
+
+note:
+-----
+in python, by default return value is None.
+
+ex:
+---
+def msg():
+    print("hai")
+    print("siva")
+    return
+print(msg())
+
+output:
+-------
+hai
+siva
+None
+
+note:
+-----
+once the control reach the return statement then immediately the control will goto outside the function body.
+
+ex:
+---
+def msg():
+    print("hai")
+    print("siva")
+    return
+    print("good morning")
+print(msg())
+print("bye")
+
+output:
+-------
+hai
+siva
+None
+bye
+
+ex:
+---
+def msg():
+    print("hai")
+    print("siva")
+    return "krishna"
+    return "good morning"    
+print(msg())
+print("bye")
+
+output:
+-------
+hai
+siva
+krishna
+bye
+
+

@@ -1,0 +1,223 @@
+dictionary datatype:
+--------------------
+in python, the dictionary datatype having 'dict' class
+
+we can create a dict object by using {} or by calling dict()
+
+the dict object contains group of key-value pairs,each key-value pair act as a one item in our dict object.
+
+	{key_1:value_1,key_2:value_2,....,key_n:value_n}
+	 -------------,-------------,....,-------------
+	      |             |                  |
+            item_1        item_2            item_n
+
+the dict object is a mutable object but key's must be immutable and values are either mutable or immutable objects.
+
+from python3.4+ versions onwards,the dict object act as a sequence object.
+
+ex:
+---
+>>> x={'name':'siva','sal':3000.0,'age':30}
+>>> x
+{'name': 'siva', 'sal': 3000.0, 'age': 30}
+>>> type(x)
+<class 'dict'>
+
+
+None datatype:
+---------------
+in python, the None datatype having 'NoneType' class.
+
+in python,at the time of declaring the variables it is mandatory to assign the values.
+
+ex:
+---
+x=None
+print(x)
+print(type(x))
+
+output:
+-------
+None
+<class 'NoneType'>
+
+ex:
+---
+x=10
+y=2.3
+z=4j
+a=False
+b="siva"
+c=[5,3,7,2]
+d=(5,2,9,1)
+e={6,3,8,2}
+f=frozenset("krishna")
+g={'m':45,'sc':78,'eng':89}
+h=None
+print(x,type(x),id(x))
+print(y,type(y),id(y))
+print(z,type(z),id(z))
+print(a,type(a),id(a))
+print(b,type(b),id(b))
+print(c,type(c),id(c))
+print(d,type(d),id(d))
+print(e,type(e),id(e))
+print(f,type(f),id(f))
+print(g,type(g),id(g))
+print(h,type(h),id(h))
+
+	output
+	------
+10 <class 'int'> 140707875185736
+2.3 <class 'float'> 2816062835440
+4j <class 'complex'> 2816062836624
+False <class 'bool'> 140707873659784
+siva <class 'str'> 2816068978800
+[5, 3, 7, 2] <class 'list'> 2816068577792
+(5, 2, 9, 1) <class 'tuple'> 2816063449392
+{8, 2, 3, 6} <class 'set'> 2816032927392
+frozenset({'r', 'n', 'a', 's', 'k', 'h', 'i'}) <class 'frozenset'> 2816068303584
+{'m': 45, 'sc': 78, 'eng': 89} <class 'dict'> 2816068977728
+None <class 'NoneType'> 140707873713352
+
+
+how to read the data from the user input?
+------------------------------------------
+we can read the data from the user input,
+	in c programming,we are using scanf() function
+
+	in python2.x versions,we are using input() and raw_input() function's.
+
+	in python3.x versions,we are using input() only.
+
+ex1:
+---
+write a C program,to read two input values from the user and to perform the addition operation?
+
+#include<stdio.h>
+void main()
+{
+    int x,y,z;
+    printf("Enter x value: ");
+    scanf("%d",&x);
+    printf("Enter y value: ");
+    scanf("%d",&y);
+    z=x+y;
+    printf("%d",z);
+}
+
+output:
+-------
+Enter x value: 4
+Enter y value: 5
+9
+
+
+ex2:
+---
+write a python3.x program,to read two input values from the user and to perform the addition operation?
+
+x=input("Enter x value: ")
+y=input("Enter y value: ")
+z=x+y
+print(z)
+
+output:
+-------
+Enter x value: 4
+Enter y value: 5
+45
+
+note:
+-----
+in python3.x versions, we can read any type of value from from the user by using input() function by default that value will be treated as string object only.
+
+if we want to read any type of value as a input from the user,in that case we are using type conversions.
+
+what is type conversion?
+-------------------------
+the type conversion means to convert the one type of data into another type of data.
+
+	(or)
+
+the type conversion means to convert the one datatype into another datatype.
+
+
+the type conversion can be categorized into 2-types,they are
+
+	1).Implicit Type Conversion
+
+	2).Explicit Type Conversion
+
+Implicit Type Conversion:
+------------------------
+the type conversion will be done automatically without programmer/developer interaction by explicitly, is known as a Implicit Type Conversion.
+
+	ex: in python2.x versions,by using input()
+
+Explicit Type Conversion:
+-------------------------
+the type conversion will be done with the help of programmer/developer interaction by explicitly,is known as a Explicit Type Conversion.
+
+	ex: in python2.x versions, by using raw_input()
+	    in python3.x versions, by using input()
+
+ex1:
+----
+x=int(input("Enter x value: "))
+y=int(input("Enter y value: "))
+z=x+y
+print(z)
+
+output:
+-------
+Enter x value: 4
+Enter y value: 5
+9
+
+ex2:
+----
+x=int(input("Enter x value: "))
+y=float(input("Enter y value: "))
+z=x+y
+print(z)
+
+output:
+-------
+Enter x value: 4
+Enter y value: 5
+9.0
+
+assignment-1:
+-------------
+write a python program,to read fname and lname of the employe from the user input, to generate the full name of the employe?
+
+	input
+	----
+enter employe first name: siva
+enter employe last name: krishna
+
+	output
+	------
+fullname of the employe: siva krishna
+
+assignment-2:
+-------------
+write a python program to read the 3-different numerical values from the user input, to perform the addition operation?
+
+	input
+	-----
+enter a value: 4
+enter b value: 2.3
+enter c value: 2+3j
+
+	output
+	------
+(8.3+3j)
+
+assignment-3:
+--------------
+write a python program to read the principle ammount,time and rate of intrest from the user input and to calculate the simple intrest?
+
+
+

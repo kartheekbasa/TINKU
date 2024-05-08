@@ -1,0 +1,216 @@
+Logical Operators:
+-----------------
+the Logical Operators are used to perform the mathmatical logical operations.
+
+the Logical Operators takes the input as Boolean values and to return the output as boolean values.
+
+
+	Logical Operation's	Logical Operator's
+				C/C++/Java	Python
+	-------------------	-----------------------
+	Logical and		&&		and
+
+	Logical or		||		or
+
+	logical not		!		not
+
+
+logical and truth table:
+-----------------------
+	ip_1	ip_2	ip_1 and ip_2
+	-----------------------------
+	False	False	     False
+	False	True	     False
+	True	False	     False
+	True	True	     True
+
+
+logical or truth table:
+-----------------------
+	ip_1	ip_2	ip_1 or ip_2
+	-----------------------------
+	False	False	     False
+	False	True	     True
+	True	False	     True
+	True	True	     True
+
+logical not truth table:
+------------------------
+	ip	op(not ip)
+	---	----------
+	False	True
+	True	False
+
+ex:
+---
+x,y=True,False
+print(x and not y)
+print(not x or y) 
+print(x or y)
+print(not x and not y) 
+print(not x or not y) 
+print(not y) 
+      
+output:
+-------
+True
+False
+True
+False
+True
+True
+
+ex2:
+----
+>>> 9 and 1
+1
+>>> 1 and 9
+9
+>>> 9 and 0
+0
+>>> 0 and 1
+0
+>>> 0 and 0
+0
+>>> 0 and False
+0
+>>> False and 0
+False
+
+ex3:
+----
+>>> 9 or 1
+9
+>>> 1 or 9
+1
+>>> 0 or 9
+9
+>>> 1 or 0
+1
+>>> 0 or 0
+0
+>>> 0 or False
+False
+>>> False or 0
+0
+
+Bitwise operators:
+------------------
+the bitwise operators are used to perform the operation on the binary data.
+
+the bitwise operators takes the input as decimal and to return the output as decimal.
+
+the bitwise operators to perform the following steps:
+
+	step1: to convert Decimal into Bianry
+
+	step2: to perform the operation on the Binary data
+
+	step3: to convert Binary into Decimal
+
+the bitwise operators are,
+
+	Bitwise and			--> &
+	Bitwise or			--> |
+	Bitwise xor			--> ^
+	Bitwise Negation		--> ~
+	Bitwise Leftshift		--> <<
+	Bitwise Rightshift		--> >>
+
+bitwise and(&) example:
+------------------------
+>>> x=10
+>>> y=3
+>>> x&y
+2
+
+	step1: to convert Decimal into Binary
+	------
+
+		x=10	--> 1010
+		y=3	--> 0011
+
+	step2: to perform the operation on the binary data
+	-----
+
+ip_1	ip_2	ip_1 & ip_2
+---------------------------
+0	0	    0		x=1010
+0	1	    0		y=0011
+1	0	    0         x&y=0010
+1	1	    1		
+
+
+	step3: to convert Binary into Decimal
+	------
+		0010
+		0*2**3+0*2**2+1*2**1+0*2**0
+		0*8+0*4+1*2+0*1
+		0+0+2+0
+		2
+
+bitwise or(|) example:
+---------------------
+>>> x=10
+>>> y=3
+>>> x|y
+11
+
+	step1: to convert Decimal into Binary
+	------
+
+		x=10	--> 1010
+		y=3	--> 0011
+
+	step2: to perform the operation on the binary data
+	-----
+
+ip_1	ip_2	ip_1 | ip_2
+---------------------------
+0	0	    0		x=1010
+0	1	    1		y=0011
+1	0	    1         x|y=1011
+1	1	    1		
+
+
+	step3: to convert Binary into Decimal
+	------
+		1011
+		1*2**3+0*2**2+1*2**1+1*2**0
+		1*8+0*4+1*2+1*1
+		8+0+2+1
+		11
+
+bitwise xor(^) example:
+-----------------------
+>>> x=10
+>>> y=3
+>>> x^y
+9
+
+	step1: to convert Decimal into Binary
+	------
+
+		x=10	--> 1010
+		y=3	--> 0011
+
+	step2: to perform the operation on the binary data
+	-----
+
+ip_1	ip_2	ip_1 ^ ip_2
+---------------------------
+0	0	    0		x=1010
+0	1	    1		y=0011
+1	0	    1         x^y=1001
+1	1	    0		
+
+
+	step3: to convert Binary into Decimal
+	------
+		
+		1001
+		1*2**3+0*2**2+0*2**1+1*2**0
+		1*8+0*4+0*2+1*1
+		8+0+0+1
+		9
+

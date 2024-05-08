@@ -1,0 +1,193 @@
+		Collections/Builtin Data Structures
+		-----------------------------------
+List:
+-----
+in python, the list datatype having "list" class
+
+we can create a list object by using [] or by calling list() or list(iterableobj)
+
+>>> x=[]
+>>> x
+[]
+>>> type(x)
+<class 'list'>
+
+>>> y=list()
+>>> y
+[]
+>>> type(y)
+<class 'list'>
+
+>>> z=[5,3,7,9]
+>>> z
+[5, 3, 7, 9]
+>>> type(z)
+<class 'list'>
+
+>>> a=list("siva")
+>>> a
+['s', 'i', 'v', 'a']
+>>> type(a)
+<class 'list'>
+
+>>> b=list((5,3,9,2))
+>>> b
+[5, 3, 9, 2]
+>>> type(b)
+<class 'list'>
+
+in python, the list object is a mutable object but it allows both mutable and immutable objects.
+
+>>> x=[9,2.3,4j,False,"siva",(6,7),[9,3]]
+>>> x
+[9, 2.3, 4j, False, 'siva', (6, 7), [9, 3]]
+>>> type(x)
+<class 'list'>
+
+in list object, the insertion order is preserved because of that reason in python the list object is a sequence object.
+
+the list object allows duplicate elements.
+
+>>> y=[5,3,5,7,9,7,3,5,9,7,8]
+>>> y
+[5, 3, 5, 7, 9, 7, 3, 5, 9, 7, 8]
+
+the list object allows both homogenious and hetrogenious elements.
+
+	homogenious(same/similar type of elements)
+	------------
+>>> a=[3,2,8,9]
+>>> a
+[3, 2, 8, 9]
+
+>>> b=[2.3,5.8,9.1,6.7]
+>>> b
+[2.3, 5.8, 9.1, 6.7]
+
+	hetrogenious(different/dissimilar type of elements)
+	-------------
+>>> x=[9,2.3,4j,False,"siva",(6,7),[9,3]]
+>>> x
+[9, 2.3, 4j, False, 'siva', (6, 7), [9, 3]]
+
+
+the list object supporting indexing concept,in python the indexing can be categorized into 	2-types, they are	
+
+	1).Positive/Forward Indexing
+
+	2).Negative/Backward Indexing
+
+
+			Indexing
+			    |
+		-------------------------
+		|			|
+	Forward/Positive	Backward/Negative
+		|			|
+takes from Left to Right	takes from Right to Left
+		|			|
+by default starts with '0'	by default starts with '-1'
+
+
+in list object, each and every element having unique indexing.
+
+	ref fig: list indexing
+
+by using indexing concept, we can retreive only one element from the list object at a time.
+
+>>> x=[9,2.3,4j,False,"siva",(6,7),[9,3]]
+>>> x
+[9, 2.3, 4j, False, 'siva', (6, 7), [9, 3]]
+>>> x[0]
+9
+>>> x[-7]
+9
+>>> x[4]
+'siva'
+>>> x[-1]
+[9, 3]
+>>> x[-1][-1]
+3
+>>> x[-1][1]
+3
+>>> x[4][1]
+'i'
+>>> x[-3][-3]
+'i'
+>>> x[5][0]
+6
+>>> x[-2][-2]
+6
+
+in python, the list object supporting slicing concept also.
+
+by using slicing concept, we can retreive one or more elements from the list object at a time.
+
+>>> x=[9,2.3,4j,False,"siva",(6,7),[9,3]]
+>>> x
+[9, 2.3, 4j, False, 'siva', (6, 7), [9, 3]]
+>>> x[:3]
+[9, 2.3, 4j]
+>>> x[-3:]
+['siva', (6, 7), [9, 3]]
+>>> x[2:5]
+[4j, False, 'siva']
+>>> x[::2]
+[9, 4j, 'siva', [9, 3]]
+>>> x[1::2]
+[2.3, False, (6, 7)]
+>>> x[::-1]
+[[9, 3], (6, 7), 'siva', False, 4j, 2.3, 9]
+>>> x[4:5]
+['siva']
+
+
+by using indexing concept, we can update the list object elements.
+
+>>> x=[9,2.3,4j,False,"siva",(6,7),[9,3]]
+>>> x
+[9, 2.3, 4j, False, 'siva', (6, 7), [9, 3]]
+>>> id(x)
+1986337014208
+
+>>> x[0]=90
+>>> x
+[90, 2.3, 4j, False, 'siva', (6, 7), [9, 3]]
+>>> id(x)
+1986337014208
+
+>>> x[-3]="krishna"
+>>> x
+[90, 2.3, 4j, False, 'krishna', (6, 7), [9, 3]]
+>>> id(x)
+1986337014208
+
+>>> x[-1]=[90,30]
+>>> x
+[90, 2.3, 4j, False, 'krishna', (6, 7), [90, 30]]
+>>> id(x)
+1986337014208
+
+>>> x[-2]=(60,70)
+>>> x
+[90, 2.3, 4j, False, 'krishna', (60, 70), [90, 30]]
+>>> id(x)
+1986337014208
+>>> id(x[-1])
+1986337014464
+
+>>> x[-1][0]=900
+>>> x
+[90, 2.3, 4j, False, 'krishna', (60, 70), [900, 30]]
+>>> id(x[-1])
+1986337014464
+
+>>> x[-3][2]='u'
+TypeError: 'str' object does not support item assignment
+
+>>> x[-2][0]=600
+TypeError: 'tuple' object does not support item assignment
+
+
+
+

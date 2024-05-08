@@ -1,0 +1,256 @@
+tuple data structure:
+---------------------
+in python, the tuple datatype having 'tuple' class
+
+we can create a tuple object by using () or by calling tuple() or tuple(iterableobj)
+
+>>> x=()
+>>> x
+()
+>>> type(x)
+<class 'tuple'>
+
+>>> y=tuple()
+>>> y
+()
+>>> type(y)
+<class 'tuple'>
+
+>>> z=(5,3,7,2)
+>>> z
+(5, 3, 7, 2)
+>>> type(z)
+<class 'tuple'>
+
+>>> a=tuple("siva")
+>>> a
+('s', 'i', 'v', 'a')
+>>> type(a)
+<class 'tuple'>
+
+>>> b=tuple([5,3,7,2])
+>>> b
+(5, 3, 7, 2)
+>>> type(b)
+<class 'tuple'>
+
+the tuple object is a immutable object but it allows both mutable and immutable objects.
+
+>>> x=(6,2.3,4j,False,"siva",(6,7),[5,9])
+>>> x
+(6, 2.3, 4j, False, 'siva', (6, 7), [5, 9])
+
+in tuple object, the insertion order is preserved because of that reason the tuple object is a sequence object.
+
+the tuple object allows duplicate elements
+
+>>> y=(5,3,7,5,9,7,5,3,6)
+>>> y
+(5, 3, 7, 5, 9, 7, 5, 3, 6)
+
+the tuple object allows both homogenious and hetrogenious elements.
+
+	homogenious(same/similar type of elements)
+	-----------
+>>> a=(5,3,7,2)
+>>> a
+(5, 3, 7, 2)
+
+>>> b=(2.3,5.1,7.2)
+>>> b
+(2.3, 5.1, 7.2)
+
+	Hetrogenious(different/dissimilar type of elements)
+	-------------
+>>> x=(6,2.3,4j,False,"siva",(6,7),[5,9])
+>>> x
+(6, 2.3, 4j, False, 'siva', (6, 7), [5, 9])
+
+the tuple object support indexing concept.
+
+in tuple object each and every element having unique indexing.
+
+by using indexing concept, we can retreive only one element from the tuple object at a time.
+
+ex:
+---
+>>> x=(6,2.3,4j,False,"siva",(6,7),[5,9])
+>>> x
+(6, 2.3, 4j, False, 'siva', (6, 7), [5, 9])
+>>> x[0]
+6
+>>> x[3]
+False
+>>> x[-1]
+[5, 9]
+>>> x[-3]
+'siva'
+>>> x[-3][1]
+'i'
+>>> x[4][1]
+'i'
+>>> x[-2][-1]
+7
+
+the tuple object support slicing concept.
+
+by using slicing concept we can retreive one or more elements from the tuple object at a time.
+
+>>> x=(6,2.3,4j,False,"siva",(6,7),[5,9])
+>>> x
+(6, 2.3, 4j, False, 'siva', (6, 7), [5, 9])
+>>> x[:3]
+(6, 2.3, 4j)
+>>> x[-3:]
+('siva', (6, 7), [5, 9])
+>>> x[2:5]
+(4j, False, 'siva')
+>>> x[-3][:3]
+'siv'
+>>> x[-3][-3:][::-1]
+'avi'
+>>> x[4:5]
+('siva',)
+
+we can't update the tuple object values.
+
+>>> x=(6,2.3,4j,False,"siva",(6,7),[5,9])
+>>> x
+(6, 2.3, 4j, False, 'siva', (6, 7), [5, 9])
+>>> id(x)
+1427361691488
+>>> type(x)
+<class 'tuple'>
+>>> x[0]=60
+TypeError: 'tuple' object does not support item assignment
+>>> x[-3]="krishna"
+TypeError: 'tuple' object does not support item assignment
+>>> x[-2]=(60,70)
+TypeError: 'tuple' object does not support item assignment
+>>> x[-1]=[50,90]
+TypeError: 'tuple' object does not support item assignment
+>>> x[-1][-1]=90
+>>> x
+(6, 2.3, 4j, False, 'siva', (6, 7), [5, 90])
+>>> x[-2][-1]=70
+TypeError: 'tuple' object does not support item assignment
+>>> x[-3][1]='u'
+TypeError: 'str' object does not support item assignment
+
+the tuple object support nested tuple mechanism.
+
+>>> x=((),())
+>>> x
+((), ())
+
+>>> y=((5,3,6),(8,1,5))
+>>> y
+((5, 3, 6), (8, 1, 5))
+>>> y[-1]
+(8, 1, 5)
+>>> y[0][1]
+3
+>>> y[1][2]
+5
+
+>>> z=(5,3,7,(9,1,4,(6,2),8),0)
+>>> z
+(5, 3, 7, (9, 1, 4, (6, 2), 8), 0)
+>>> z[3][3][0]
+6
+>>> z[-2][-2][-1]
+2
+>>> z[3][0]
+9
+>>> z[-2][-1]
+8
+>>> z[3][4]
+8
+
+working with functions:
+------------------------
+>>> x=(5,3,7,2)
+>>> x
+(5, 3, 7, 2)
+>>> len(x)
+4
+>>> min(x)
+2
+>>> max(x)
+7
+>>> sum(x)
+17
+>>> sorted(x)
+[2, 3, 5, 7]
+>>> sorted(x,reverse=True)
+[7, 5, 3, 2]
+>>> reversed(x)
+<reversed object at 0x0000014C55AA6260>
+>>> tuple(reversed(x))
+(2, 7, 3, 5)
+
+working with tuple class methods:
+---------------------------------
+	if we want to display all the available tuple class method names with syntax and description, in that case we are using help() function.
+
+	help(tuple)
+
+	if we want to display the list of all the available tuple class method names without syntax and description, in that case we are using dir() function.
+
+	dir(tuple)
+
+count()
+------
+to return the no.of occurencess of given element in a tuple object.
+
+	tupleobj.count(element)
+
+ex:
+---
+>>> x=(10,20,30,10,40,30,20,10,30,10)
+>>> x
+(10, 20, 30, 10, 40, 30, 20, 10, 30, 10)
+>>> x.count(10)
+4
+>>> x.count(20)
+2
+>>> x.count(30)
+3
+>>> x.count(40)
+1
+>>> x.count(50)
+0
+
+index()
+-------
+to return the positive index of first occurencess of given element in a tuple object from left to right.
+
+	tupleobj.index(element)
+
+ex1:
+-----
+>>> y=(10,20,30,40,50)
+>>> y
+(10, 20, 30, 40, 50)
+>>> y.index(10)
+0
+>>> y.index(30)
+2
+>>> y.index(50)
+4
+>>> y.index(90)
+ValueError: tuple.index(x): x not in tuple
+
+
+ex2:
+----
+>>> z=(10,20,30,10,40,20,30,10,30,20,10)
+>>> z
+(10, 20, 30, 10, 40, 20, 30, 10, 30, 20, 10)
+>>> z.index(10)
+0
+>>> z.index(30)
+2
+>>> z.index(40)
+4
+

@@ -1,0 +1,364 @@
+working with range() function:
+------------------------------
+the range() function is a builtin function in both python2.x and python3.x versions.
+
+in python2.x versions, the range() function to return the list object, the list object is mutable object.
+
+in python3.x versions, the range() function to return the range object, the range object is a immutable object.
+
+	scenario-1
+	----------
+	range(stop)
+
+	here the stop value is a exclusive value
+	     by default starts with 0
+	     by default increment by 1
+
+
+ex1:
+----
+>>> x=range(5)
+>>> x
+range(0, 5)
+
+>>> type(x)
+<class 'range'>
+
+>>> for i in x:
+        print(i)
+
+0
+1
+2
+3
+4
+
+>>> list(x)
+[0, 1, 2, 3, 4]
+
+>>> tuple(x)
+(0, 1, 2, 3, 4)
+
+	scenario-2
+	----------
+	range(start,stop)
+
+	here the start value is a inclusive value
+	     the stop value is a exclusive value
+	     by default increment by 1
+
+ex2:
+----
+>>> y=range(5,10)
+>>> y
+range(5, 10)
+
+>>> type(y)
+<class 'range'>
+
+>>> for j in y:
+        print(j)
+
+5
+6
+7
+8
+9
+
+>>> list(y)
+[5, 6, 7, 8, 9]
+
+>>> tuple(y)
+(5, 6, 7, 8, 9)
+
+	scenario-3
+	-----------
+	range(start,stop,step)
+
+	here the start value is a inclusive value
+	     the stop value is a exclusive value
+	     the step value is either increment/decrement
+
+ex3:
+----
+>>> z=range(1,10,2)
+>>> z
+range(1, 10, 2)
+
+>>> type(z)
+<class 'range'>
+
+>>> for k in z:
+        print(k)
+
+1
+3
+5
+7
+9
+
+>>> list(z)
+[1, 3, 5, 7, 9]
+
+>>> tuple(z)
+(1, 3, 5, 7, 9)
+
+ex4:
+----
+>>> a=range(10,1,-2)
+>>> a
+range(10, 1, -2)
+
+>>> type(a)
+<class 'range'>
+
+>>> for _ in a:
+        print(_)
+
+10
+8
+6
+4
+2
+
+>>> list(a)
+[10, 8, 6, 4, 2]
+
+>>> tuple(a)
+(10, 8, 6, 4, 2)
+
+note:
+----
+the range() function always takes the parameter as a integer object only, by mistakley we are passing boolean values, in that case the range() to convert that boolean values into integers like True means 1 and False means 0.
+
+ex:
+---
+>>> range(5)
+range(0, 5)
+
+>>> range(True)
+range(0, 1)
+
+>>> range(2.3)
+TypeError: 'float' object cannot be interpreted as an integer
+
+>>> range(4j)
+TypeError: 'complex' object cannot be interpreted as an integer
+
+>>> range("siva")
+TypeError: 'str' object cannot be interpreted as an integer
+
+>>> range([5,3,7,2])
+TypeError: 'list' object cannot be interpreted as an integer
+
+>>> range((4,2,7,9))
+TypeError: 'tuple' object cannot be interpreted as an integer
+
+>>> range({5,3,7,2})
+TypeError: 'set' object cannot be interpreted as an integer
+
+>>> range({'m':34,'sc':89,'so':90})
+TypeError: 'dict' object cannot be interpreted as an integer
+
+>>> range(frozenset([6,3,8,2]))
+TypeError: 'frozenset' object cannot be interpreted as an integer
+
+
+in the range() function, we are passing same number as a both start and stop value, in that the range() function to return the empty range object i.e., there's no elements from start value to stop value.
+
+ex:
+---
+>>> x=range(5,5)
+>>> x
+range(5, 5)
+
+>>> type(x)
+<class 'range'>
+
+>>> for i in x:
+        print(i)
+
+>>> list(x)
+[]
+
+>>> tuple(x)
+()
+
+>>> len(x)
+0
+
+
+note:
+-----
+xrange() function is a one builtin function in python2.x versions only.
+
+the xrange() function to return the xrange object, the xrange object is a immutable object.
+
+the difference between range() function and xrange() functions in python2.x versions is, the range() function to return the list object, the list object is a mutable object but the xrange() function to return the xrange object, the xrange object is a immutable object.
+
+ex1:
+----
+write a python script/program to print 1-N natural numbers by using for loop?
+
+num=int(input("enter your number: "))
+for i in range(1,num+1):
+    print(i)
+
+output:
+-------
+enter your number: 10
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+ex2:
+----
+write a python script/program to print 1-N natural numbers by using for loop?
+
+num=int(input("enter your number: "))
+for i in range(1,num+1):
+    print(i,end=" ")
+
+output:
+-------
+enter your number: 10
+1 2 3 4 5 6 7 8 9 10 
+
+ex3:
+----
+write a python program to print even numbers from 1-N natural numbers by using for loop?
+
+num=int(input("enter your number: "))
+for i in range(1,num+1):
+    if i%2==0:
+        print(i)
+
+output:
+------
+enter your number: 10
+2
+4
+6
+8
+10
+
+assignment-1:
+-------------
+write a python program to print N-1 natural numbers by using for loop?
+
+	input
+	------
+num=10
+
+	output
+	------
+10 9 8 7 6 5 4 3 2 1
+
+assignment-2:
+-------------
+write a python program to print the sum of 1-N natural numbers by using for loop?
+
+	input
+	------
+num=10
+
+	output
+	------
+55
+
+assignment-3:
+-----------
+write a python program to print the sum of odd numbers from 1-N natural numbers by using for loop?
+
+	input
+	-----
+num=10
+
+	output
+	------
+25
+
+assignment-4:
+------------
+write a python program to print the divisibles of the given number by using for loop?
+
+	input
+	-----
+num=6
+
+	output
+	-------
+1
+2
+3
+6
+
+assignment-5:
+-------------
+write a python program to print the multiplication table of the given number by using while loop?
+
+	input
+	-----
+num=5
+
+	output
+	-------
+5 x 1 = 5
+5 x 2 = 10
+5 x 3 = 15
+.....
+.....
+5 x 10 = 50
+
+assignment-6:
+-------------
+write a python program to print the multiplication table of the given number by using for loop?
+
+	input
+	-----
+num=5
+
+	output
+	-------
+5 x 1 = 5
+5 x 2 = 10
+5 x 3 = 15
+.....
+.....
+5 x 10 = 50
+
+assignment-7:
+-------------
+write a python program to check wheather given string is palindrom string or not by using while loop, dont use any slicing and reversed() function concepts?
+
+	input			output
+	-----			------
+	siva			not a palindrom string
+
+	madam			palindrom string
+
+
+assignment-8:
+-------------
+write a python program to check wheather given string is palindrom string or not by using for  loop, dont use any slicing and reversed() function concepts?
+
+	input			output
+	-----			------
+	siva			not a palindrom string
+
+	madam			palindrom string
+
+
+
+
+
+
+
+

@@ -1,0 +1,356 @@
+ex:
+---
+u_c=p_c=0
+while True:
+    uname=input("enter your user name: ")
+    if uname=='siva':
+        while True:
+            pwd=input("enter your password: ")
+            if pwd=='krish@123':
+                break
+            else:
+                p_c+=1
+                if p_c==3:
+                    break
+                else:
+                    print("Invalid Password")
+                    print("You have only %d attempts left"%(3-p_c))
+                    continue
+    else:
+        u_c+=1
+        if u_c==3:
+            break
+        else:
+            print("Invalid UserName")
+            print("You have only %d attempts left"%(3-u_c))
+            continue
+    break
+if uname=='siva':
+    if pwd=='krish@123':
+        print("successfully login")
+    else:
+        print("sorry,you are enter the maximum number of times wrong password,\
+ please try again after 24 hours")
+else:
+    print("sorry,you are enter the maximum number of times wrong user name,\
+ please try again after 24 hours")
+            
+output1:
+-------
+enter your user name: abc
+Invalid UserName
+You have only 2 attempts left
+enter your user name: pqr
+Invalid UserName
+You have only 1 attempts left
+enter your user name: xyz
+sorry,you are enter the maximum number of times wrong user name, please try again after 24 hours
+
+output2:
+--------
+enter your user name: abc
+Invalid UserName
+You have only 2 attempts left
+enter your user name: siva
+enter your password: siva@123
+Invalid Password
+You have only 2 attempts left
+enter your password: abc@123
+Invalid Password
+You have only 1 attempts left
+enter your password: xyz@342
+sorry,you are enter the maximum number of times wrong password, please try again after 24 hours
+
+output3:
+--------
+enter your user name: siva
+enter your password: krish@123
+successfully login
+
+
+ex2:
+----
+write a python program to implement the menu driven arithmetic calculator?
+
+while True:
+    print("Select any one Option from the following Options:\
+\n\t 1).Addition\n\t 2).Subtraction\n\t 3).Multiplication\n\t 4).Division\
+\n\t 5).Floor Division\n\t 6).Modulo\n\t 7).Exponent\n\t 8).Exit")
+    opt=int(input("enter your option: "))
+    if opt==1:
+        a,b=eval(input("enter your input values: "))
+        res=a+b
+        print(f"the addition of {a} and {b} is: {res}")
+    elif opt==2:
+        a,b=eval(input("enter your input values: "))
+        res=a-b
+        print(f"the subtraction of {a} and {b} is: {res}")
+    elif opt==3:
+        a,b=eval(input("enter your input values: "))
+        res=a*b
+        print(f"the multiplication of {a} and {b} is: {res}")
+    elif opt==4:
+        a,b=eval(input("enter your input values: "))
+        if b==0:
+            print("sno can't be zero")
+        else:
+            res=a/b
+            print(f"the division of {a} and {b} is: {res}")
+    elif opt==5:
+        a,b=eval(input("enter your input values: "))
+        if b==0:
+            print("sno can't be zero")
+        else:
+            res=a//b
+            print(f"the floor division of {a} and {b} is: {res}")
+    elif opt==6:
+        a,b=eval(input("enter your input values: "))
+        if b==0:
+            print("sno can't be zero")
+        else:
+            res=a%b
+            print(f"the modulo of {a} and {b} is: {res}")
+    elif opt==7:
+        a,b=eval(input("enter your input values: "))
+        res=a**b
+        print(f"the power/exponent of {a} and {b} is: {res}")
+    elif opt==8:
+        break
+    else:
+        print("Invalid Option")
+print("Thanks for using my arithmetic calculator application")
+    
+    
+output:
+-------
+Select any one Option from the following Options:
+	 1).Addition
+	 2).Subtraction
+	 3).Multiplication
+	 4).Division
+	 5).Floor Division
+	 6).Modulo
+	 7).Exponent
+	 8).Exit
+enter your option: 1
+enter your input values: 4,5
+the addition of 4 and 5 is: 9
+Select any one Option from the following Options:
+	 1).Addition
+	 2).Subtraction
+	 3).Multiplication
+	 4).Division
+	 5).Floor Division
+	 6).Modulo
+	 7).Exponent
+	 8).Exit
+enter your option: 2
+enter your input values: 2,3
+the subtraction of 2 and 3 is: -1
+Select any one Option from the following Options:
+	 1).Addition
+	 2).Subtraction
+	 3).Multiplication
+	 4).Division
+	 5).Floor Division
+	 6).Modulo
+	 7).Exponent
+	 8).Exit
+enter your option: 3
+enter your input values: 2,3
+the multiplication of 2 and 3 is: 6
+Select any one Option from the following Options:
+	 1).Addition
+	 2).Subtraction
+	 3).Multiplication
+	 4).Division
+	 5).Floor Division
+	 6).Modulo
+	 7).Exponent
+	 8).Exit
+enter your option: 4
+enter your input values: 2,4
+the division of 2 and 4 is: 0.5
+Select any one Option from the following Options:
+	 1).Addition
+	 2).Subtraction
+	 3).Multiplication
+	 4).Division
+	 5).Floor Division
+	 6).Modulo
+	 7).Exponent
+	 8).Exit
+enter your option: 4
+enter your input values: 2,0
+sno can't be zero
+Select any one Option from the following Options:
+	 1).Addition
+	 2).Subtraction
+	 3).Multiplication
+	 4).Division
+	 5).Floor Division
+	 6).Modulo
+	 7).Exponent
+	 8).Exit
+enter your option: 5
+enter your input values: 3,2
+the floor division of 3 and 2 is: 1
+Select any one Option from the following Options:
+	 1).Addition
+	 2).Subtraction
+	 3).Multiplication
+	 4).Division
+	 5).Floor Division
+	 6).Modulo
+	 7).Exponent
+	 8).Exit
+enter your option: 5
+enter your input values: 3,0
+sno can't be zero
+Select any one Option from the following Options:
+	 1).Addition
+	 2).Subtraction
+	 3).Multiplication
+	 4).Division
+	 5).Floor Division
+	 6).Modulo
+	 7).Exponent
+	 8).Exit
+enter your option: 6
+enter your input values: 2,3
+the modulo of 2 and 3 is: 2
+Select any one Option from the following Options:
+	 1).Addition
+	 2).Subtraction
+	 3).Multiplication
+	 4).Division
+	 5).Floor Division
+	 6).Modulo
+	 7).Exponent
+	 8).Exit
+enter your option: 6
+enter your input values: 2,0
+sno can't be zero
+Select any one Option from the following Options:
+	 1).Addition
+	 2).Subtraction
+	 3).Multiplication
+	 4).Division
+	 5).Floor Division
+	 6).Modulo
+	 7).Exponent
+	 8).Exit
+enter your option: 7
+enter your input values: 2,3
+the power/exponent of 2 and 3 is: 8
+Select any one Option from the following Options:
+	 1).Addition
+	 2).Subtraction
+	 3).Multiplication
+	 4).Division
+	 5).Floor Division
+	 6).Modulo
+	 7).Exponent
+	 8).Exit
+enter your option: 7
+enter your input values: 2,0
+the power/exponent of 2 and 0 is: 1
+Select any one Option from the following Options:
+	 1).Addition
+	 2).Subtraction
+	 3).Multiplication
+	 4).Division
+	 5).Floor Division
+	 6).Modulo
+	 7).Exponent
+	 8).Exit
+enter your option: 9
+Invalid Option
+Select any one Option from the following Options:
+	 1).Addition
+	 2).Subtraction
+	 3).Multiplication
+	 4).Division
+	 5).Floor Division
+	 6).Modulo
+	 7).Exponent
+	 8).Exit
+enter your option: 8
+Thanks for using my arithmetic calculator application
+        
+
+ex3:
+----
+write a python program to implement menu driven number system converter?
+
+num_sys=eval(input("enter your number system: "))
+while True:
+    print("Select any one Option from the following Options:\
+\n\t 1).Binary\n\t 2).Octal\n\t 3).Decimal\n\t 4).Hexadecimal\
+\n\t 5).Exit")    
+    opt=int(input("enter your option: "))
+    if opt==1:        
+        res=bin(num_sys)
+        print(f"the Binary value is: {res}")
+    elif opt==2:
+        res=oct(num_sys)
+        print(f"the Octal value is: {res}")
+    elif opt==3:
+        res=num_sys
+        print(f"the Decimal value is: {res}")
+    elif opt==4:
+        res=hex(num_sys)
+        print(f"the Hexadecimal value is: {res}")
+    elif opt==5:
+        break    
+    else:
+        print("Invalid Option")
+print("Thanks for using my Number System Converter application")
+    
+output:
+-------
+enter your number system: 39
+Select any one Option from the following Options:
+	 1).Binary
+	 2).Octal
+	 3).Decimal
+	 4).Hexadecimal
+	 5).Exit
+enter your option: 1
+the Binary value is: 0b100111
+Select any one Option from the following Options:
+	 1).Binary
+	 2).Octal
+	 3).Decimal
+	 4).Hexadecimal
+	 5).Exit
+enter your option: 2
+the Octal value is: 0o47
+Select any one Option from the following Options:
+	 1).Binary
+	 2).Octal
+	 3).Decimal
+	 4).Hexadecimal
+	 5).Exit
+enter your option: 3
+the Decimal value is: 39
+Select any one Option from the following Options:
+	 1).Binary
+	 2).Octal
+	 3).Decimal
+	 4).Hexadecimal
+	 5).Exit
+enter your option: 4
+the Hexadecimal value is: 0x27
+Select any one Option from the following Options:
+	 1).Binary
+	 2).Octal
+	 3).Decimal
+	 4).Hexadecimal
+	 5).Exit
+enter your option: 5
+Thanks for using my Number System Converter application    
+        
+
+
+

@@ -1,0 +1,173 @@
+setdefault()
+------------
+to set the default value to the key's
+
+	dictobj.setdefault(key,value)
+
+ex:
+---
+>>> x={'m':34,'sc':67,'tel':21,'so':78}
+>>> x
+{'m': 34, 'sc': 67, 'tel': 21, 'so': 78}
+>>> x.setdefault('sc',33)
+67
+>>> x.setdefault('py',33)
+33
+>>> x
+{'m': 34, 'sc': 67, 'tel': 21, 'so': 78, 'py': 33}
+>>> x.get('sc',22)
+67
+>>> x.get('java',22)
+22
+>>> x
+{'m': 34, 'sc': 67, 'tel': 21, 'so': 78, 'py': 33}
+
+update()
+-------
+to update the dict object values.
+
+	dictobj.update(dictobj)
+
+ex:
+---
+>>> x={'m':34,'sc':67,'tel':21,'so':78}
+>>> y={'sc':56,'hin':90,'so':21,'eng':45}
+>>> x
+{'m': 34, 'sc': 67, 'tel': 21, 'so': 78}
+>>> y
+{'sc': 56, 'hin': 90, 'so': 21, 'eng': 45}
+>>> x.update(y)
+>>> x
+{'m': 34, 'sc': 56, 'tel': 21, 'so': 21, 'hin': 90, 'eng': 45}
+>>> y
+{'sc': 56, 'hin': 90, 'so': 21, 'eng': 45}
+
+
+note:
+-----
+from python3.8 versions onwards, in dict class to introduce two new operators, they are
+
+	|	--> merge
+
+	|=	--> update
+
+ex1:  merge
+----
+>>> x={'a':1,'b':2}
+>>> y={'c':3,'d':4}
+>>> x
+{'a': 1, 'b': 2}
+>>> y
+{'c': 3, 'd': 4}
+>>> {**x,**y}
+{'a': 1, 'b': 2, 'c': 3, 'd': 4}
+>>> x
+{'a': 1, 'b': 2}
+>>> y
+{'c': 3, 'd': 4}
+>>> x|y
+{'a': 1, 'b': 2, 'c': 3, 'd': 4}
+>>> x
+{'a': 1, 'b': 2}
+>>> y
+{'c': 3, 'd': 4}
+
+ex2: update
+----
+>>> x={'a':1,'b':2}
+>>> y={'c':3,'d':4}
+>>> x
+{'a': 1, 'b': 2}
+>>> y
+{'c': 3, 'd': 4}
+>>> x.update(y)
+>>> x
+{'a': 1, 'b': 2, 'c': 3, 'd': 4}
+>>> y
+{'c': 3, 'd': 4}
+>>> p={'a':1,'b':2}
+>>> q={'c':3,'d':4}
+>>> p
+{'a': 1, 'b': 2}
+>>> q
+{'c': 3, 'd': 4}
+>>> p|=q
+>>> p
+{'a': 1, 'b': 2, 'c': 3, 'd': 4}
+>>> q
+{'c': 3, 'd': 4}
+
+dict comprihension:
+--------------------
+to generate the item's into the dict object dynamically by writeing some logic in that dict object, is known as a dict comprihension.
+
+we can implement the dict comprihension to required minimum one for loop and one dict object.
+
+ex1:
+----
+write a python program to generate the items(key's are elements and value's are no.of occurencess of that element) into dict object from the given list object?
+
+	demo.py
+	-------
+x=eval(input("enter your list: "))
+y={}
+for ele in x:
+    y[ele]=x.count(ele)
+print(y)
+
+	(or)
+
+x=eval(input("enter your list: "))
+print({ele:x.count(ele) for ele in x})
+
+output:
+-------
+enter your list: [10,20,30,10,30,40,20,10,30,10]
+{10: 4, 20: 2, 30: 3, 40: 1}
+
+ex2:
+----
+write a python program to generate the item's(key's are words and value's are no.of.charecters in that word) into dict object from the given string object?
+
+	demo.py
+	-------
+x=input("enter your string: ")
+words=x.split()
+y={}
+for w in words:
+    y[w]=len(w)
+print(y)
+
+	(or)
+
+x=input("enter your string: ")
+words=x.split()
+print({w:len(w) for w in words})
+
+	output
+	------
+enter your string: hai siva krishna good morning
+{'hai': 3, 'siva': 4, 'krishna': 7, 'good': 4, 'morning': 7}
+
+ex3:
+----
+write a python program to generate the item's(key's are even numbers and value's are odd numbers) into dict object from 1-N natural numbers?
+
+	demo.py
+	------
+num=int(input("enter your number: "))
+x={}
+for i in range(1,num+1):
+    if i%2==0:
+        x[i]=i-1
+print(x)
+
+	(or)
+
+num=int(input("enter your number: "))
+print({i:i-1 for i in range(1,num+1) if i%2==0})
+
+	output:
+	------
+enter your number: 10
+{2: 1, 4: 3, 6: 5, 8: 7, 10: 9}

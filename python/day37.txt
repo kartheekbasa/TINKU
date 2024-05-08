@@ -1,0 +1,274 @@
+ex6:
+----
+write a python program to print '*'s in a right angle tri-angle pattern?
+
+	input
+	-----
+num=5
+
+	output
+	-----
+        *
+      * *
+    * * *
+  * * * *
+* * * * *
+
+num=int(input("enter your number: "))
+for r in range(1,num+1):
+    for c in range(r,num):
+        print(" ",end=" ")
+    for c in range(1,r+1):
+        print("*",end=" ")
+    print()
+
+	(or)
+
+num=int(input("enter your number: "))
+for r in range(1,num+1):
+    for c in range(num-r):
+        print(" ",end=" ")
+    for c in range(1,r+1):
+        print("*",end=" ")
+    print()
+
+ex7:
+----
+write a python program to print '*'s in inverted right angle triangle pattern?
+
+	input
+	-----
+num=5
+
+	output
+	------
+* * * * *
+  * * * *
+    * * *
+      * *
+        *
+
+num=int(input("enter your number: "))
+for r in range(1,num+1):
+    for c in range(1,r):
+        print(" ",end=" ")
+    for c in range(1,num-r+2):
+        print("*",end=" ")
+    print()
+
+ex8:
+----
+write a python program to print '*'s in floyd's triangle pattern?
+
+	input
+	-----
+num=5
+
+	output
+	------
+    *
+   * *
+  * * *
+ * * * *
+* * * * *
+
+num=int(input("enter your number: "))
+for r in range(1,num+1):
+    for c in range(num-r):
+        print(" ",end="")
+    for c in range(1,r+1):
+        print("*",end=" ")
+    print()
+
+
+ex9:
+----
+write a python program to print '*'s in diamond pattern?
+
+	input
+	-----
+num=5
+
+	output
+	------
+    *
+   * *
+  * * *
+ * * * *
+* * * * *
+ * * * *
+  * * *
+   * *
+    *
+
+num=int(input("enter your number: "))
+for r in range(1,num+1):
+    for c in range(num-r):
+        print(" ",end="")
+    for c in range(1,r+1):
+        print("*",end=" ")
+    print()
+for r in range(1,num):
+    for c in range(1,r+1):
+        print(" ",end="")
+    for c in range(num-r):
+        print("*",end=" ")
+    print()
+
+
+ex10:
+-----
+write a python program to print the '*'s in pyramid pattern?
+
+	input
+	-----
+num=5
+
+	output
+	------
+        *
+      * * *
+    * * * * *
+  * * * * * * *
+* * * * * * * * *
+
+num=int(input("enter your number: "))
+for r in range(1,num+1):
+    for c in range(num-r):
+        print(" ",end=" ")
+    for c in range(1,r+1):
+        print("*",end=" ")
+    for c in range(1,r):
+        print("*",end=" ")
+    print()
+
+ex11:
+-----
+	input
+	-----
+num=5
+
+	output
+	------
+        *
+      * * *
+    * * * * *
+  * * * * * * *
+* * * * * * * * *
+  * * * * * * *
+    * * * * * 
+      * * *
+        *
+
+num=int(input("enter your number: "))
+for r in range(1,num+1):
+    for c in range(num-r):
+        print(" ",end=" ")
+    for c in range(1,r+1):
+        print("*",end=" ")
+    for c in range(1,r):
+        print("*",end=" ")
+    print()
+for r in range(1,num):
+    for c in range(1,r+1):
+        print(" ",end=" ")
+    for c in range(num-r):
+        print("*",end=" ")
+    for c in range(num-r-1):
+        print("*",end=" ")
+    print()
+
+    
+ex12:
+-----
+	input
+	------
+num=5
+
+	output
+	------
+* * * * *
+* * * *
+* * *
+* *
+*
+* *
+* * *
+* * * *
+* * * * *
+
+num=int(input("enter your number: "))
+for r in range(1,num+1):
+    for c in range(1,num-r+2):
+        print("*",end=" ")
+    print()
+for r in range(1,num):
+    for c in range(1,r+2):
+        print("*",end=" ")
+    print()
+
+ex13:
+-----
+	input
+	-----
+*
+* *
+* * *
+* * * *
+* * * * *
+* * * *
+* * *
+* *
+*
+
+num=int(input("enter your number: "))
+for r in range(1,num+1):
+    for c in range(1,r+1):
+        print("*",end=" ")
+    print()
+for r in range(1,num):
+    for c in range(1,num-r+1):
+        print("*",end=" ")
+    print()
+
+ex14:
+-----
+	input
+	-----
+num=5
+
+	output
+	------
+* * * * * * * * *
+  * * * * * * *
+    * * * * *
+      * * *
+        *
+      * * *
+    * * * * *
+  * * * * * * *
+* * * * * * * * *
+
+
+num=int(input("enter your number: "))
+for r in range(1,num+1):
+    for c in range(1,r):
+        print(" ",end=" ")
+    for c in range(1,num-r+2):
+        print("*",end=" ")
+    for c in range(1,num-r+1):
+        print("*",end=" ")
+    print()
+for r in range(1,num):
+    for c in range(1,num-r):
+        print(" ",end=" ")
+    for c in range(1,r+2):
+        print("*",end=" ")
+    for c in range(1,r+1):
+        print("*",end=" ")
+    print()
+
+
+
+
+

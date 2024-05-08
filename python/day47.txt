@@ -1,0 +1,206 @@
+ex4:
+----
+write a python program to generate the elements into nested list?
+
+x=eval(input("enter your nested list: "))
+for i in range(len(x)):
+    for j in range(len(x)):
+        x[i].append(eval(input("enter your element: ")))
+print(x)
+
+output:
+-------
+enter your nested list: [[],[]]
+enter your element: 3
+enter your element: 2.3
+enter your element: 4j
+enter your element: False
+[[3, 2.3], [4j, False]]
+
+
+write a python program to generate the elements into nested list by using list comprihension?
+
+x=int(input("enter no.of list objects: "))
+y=int(input("enter no.of elements in each list object: "))
+print([[eval(input("enter your element: "))for j in range(y)]for i in range(x)])
+
+output1:
+---------
+enter no.of list objects: 2
+enter no.of elements in each list object: 2
+enter your element: 2
+enter your element: 3.2
+enter your element: 4j
+enter your element: False
+[[2, 3.2], [4j, False]]
+
+output2:
+--------
+enter no.of list objects: 2
+enter no.of elements in each list object: 3
+enter your element: 3
+enter your element: 2.3
+enter your element: 4j
+enter your element: False
+enter your element: "siva"
+enter your element: [5,6]
+[[3, 2.3, 4j], [False, 'siva', [5, 6]]]
+
+ex5:
+----
+write a python program to perform the matrix addition?
+
+x=int(input("enter no.of list objects: "))
+y=int(input("enter no.of elements in each list object: "))
+print("Enter the Elements into a matrix:")
+a=[[eval(input("enter your element: "))for j in range(y)]for i in range(x)]
+print("Enter the Elements into b matrix:")
+b=[[eval(input("enter your element: "))for j in range(y)]for i in range(x)]
+print("a matrix is:")
+for row in a:
+    print("\t",row)
+print("b matrix is:")
+for row in b:
+    print("\t",row)
+c=[[a[i][j]+b[i][j]for j in range(y)]for i in range(x)]
+print("result matrix is:")
+for row in c:
+    print("\t",row)
+
+output:
+-------
+enter no.of list objects: 2
+enter no.of elements in each list object: 2
+Enter the Elements into a matrix:
+enter your element: 3
+enter your element: 2
+enter your element: 5
+enter your element: 1
+Enter the Elements into b matrix:
+enter your element: 4
+enter your element: 3
+enter your element: 6
+enter your element: 2
+a matrix is:
+	 [3, 2]
+	 [5, 1]
+b matrix is:
+	 [4, 3]
+	 [6, 2]
+result matrix is:
+	 [7, 5]
+	 [11, 3]
+
+ex6:
+----
+write a python program to perform the transpose of a matrix?
+
+x=int(input("enter no.of list objects: "))
+y=int(input("enter no.of elements in each list object: "))
+print("Enter the Elements into a matrix:")
+a=[[eval(input("enter your element: "))for j in range(y)]for i in range(x)]
+print("a matrix is:")
+for row in a:
+    print("\t",row)
+b=[[a[j][i] for j in range(x)]for i in range(y)]
+print("result matrix is:")
+for row in b:
+    print("\t",row)
+
+output1:
+-------
+enter no.of list objects: 2
+enter no.of elements in each list object: 2
+Enter the Elements into a matrix:
+enter your element: 3
+enter your element: 2
+enter your element: 4
+enter your element: 1
+a matrix is:
+	 [3, 2]
+	 [4, 1]
+result matrix is:
+	 [3, 4]
+	 [2, 1]
+
+output2:
+--------
+enter no.of list objects: 2
+enter no.of elements in each list object: 3
+Enter the Elements into a matrix:
+enter your element: 3
+enter your element: 2
+enter your element: 5
+enter your element: 1
+enter your element: 6
+enter your element: 4
+a matrix is:
+	 [3, 2, 5]
+	 [1, 6, 4]
+result matrix is:
+	 [3, 1]
+	 [2, 6]
+	 [5, 4]
+
+ex7:
+----
+write a python program to generate the pair of elements(first one is element and second one is count value of that element) into list object from the given list object?
+
+x=eval(input("enter your list: "))
+y=[]
+z=[]
+for ele in x:
+    if ele not in y:
+        y.append(ele)
+for ele in y:
+    z.append((ele,x.count(ele)))
+print(z)
+
+	(or)
+
+x=eval(input("enter your list: "))
+y=[]
+for ele in x:
+    if ele not in y:
+        y.append(ele)
+print([(ele,x.count(ele))for ele in y])
+
+output:
+-------
+enter your list: [10,20,30,10,30,40,10,20,30,10]
+[(10, 4), (20, 2), (30, 3), (40, 1)]
+
+ex8:
+----
+write a python program to find the position of an element in a given list?
+
+x=eval(input("enter your list: "))
+ele=eval(input("enter your element: "))
+if ele in x:
+    for i in range(len(x)):
+        if x[i]==ele:
+            print(f"the element {ele} is finding at {i} indexing")
+else:
+    print(f"the element {ele} is not found")
+
+output1:
+--------
+enter your list: [9,7,10,5,12,3]
+enter your element: 5
+the element 5 is finding at 3 indexing
+
+output2:
+-------
+enter your list: [9,7,10,5,12,3]
+enter your element: 6
+the element 6 is not found
+
+advantages of Comprihension:
+-----------------------------
+less code
+to improve the performance of the application
+
+disadvantages of comprihension:
+--------------------------------
+Less Readability i.e., harder to understanding
+

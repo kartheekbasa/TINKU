@@ -1,0 +1,226 @@
+		Alphabet patterns
+		-----------------
+ex1:
+----
+write a python program to print lowercase alphabets in a square pattern?
+
+	input
+	-----
+num=5
+
+	output
+	------
+a b c d e
+a b c d e
+a b c d e
+a b c d e
+a b c d e
+
+num=int(input("enter your number: "))
+for r in range(num):
+    for c in range(num):
+        print(chr(97+c),end=" ")
+    print()
+    
+ex2:
+----
+write a python program to print uppercase alphabets in a square pattern?
+
+	input
+	-----
+num=5
+
+	output
+	------
+A A A A A
+B B B B B
+C C C C C
+D D D D D
+E E E E E
+
+num=int(input("enter your number: "))
+for r in range(num):
+    for c in range(num):
+        print(chr(65+r),end=" ")
+    print()
+    
+ex3:
+---
+write a python program to print lowercase alphabets in a right-angle triangle pattern?
+
+	input
+	------
+num=5
+
+	output
+	------
+a
+b b
+c c c 
+d d d d
+e e e e e
+
+num=int(input("enter your number: "))
+for r in range(num):
+    for c in range(r+1):
+        print(chr(97+r),end=" ")
+    print()
+    
+ex4:
+----
+write a python program to print uppercase alphabets in a right-angle triangle pattern?
+
+	input
+	------
+num=5
+
+	output
+	------
+A
+A B
+A B C
+A B C D
+A B C D E
+
+num=int(input("enter your number: "))
+for r in range(num):
+    for c in range(r+1):
+        print(chr(65+c),end=" ")
+    print()
+    
+ex5:
+----
+write a python program to print lowercase alphabets in a inverted right-angle triangle pattern?
+
+	input
+	-----
+num=5
+
+	output
+	------
+a b c d e
+a b c d
+a b c
+a b
+a
+
+num=int(input("enter your number: "))
+for r in range(num):
+    for c in range(num-r):
+        print(chr(97+c),end=" ")
+    print()
+    
+ex6:
+----
+write a python program to print uppercase alphabets in a inverted right-angle triangle pattern?
+
+	input
+	-----
+num=5
+
+	output
+	------
+A A A A A
+B B B B
+C C C
+D D
+E
+
+num=int(input("enter your number: "))
+for r in range(num):
+    for c in range(num-r):
+        print(chr(65+r),end=" ")
+    print()
+    
+ex7:
+----
+write a python program to print lowercase alphabets in a floyd's triangle pattern?
+
+	input
+	-----
+num=5
+
+	output
+	-----
+    a
+   a b
+  a b c
+ a b c d
+a b c d e
+
+num=int(input("enter your number: "))
+for r in range(num):
+    for c in range(num-r-1):
+        print(" ",end="")
+    for c in range(r+1):
+        print(chr(97+c),end=" ")
+    print()
+    
+ex8:
+---
+write a python program to print uppercase alphabets in diamond pattern?
+
+	input
+	-----
+num=5
+
+	output
+	------
+    A
+   B B
+  C C C
+ D D D D 
+E E E E E
+ D D D D
+  C C C
+   B B
+    A
+
+num=int(input("enter your number: "))
+for r in range(num):
+    for c in range(num-r-1):
+        print(" ",end="")
+    for c in range(r+1):
+        print(chr(65+r),end=" ")
+    print()
+    
+for r in range(num-2,-1,-1):
+    for c in range(num-r-1):
+        print(" ",end="")
+    for c in range(r+1):
+        print(chr(65+r),end=" ")
+    print()
+
+ex9:
+----
+write a python program to print lowercase alphabets in a pyramid pattern?
+
+	input
+	-----
+num=5
+
+	output
+	------
+        a
+      b a b
+    c b a b c
+  d c b a b c d
+e d c b a b c d e
+
+num=int(input("enter your number: "))
+for r in range(num):
+    for c in range(num-r-1):
+        print(" ",end=" ")
+    for c in range(r,-1,-1):
+        print(chr(97+c),end=" ")
+    for c in range(1,r+1):
+        print(chr(97+c),end=" ")
+    print()
+    
+
+
+
+
+
+
+

@@ -1,0 +1,258 @@
+count()
+-------
+to return the no.of occurencess of given charecter/substr in a string object.
+
+	strobj.count(char/substr)
+
+ex:
+---
+>>> x="hai siva krishna hai"
+>>> x
+'hai siva krishna hai'
+>>> x.count('a')
+4
+>>> x.count('h')
+3
+>>> x.count('k')
+1
+>>> x.count('s')
+2
+>>> x.count("A")
+0
+>>> x.count('b')
+0
+>>> x.count('hai')
+2
+
+center()
+--------
+to print the string at center position.
+
+	strobj.center(width,fillchar)
+
+	here the width is a output string length
+	     by default the fillchar is a space charecter
+	     the fillchar must be one charecter long only
+
+ex:
+---
+>>> x="siva"
+>>> x
+'siva'
+>>> x.center(4)
+'siva'
+>>> x
+'siva'
+>>> x.center(9)
+'   siva  '
+>>> x
+'siva'
+>>> x.center(13,'@')
+'@@@@@siva@@@@'
+>>> x.center(17,'@#')
+TypeError: The fill character must be exactly one character long
+
+ljust()
+------
+ljust means left justification i.e., to print the string at left side.
+
+	strobj.ljust(width,fillchar)
+
+	here the width is a output string length
+	     by default the fillchar is a space charecter
+	     the fillchar must be one charecter long only
+
+ex:
+---
+>>> x="siva"
+>>> x
+'siva'
+>>> x.ljust(0)
+'siva'
+>>> x
+'siva'
+>>> x.ljust(9)
+'siva     '
+>>> x
+'siva'
+>>> x.ljust(13,'a')
+'sivaaaaaaaaaa'
+>>> x.ljust(15,'@')
+'siva@@@@@@@@@@@'
+>>> x.ljust(15,'ab')
+TypeError: The fill character must be exactly one character long
+
+rjust()
+-------
+rjust means right justification i.e., to print the string at right side.
+
+	strobj.rjust(width,fillchar)
+
+	here the width is a output string length
+	     by default the fillchar is a space charecter
+	     the fillchar must be one charecter long only
+
+ex:
+---
+>>> x="siva"
+>>> x
+'siva'
+>>> x.rjust(2)
+'siva'
+>>> x
+'siva'
+>>> x.rjust(9)
+'     siva'
+>>> x
+'siva'
+>>> x.rjust(13,'s')
+'ssssssssssiva'
+>>> x
+'siva'
+>>> x.rjust(15,'7')
+'77777777777siva'
+>>> x
+'siva'
+>>> x.rjust(15,'7a')
+TypeError: The fill character must be exactly one character long
+
+zfill()
+------
+to fill with zero's at leftside.
+
+	strobj.zfill(width)
+
+	here, the width is a output string length
+
+ex:
+---
+>>> x="siva"
+>>> x
+'siva'
+>>> x.zfill(2)
+'siva'
+>>> x
+'siva'
+>>> x.zfill(9)
+'00000siva'
+>>> x
+'siva'
+
+find()
+------
+to return the positive index of first occurencess of given charecter in a string object from left to right.
+
+	strobj.find(char/substr)
+
+ex:
+---
+>>> x="siva krishna"
+>>> x
+'siva krishna'
+>>> x.find('a')
+3
+>>> x.find('i')
+1
+
+rfind()
+------
+to return the positive index of first occurencess of given charecter in a string object from right to left.
+
+	strobj.rfind(char/substr)
+
+ex:
+---
+>>> x="siva krishna"
+>>> x
+'siva krishna'
+>>> x.rfind('a')
+11
+>>> x.rfind('i')
+7
+
+index()
+-------
+to return the positive index of first occurencess of given charecter in a string object from left to right.
+
+	strobj.index(char/substr)
+
+ex:
+---
+>>> x="siva krishna"
+>>> x
+'siva krishna'
+>>> x.index('a')
+3
+>>> x.index('i')
+1
+
+rindex()
+--------
+to return the positive index of first occurencess of given charecter in a string object from right to left.
+
+	strobj.rindex(char/substr)
+
+ex:
+---
+>>> x="siva krishna"
+>>> x
+'siva krishna'
+>>> x.rindex('a')
+11
+>>> x.rindex('i')
+7
+
+note:
+-----
+if char/substr is find/match, in that case there's no difference between find() and index() methods, it is similar to rfind() and rindex() methods.
+
+ex:
+---
+>>> y="siva"
+>>> y
+'siva'
+>>> y.find('v')
+2
+>>> y.index('v')
+2
+
+if char/substr is not find/match, in that case only we are identify the differences between find() and index() methods, it is similar to rfind() and rindex() methods.
+
+ex:
+---
+>>> y="siva"
+>>> y
+'siva'
+>>> y.find('k')
+-1
+>>> y[-1]
+'a'
+>>> y.index('k')
+ValueError: substring not found
+
+ex2:
+----
+>>> z="hai siva krishna hai"
+>>> z
+'hai siva krishna hai'
+>>> z.index('a')
+1
+>>> z.index('a',2)
+7
+>>> z.index('a',8)
+15
+>>> z.index('a',8,15)
+ValueError: substring not found
+>>> z.index('a',8,16)
+15
+
+ex3:
+----
+>>> z="hai siva krishna hai"
+>>> z
+'hai siva krishna hai'
+>>> z.index('hai')
+0
+>>> z.rindex('hai')
+17
+

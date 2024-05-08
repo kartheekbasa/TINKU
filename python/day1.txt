@@ -1,0 +1,129 @@
+			Python
+			------
+what is Python?
+--------------
+Python is a General Purpose Programming Language
+Python is a High-Level Programming Language
+Python is a Multi-Paradigm
+Python support both Interactive Mode and Batch Mode Executions
+
+		(or)
+
+Python is a General Purpose,High-Level,Interpreted,Interactive,Modular,
+Dynamically Typed,Garbage Collected,Procedure Oriented,Object Oriented and Scripting Programming Language.
+
+History of Python:
+-------------------
+the Python was developed by the Guido Van Rossum in the year of 1991(actually this project implementation is started in the early of 1980's i.e., 1989)
+
+the name python was derived from the Guido Van Rossum favourite TV fun show "the complete monty python's flying circus".
+
+he is a Dutch Programmer, best known as a Creator of the python programming language i.e., he is a father of Python Programming Language.
+
+currently he is working in microsoft.
+
+the python programming language implementation is influenced by two programming languages, they are
+
+	ABC
+	Modula3
+
+Advantages of Python:
+---------------------
+1).Simple Syntax
+	in python, there's no concept of ;,{},()
+	python simply follows Space Indentation concept
+
+ex: if block representation
+---
+	C/C++/Java			Python
+	----------			-------
+	if(condition)			if condition:
+	{					stmt_1
+	    stmt_1;				stmt_2
+	      stmt_2;				......
+	    ......			        stmt_n
+	  stmt_n;
+	}
+
+2).Less Code
+	python programs having less code when compared to other programming languages programs code like C,C++,Java,C#,....
+
+ex:
+---
+write a c-program,to print "hello world"?
+
+#include<stdio.h>
+void main()
+{
+  printf("hello world");
+}
+
+write a Java program, to print "hello world"?
+
+import java.io.*;
+class Test
+{
+   public static void main(String[] args)
+   {
+      System.out.println("hello world");
+    }
+}
+
+write a Python program,to print "hello world"?
+
+print("hello world")
+
+3).Dynamically Typed Language
+
+ex:
+----
+write a C program(static typed language) to perform the addition operation on two different types of numerical data?
+
+#include<stdio.h>
+void main()
+{
+   int x=10;
+   float y=2.3;
+   float z=x+y;
+   printf("%f",z);
+}
+
+
+write a Python program(Dynamically typed language) to perform the addition operation on two different types of numerical data?
+
+x=10
+y=2.3
+z=x+y
+print(z)
+
+4).python support N-no.of builtin libraries/packages/modules
+
+
+Feature's of Python:
+---------------------
+1).Easy-To-Learn
+2).Easy-To-Read
+3).Easy-To-Maintain
+4).Easy-To-Use
+5).CrossPlatform/Portable
+6).Scalable
+7).Secure
+8).Flexible
+9).Extendable
+10).Platform Independent
+11).Strongly Typed Language
+12).Interpreted Language
+13).Garbage Collected
+14).Free and OpenSource
+15).it support all types of database connections
+
+note:
+----
+python is a completely free and opensource project, it is maintained by PSF(Python Software Foundation) team.
+
+python official website	: www.python.org
+
+
+
+
+

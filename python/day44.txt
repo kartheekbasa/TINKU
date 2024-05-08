@@ -1,0 +1,306 @@
+assignment-1:
+--------------
+write a python program to print the no_of_elements in a given list object, dont use builtin len() function?
+
+	input				output
+	-----				------
+	[5,3,7,2]			4
+
+sol:
+----
+x=eval(input("enter your list object: "))
+c=0
+for ele in x:
+    c+=1
+print(c)
+
+
+
+assignment-2:
+--------------
+write a python program to print the sum of given list object elements,dont use builtin sum() function?
+
+	input				output
+	-----				------
+	[5,3,7,2]			17
+
+sol:
+----
+x=eval(input("enter your list object: "))
+s=0
+for ele in x:
+    s+=ele
+print(s)
+
+
+assignment-3:
+--------------
+write a python program to perform the accumulated sum of the given list object elements?
+
+	input				output
+	-----				------
+	[5,3,7,2]			[5,8,15,17]
+
+
+sol:
+----
+x=eval(input("enter your list object: "))
+y=[]
+s=0
+for ele in x:
+    s+=ele
+    y.append(s)
+print(y)
+
+
+assignment-4:
+-------------
+write a python program to searching/finding an element in a given list, if element is find to return True otherwise to return False?
+
+	input		element		output
+	-----		-------		-------
+	[5,3,7,2]	  7		True
+
+			  6		False
+
+sol:
+----
+x=eval(input("enter your list object: "))
+ele=eval(input("enter your searching element: "))
+print(ele in x)
+
+
+
+assignment-5:
+-------------
+write a python program to read the list object as a input from the user,to split that list into two sublist, one sublist contains even numbers in ascending order and another sublist contains odd numbers in dscending order?
+
+	input				output
+	-----				-------
+[5,2,8,9,1,12,3,4,7,6]		[[2,4,6,8,12],[9,7,5,3,1]]
+
+
+sol:
+----
+x=eval(input("enter your list object: "))
+even_list=[]
+odd_list=[]
+result=[]
+for ele in x:
+    if ele%2==0:
+        even_list.append(ele)
+    else:
+        odd_list.append(ele)
+result.append(sorted(even_list))
+result.append(sorted(odd_list,reverse=True))
+print(result)
+        
+extend()
+-------
+to extend the our iterable object elements with list object.
+
+		(or)
+
+to extend our list object with the elements of given iterable object.
+
+	listobj.extend(iterableobj)
+
+ex1:
+----
+>>> x=[1,2,3]
+>>> y=[4,5,6]
+>>> x+y #concatination
+[1, 2, 3, 4, 5, 6]
+>>> x
+[1, 2, 3]
+>>> y
+[4, 5, 6]
+>>> x.append(y) #appending
+>>> x
+[1, 2, 3, [4, 5, 6]]
+>>> y
+[4, 5, 6]
+>>> a=[1,2,3]
+>>> b=[4,5,6]
+>>> a.extend(b) #extending
+>>> a
+[1, 2, 3, 4, 5, 6]
+>>> b
+[4, 5, 6]
+
+ex2:
+---
+>>> x=[1,2,3]
+>>> y="siva"
+>>> x+y #concatination
+TypeError: can only concatenate list (not "str") to list
+>>> x.append(y) #appending
+>>> x
+[1, 2, 3, 'siva']
+>>> y
+'siva'
+>>> a=[1,2,3]
+>>> b="siva"
+>>> a.extend(b) #extending
+>>> a
+[1, 2, 3, 's', 'i', 'v', 'a']
+>>> b
+'siva'
+
+ex3:
+----
+>>> x=[1,2,3]
+>>> y=5
+>>> x+y #concatination
+TypeError: can only concatenate list (not "int") to list
+>>> x.append(y) #appending
+>>> x
+[1, 2, 3, 5]
+>>> y
+5
+>>> a=[1,2,3]
+>>> b=5
+>>> a.extend(b) #extending
+TypeError: 'int' object is not iterable
+
+
+index()
+-------
+to return the positive index of first occurencess of given element in a list object from left to right.
+
+	listobj.index(element,[start],[stop])
+
+ex1:
+----
+>>> z=[10,20,30,40,50,60]
+>>> z
+[10, 20, 30, 40, 50, 60]
+>>> z.index(10)
+0
+>>> z.index(30)
+2
+>>> z.index(60)
+5
+>>> z.index(70)
+ValueError: 70 is not in list
+>>> z.index()
+TypeError: index expected at least 1 argument, got 0
+
+ex2:
+----
+>>> y=[10,20,30,10,40,30,10,20,30,10]
+>>> y
+[10, 20, 30, 10, 40, 30, 10, 20, 30, 10]
+>>> y.index(10)
+0
+>>> y.index(30)
+2
+>>> y.index(10,1)
+3
+>>> y.index(10,4)
+6
+>>> y.index(10,4,6)
+ValueError: 10 is not in list
+>>> y.index(10,4,7)
+6
+
+ex3:
+----
+write a python program to print all the possible indexes of given element in a list object?
+
+x=eval(input("enter your list object: "))
+ele=eval(input("enter your element: "))
+for ind in range(len(x)):
+    if x[ind]==ele:
+        print(ind)
+
+output:
+------
+enter your list object: [10,20,30,10,30,20,10,40,30,10,20,30,10]
+enter your element: 10
+0
+3
+6
+9
+12
+
+output2:
+--------
+enter your list object: [10,2.3,4j,2.3,False,"siva",2.3,4j]
+enter your element: 2.3
+1
+3
+6
+
+insert()
+--------
+to insert an element into the list object at any position.
+
+	listobj.insert(index,element)
+
+ex:
+---
+>>> x=[10,20,30,40,50]
+>>> x
+[10, 20, 30, 40, 50]
+>>> x.insert(0,5)
+>>> x
+[5, 10, 20, 30, 40, 50]
+>>> x.insert(2,15)
+>>> x
+[5, 10, 15, 20, 30, 40, 50]
+>>> x.insert(x.index(30),33)
+>>> x
+[5, 10, 15, 20, 33, 30, 40, 50]
+>>> x.insert(-1,45)
+>>> x
+[5, 10, 15, 20, 33, 30, 40, 45, 50]
+>>> len(x)
+9
+>>> x.insert(len(x),41)
+>>> x
+[5, 10, 15, 20, 33, 30, 40, 45, 50, 41]
+>>> x.insert(10000,37)
+>>> x
+[5, 10, 15, 20, 33, 30, 40, 45, 50, 41, 37]
+>>> x.index(37)
+10
+
+
+assignment-1:
+-------------
+write a python program to find the minimum element from the given list object, dont use builtin min() function?
+
+	input				output
+	------				-------
+     [6,3,7,5]				3
+
+
+assignment-2:
+-------------
+write a python program to find the maximum element from the given list object, dont use builtin max() function?
+
+	input				output
+	------				-------
+     [6,3,7,5]				7
+
+assignment-3:
+-------------
+write a python program to print the list object elements in ascending order, dont use builtin sorted() function and sort() method of list class?
+
+	input				output
+	------				-------
+     [6,3,7,5]				[3,5,6,7]
+
+
+assignment-4:
+-------------
+write a python program to print the list object elements in reverse order, dont use builtin
+reversed() function,reverse() of list class and slicing concept?
+
+ 	input				output
+	------				-------
+     [6,3,7,5]				[5,7,3,6]
+
+
+

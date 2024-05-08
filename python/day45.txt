@@ -1,0 +1,269 @@
+assignment-1:
+-------------
+write a python program to find the minimum element from the given list object, dont use builtin min() function?
+
+	input				output
+	------				-------
+     [6,3,7,5]				3
+
+
+sol:
+----
+x=eval(input("enter your list object: "))
+m=x[0]
+for ele in x:
+    if m>ele:
+        m=ele
+print(m)
+
+
+assignment-2:
+-------------
+write a python program to find the maximum element from the given list object, dont use builtin max() function?
+
+	input				output
+	------				-------
+     [6,3,7,5]				7
+
+sol:
+----
+x=eval(input("enter your list object: "))
+m=x[0]
+for ele in x:
+    if m<ele:
+        m=ele
+print(m)
+
+
+assignment-3:
+-------------
+write a python program to print the list object elements in ascending order, dont use builtin sorted() function and sort() method of list class?
+
+	input				output
+	------				-------
+     [6,3,7,5]				[3,5,6,7]
+
+sol:
+---
+x=eval(input("enter your list object: "))
+for i in range(len(x)):
+    for j in range(i+1,len(x)):
+        if x[i]>x[j]:
+            x[i],x[j]=x[j],x[i]
+print(x)
+
+
+assignment-4:
+-------------
+write a python program to print the list object elements in reverse order, dont use builtin
+reversed() function,reverse() of list class and slicing concept?
+
+ 	input				output
+	------				-------
+     [6,3,7,5]				[5,7,3,6]
+
+sol:
+----
+x=eval(input("enter your list object: "))
+y=[]
+for i in range(len(x)-1,-1,-1):
+    y.append(x[i])
+print(y)
+
+
+pop()
+-----
+to remove an particular element from the list object based on indexing.
+
+	listobj.pop(index=-1)
+
+ex:
+---
+>>> x=[10,20,30,40,50,60]
+>>> x
+[10, 20, 30, 40, 50, 60]
+>>> x.pop(0)
+10
+>>> x
+[20, 30, 40, 50, 60]
+>>> x.pop(x.index(40))
+40
+>>> x
+[20, 30, 50, 60]
+>>> x.pop()
+60
+>>> x
+[20, 30, 50]
+>>> x.pop(4)
+IndexError: pop index out of range
+
+remove()
+--------
+to remove an particular element from the list object based on element.
+
+in our list object, the duplicate elements are there, in that case the remove() to remove only first occurence of that element from left to right.
+
+	listobj.remove(element)
+
+ex1:
+----
+>>> z=[10,20,30,40,50,60]
+>>> z
+[10, 20, 30, 40, 50, 60]
+>>> z.remove(20)
+>>> z
+[10, 30, 40, 50, 60]
+>>> z.remove(60)
+>>> z
+[10, 30, 40, 50]
+>>> z.remove(70)
+ValueError: list.remove(x): x not in list
+>>> z.remove()
+TypeError: list.remove() takes exactly one argument (0 given)
+
+ex2:
+----
+>>> x=[10,20,30,10,40,20,10,30,20,10]
+>>> x
+[10, 20, 30, 10, 40, 20, 10, 30, 20, 10]
+>>> x.remove(10)
+>>> x
+[20, 30, 10, 40, 20, 10, 30, 20, 10]
+>>> x.remove(20)
+>>> x
+[30, 10, 40, 20, 10, 30, 20, 10]
+>>> x.remove(10)
+>>> x
+[30, 40, 20, 10, 30, 20, 10]
+
+ex3:
+----
+write a python program to remove all the possible occurencess of given element in a list object?
+
+x=eval(input("enter your list object: "))
+ele=eval(input("enter your element: "))
+y=[]
+for i in x:
+    if i!=ele:
+        y.append(i)
+print(y)
+
+output:
+-------
+enter your list object: [10,20,30,10,30,40,20,10,30,20,10]
+enter your element: 10
+[20, 30, 30, 40, 20, 30, 20]
+
+ex4:
+----
+write a python program to print the unique/distict elements from the given list object i.e., to remove all the duplicate elements from the list object?
+
+x=eval(input("enter your list object: "))
+y=[]
+for ele in x:
+    if ele not in y:
+        y.append(ele)
+print(y)
+
+output:
+-------
+enter your list object: [10,20,30,10,30,40,20,10,30,20,10]
+[10, 20, 30, 40]
+
+sort()
+------
+to return the list object elements in sorting order.
+
+by default, the sort() to return the elements in ascending order.
+
+by default, the sort() to perform the inplace order operation.
+
+	listobj.sort(reverse=False)
+
+ex1: ascending order
+---
+>>> x=[5,3,7,2] #list object
+>>> x
+[5, 3, 7, 2]
+>>> sorted(x) #sorted is a function
+[2, 3, 5, 7]
+>>> x
+[5, 3, 7, 2]
+>>> x.sort() #sort is a list class method
+>>> x
+[2, 3, 5, 7]
+
+ex2: descending order
+----
+>>> x=[5,3,7,2] #list object
+>>> x
+[5, 3, 7, 2]
+>>> sorted(x,reverse=True) #sorted is a function
+[7, 5, 3, 2]
+>>> x
+[5, 3, 7, 2]
+>>> x.sort(reverse=True) #sort is a list class method
+>>> x
+[7, 5, 3, 2]
+
+
+reverse()
+----------
+to return the list object elements in reverse order.
+
+by default, the reverse() to perform the inplace order operation.
+
+	listobj.reverse()
+
+ex:
+---
+>>> x=[5,3,7,2] #list object
+>>> x
+[5, 3, 7, 2]
+>>> reversed(x) #reversed is a function
+<list_reverseiterator object at 0x000001AA16499CF0>
+>>> list(reversed(x))
+[2, 7, 3, 5]
+>>> x
+[5, 3, 7, 2]
+>>> x.reverse() #reverse is a list class method
+>>> x
+[2, 7, 3, 5]
+
+assignment-1:
+-------------
+write a python program to move the zero's at the end of the list object elements?
+
+	input			output
+	-----			------
+[6,0,9,3,0,7,2,0,1]	      [6,9,3,7,2,1,0,0,0]
+
+assignment-2:
+--------------
+write a python program to convert nested list into flatted/single list?
+
+	input			output
+	-----			------
+[[5,3,6],[9,7,2]]		[5,3,6,9,7,2]
+
+
+assignment-3:
+-------------
+write a python program to find the most common occured element in a list object?
+
+	input				output
+	-----				------
+[10,20,30,10,20,10,40,30,10]		10
+
+
+assignment-4:
+--------------
+write a python program to find the longest sub string in a given string object?
+
+	input				output
+	-----				------
+hello siva krishna good afternoon	afternoon
+
+
+
+	
